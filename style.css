@@ -40,6 +40,33 @@ header {
     box-shadow: 0 2px 12px rgba(0,0,0,.08);
 }
 
+/* Barre horizontale sous l'en-tête (sous-pages) */
+.subnav {
+    background: var(--blue);
+    color: var(--white);
+    border-bottom: 4px solid var(--yellow);
+}
+.subnav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: .45rem 2rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    justify-content: center;
+}
+.subnav-inner a {
+    color: var(--white);
+    font-weight: 600;
+    padding: .5rem 0.75rem;
+    border-radius: 6px;
+    transition: background var(--trans), color var(--trans);
+}
+.subnav-inner a:hover, .subnav-inner a.active {
+    background: rgba(255,255,255,.08);
+    color: var(--yellow);
+}
+
 .header-inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -59,6 +86,43 @@ header {
     letter-spacing: -.5px;
 }
 .logo span { color: var(--yellow); }
+
+.site-logo { height: 36px; width: auto; display: block; }
+
+/* accessible focus ring for links and buttons */
+a:focus, button:focus {
+    outline: 3px solid rgba(21,101,192,.2);
+    outline-offset: 2px;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* Make subnav sticky below header (Option B) */
+.subnav {
+    position: sticky;
+    top: 70px; /* header height */
+    z-index: 99;
+    box-shadow: 0 4px 14px rgba(0,0,0,.06);
+}
+
+/* Campus banner between nav and hero */
+.campus-banner {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
+.campus-banner img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .campus-banner img { height: 180px; }
+}
 
 nav ul {
     display: flex;

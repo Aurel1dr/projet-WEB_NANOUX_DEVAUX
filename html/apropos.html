@@ -4,28 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À propos – Département Informatique EFREI</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <meta name="description" content="À propos du département informatique - projet TI402. Membres et contact.">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>
         <div class="header-inner">
-            <a href="../index.html" class="logo">EFREI <span>Informatique</span></a>
-            <nav>
+            <a href="../index.html" class="logo" aria-label="Accueil">
+                <img src="../img/logo.svg" alt="Logo EFREI Informatique" class="site-logo">
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="mainNav">
                 <ul>
                     <li><a href="agenda.html">Agenda</a></li>
                     <li><a href="formations.html">Formations</a></li>
                     <li><a href="equipe.html">Équipe</a></li>
-                    <li><a href="apropos.html">À propos</a></li>
+                    <li><a href="apropos.html" class="active">À propos</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <h1>À propos</h1>
-        <p>Page en construction.</p>
+        <section class="page-intro">
+            <div class="about-inner">
+                <div>
+                    <h1>À propos</h1>
+                    <p>Présentation du projet et liste des membres. Remplacez les placeholders par les vrais noms et descriptions.</p>
+                </div>
+                <div>
+                    <h2>Membres du projet</h2>
+                    <ul>
+                        <li><strong>Nom 1</strong> — rôle / description à compléter.</li>
+                        <li><strong>Nom 2</strong> — rôle / description à compléter.</li>
+                        <li><strong>Nom 3</strong> — rôle / description à compléter.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <section class="contact-form">
+                <h2>Contact</h2>
+                <form id="contactForm" novalidate>
+                    <div>
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                        <span id="contactResult" aria-live="polite" style="margin-left:1rem"></span>
+                    </div>
+                </form>
+            </section>
+        </section>
     </main>
     <footer>
-        <a href="apropos.html">À propos</a>
+        <div class="footer-inner">
+            <p class="footer-logo">EFREI <span>Informatique</span></p>
+            <nav class="footer-nav">
+                <a href="agenda.html">Agenda</a>
+                <a href="formations.html">Formations</a>
+                <a href="equipe.html">Équipe</a>
+                <a href="apropos.html">À propos</a>
+            </nav>
+            <p class="footer-copy">© 2025–2026 EFREI Paris – Département Informatique</p>
+        </div>
     </footer>
+    <script src="../main.js"></script>
 </body>
 </html>

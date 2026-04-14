@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="40" viewBox="0 0 180 40" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">EFREI Informatique</title>
+  <rect width="180" height="40" rx="6" fill="#002680" />
+  <text x="14" y="26" font-family="Georgia, serif" font-size="18" fill="#F5C300">EFREI</text>
+  <text x="80" y="26" font-family="Segoe UI, system-ui, sans-serif" font-size="14" fill="#ffffff">Informatique</text>
+</svg>

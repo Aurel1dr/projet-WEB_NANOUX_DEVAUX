@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Département Informatique – EFREI Paris</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="header-inner">
-            <a href="index.html" class="logo">EFREI <span>Informatique</span></a>
+            <a href="index.html" class="logo" aria-label="Accueil">
+                <img src="img/logo.svg" alt="Logo EFREI Informatique" class="site-logo">
+            </a>
             <button class="menu-toggle" id="menuToggle" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
@@ -24,6 +26,20 @@
             </nav>
         </div>
     </header>
+
+    <div class="subnav" role="navigation" aria-label="Sous pages">
+        <div class="subnav-inner">
+            <a href="html/agenda.html">Agenda</a>
+            <a href="html/formations.html">Formations</a>
+            <a href="html/equipe.html">Équipe</a>
+            <a href="html/apropos.html">À propos</a>
+        </div>
+    </div>
+
+    <!-- Bannière photo campus (placeholder) -->
+    <div class="campus-banner" aria-hidden="false">
+        <img src="img/campus-placeholder.svg" alt="Photo du campus EFREI (placeholder)" />
+    </div>
 
     <section class="hero">
         <div class="hero-bg">
@@ -161,6 +177,6 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

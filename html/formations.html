@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formations – Département Informatique EFREI</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <meta name="description" content="Formations proposées par le département informatique EFREI.">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>
         <div class="header-inner">
-            <a href="../index.html" class="logo">EFREI <span>Informatique</span></a>
-            <nav>
+            <a href="../index.html" class="logo" aria-label="Accueil">
+                <img src="../img/logo.svg" alt="Logo EFREI Informatique" class="site-logo">
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="mainNav">
                 <ul>
                     <li><a href="agenda.html">Agenda</a></li>
-                    <li><a href="formations.html">Formations</a></li>
+                    <li><a href="formations.html" class="active">Formations</a></li>
                     <li><a href="equipe.html">Équipe</a></li>
                     <li><a href="apropos.html">À propos</a></li>
                 </ul>
@@ -25,7 +31,17 @@
         <p>Page en construction.</p>
     </main>
     <footer>
-        <a href="apropos.html">À propos</a>
+        <div class="footer-inner">
+            <p class="footer-logo">EFREI <span>Informatique</span></p>
+            <nav class="footer-nav">
+                <a href="agenda.html">Agenda</a>
+                <a href="formations.html">Formations</a>
+                <a href="equipe.html">Équipe</a>
+                <a href="apropos.html">À propos</a>
+            </nav>
+            <p class="footer-copy">© 2025–2026 EFREI Paris – Département Informatique</p>
+        </div>
     </footer>
+    <script src="../main.js"></script>
 </body>
 </html>
