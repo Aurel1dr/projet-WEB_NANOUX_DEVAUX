@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À propos – Département Informatique EFREI Paris</title>
-    <meta name="description" content="Page À propos du département Informatique de l'EFREI Paris : projet, équipe, FAQ, contacts et formulaire de contact enseignant.">
+    <meta name="description" content="Page À propos du département Informatique de l'EFREI Paris. Présentation du projet, équipe, FAQ, contacts et formulaire de contact enseignant.">
     <style>
+        /* Palette EFREI */
         :root {
             --navy: #1a2e5a;
             --yellow: #f5c000;
@@ -13,12 +14,14 @@
             --light: #f4f6fb;
             --soft: #e8edf7;
             --text: #162145;
-            --border: rgba(26,46,90,0.14);
+            --border: rgba(26,46,90,0.12);
             --radius: 18px;
             --transition: 0.25s ease;
         }
 
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
         body {
             margin: 0;
@@ -28,9 +31,19 @@
             line-height: 1.6;
         }
 
-        img { display: block; max-width: 100%; }
-        a { color: inherit; text-decoration: none; }
-        button { font: inherit; }
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
 
         header {
             position: sticky;
@@ -57,7 +70,7 @@
         }
 
         .brand img {
-            width: 130px;
+            width: 140px;
             height: auto;
         }
 
@@ -67,6 +80,12 @@
             color: var(--navy);
         }
 
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
         .nav-links {
             display: flex;
             align-items: center;
@@ -74,12 +93,12 @@
         }
 
         .nav-links a {
-            padding: 0.75rem 0.9rem;
+            padding: 0.8rem 0.6rem;
             border-radius: 999px;
             transition: background var(--transition), color var(--transition);
+            color: var(--navy);
             font-size: 0.95rem;
             font-weight: 600;
-            color: var(--navy);
         }
 
         .nav-links a:hover,
@@ -133,7 +152,7 @@
         }
 
         .hero p {
-            max-width: 720px;
+            max-width: 760px;
             margin: 1.25rem auto 0;
             font-size: 1rem;
             opacity: 0.95;
@@ -159,7 +178,9 @@
         section:nth-of-type(5) { animation-delay: 0.55s; }
         section:nth-of-type(6) { animation-delay: 0.65s; }
 
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
 
         .section-header {
             display: flex;
@@ -205,7 +226,9 @@
             letter-spacing: 0.02em;
         }
 
-        .team-table tbody tr:last-child td { border-bottom: none; }
+        .team-table tbody tr:last-child td {
+            border-bottom: none;
+        }
 
         .profile-cell {
             display: flex;
@@ -249,7 +272,9 @@
             text-align: left;
         }
 
-        .faq-question:hover { background: rgba(245,192,0,0.15); }
+        .faq-question:hover {
+            background: rgba(245,192,0,0.15);
+        }
 
         .faq-answer {
             max-height: 0;
@@ -274,7 +299,9 @@
             transition: transform var(--transition);
         }
 
-        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
 
         .contacts-grid {
             display: grid;
@@ -316,13 +343,21 @@
             font-size: 0.95rem;
         }
 
+        .contact-card a {
+            color: var(--navy);
+            font-weight: 600;
+        }
+
         .form-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 1rem;
         }
 
-        .form-field { display: grid; gap: 0.5rem; }
+        .form-field {
+            display: grid;
+            gap: 0.5rem;
+        }
 
         label {
             font-weight: 600;
@@ -369,11 +404,17 @@
             font-size: 0.95rem;
         }
 
-        .radio-label input { accent-color: var(--navy); }
+        .radio-label input {
+            accent-color: var(--navy);
+        }
 
-        .radio-label:hover { border-color: rgba(26,46,90,0.3); }
+        .radio-label:hover {
+            border-color: rgba(26,46,90,0.3);
+        }
 
-        .message-area { grid-column: 1 / -1; }
+        .message-area {
+            grid-column: 1 / -1;
+        }
 
         .form-footer {
             display: flex;
@@ -408,14 +449,19 @@
             color: #d32f2f;
         }
 
-        .feedback.success { color: #0f7d36; }
+        .feedback.success {
+            color: #0f7d36;
+        }
 
         .progress-list {
             display: grid;
             gap: 1.2rem;
         }
 
-        .progress-item { display: grid; gap: 0.35rem; }
+        .progress-item {
+            display: grid;
+            gap: 0.35rem;
+        }
 
         .progress-label {
             display: flex;
@@ -456,7 +502,11 @@
         }
 
         .footer-inner p,
-        .footer-inner a { margin: 0; color: var(--white); font-size: 0.95rem; }
+        .footer-inner a {
+            margin: 0;
+            color: var(--white);
+            font-size: 0.95rem;
+        }
 
         .social-links {
             display: flex;
@@ -468,19 +518,27 @@
             width: 38px;
             height: 38px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.1);
             align-items: center;
             justify-content: center;
         }
 
-        .social-links span { font-size: 1rem; }
+        .social-links span {
+            font-size: 1rem;
+        }
 
         @media (max-width: 1024px) {
-            .contacts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .contacts-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
         }
 
         @media (max-width: 768px) {
-            .header-inner { flex-wrap: wrap; justify-content: space-between; }
+            .header-inner {
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
             .nav-links {
                 display: none;
                 flex-direction: column;
@@ -491,19 +549,45 @@
                 box-shadow: 0 20px 50px rgba(26,46,90,0.1);
             }
 
-            .nav-links.open { display: flex; }
-            .burger { display: flex; }
-            .hero { padding: 3rem 1rem; }
-            .form-grid { grid-template-columns: 1fr; }
-            .message-area { grid-column: 1 / -1; }
+            .nav-links.open {
+                display: flex;
+            }
+
+            .burger {
+                display: flex;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .message-area {
+                grid-column: 1 / -1;
+            }
         }
 
         @media (max-width: 480px) {
-            .header-inner { padding: 1rem; }
-            .section-header { flex-direction: column; align-items: flex-start; }
-            .contacts-grid { grid-template-columns: 1fr; }
+            .header-inner {
+                padding: 1rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contacts-grid {
+                grid-template-columns: 1fr;
+            }
+
             .team-table th,
-            .team-table td { padding: 0.95rem 0.8rem; }
+            .team-table td {
+                padding: 0.95rem 0.8rem;
+            }
         }
     </style>
 </head>
@@ -521,25 +605,25 @@
             </button>
             <nav>
                 <div class="nav-links" id="navLinks">
-                    <a href="../index.html">Accueil</a>
+                    <a href="index.html">Accueil</a>
                     <a href="formations.html">Cours & Formations</a>
                     <a href="equipe.html">Équipe enseignante</a>
-                    <a href="apropos.html" class="active">À propos</a>
+                    <a href="about.html" class="active">À propos</a>
                 </div>
             </nav>
         </div>
     </header>
 
     <section class="hero">
-        <h1>À propos du département Informatique</h1>
-        <p>Une page vitrine autonome en HTML5, CSS3 et JavaScript vanilla pour présenter l'équipe, la FAQ, les contacts et le formulaire de contact enseignant.</p>
+        <h1>Page À propos du Département Informatique</h1>
+        <p>Découvrez l’équipe projet, les contacts étudiants, les questions fréquentes et le formulaire pour contacter un enseignant dans un cadre 100% vanilla.</p>
     </section>
 
     <main>
         <section aria-labelledby="team-title">
             <div class="section-header">
                 <h2 id="team-title">L'équipe projet</h2>
-                <p>Présentation du groupe de travail avec roles détaillés et courtes descriptions pour chaque membre.</p>
+                <p>Une équipe fictive mais complète, prête à représenter le département Informatique de l'EFREI Paris.</p>
             </div>
             <table class="team-table">
                 <thead>
@@ -557,35 +641,35 @@
                         <td>Dubois</td>
                         <td>Lucie</td>
                         <td>Chef de projet</td>
-                        <td class="description-cell">Coordonne la production de la page, organise les réunions et s'assure de la cohérence globale.</td>
+                        <td class="description-cell">Coordonne la production de la page, organise les réunions et s'assure de la cohérence générale du contenu.</td>
                     </tr>
                     <tr>
                         <td class="profile-cell"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Crect width='120' height='120' rx='20' fill='%23e6eaf3'/%3E%3Ctext x='60' y='72' font-family='Segoe UI' font-size='18' fill='%231a2e5a' text-anchor='middle'%3EPhoto%3C/text%3E%3C/svg%3E" alt="Photo membre 2" /></td>
                         <td>Martin</td>
                         <td>Ana</td>
                         <td>Designer</td>
-                        <td class="description-cell">Conçoit l'identité visuelle, le style responsive et les animations CSS de la page.</td>
+                        <td class="description-cell">Conçoit l'identité visuelle, les animations CSS et veille à la lisibilité sur mobile et sur grand écran.</td>
                     </tr>
                     <tr>
                         <td class="profile-cell"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Crect width='120' height='120' rx='20' fill='%23e6eaf3'/%3E%3Ctext x='60' y='72' font-family='Segoe UI' font-size='18' fill='%231a2e5a' text-anchor='middle'%3EPhoto%3C/text%3E%3C/svg%3E" alt="Photo membre 3" /></td>
                         <td>Leroy</td>
                         <td>Antoine</td>
                         <td>Développeur</td>
-                        <td class="description-cell">Implémente la logique JavaScript : burger mobile, accordéon FAQ, validation du formulaire.</td>
+                        <td class="description-cell">Implémente le menu burger, l'accordéon FAQ et la validation du formulaire en JavaScript pur.</td>
                     </tr>
                     <tr>
                         <td class="profile-cell"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Crect width='120' height='120' rx='20' fill='%23e6eaf3'/%3E%3Ctext x='60' y='72' font-family='Segoe UI' font-size='18' fill='%231a2e5a' text-anchor='middle'%3EPhoto%3C/text%3E%3C/svg%3E" alt="Photo membre 4" /></td>
                         <td>Nguyen</td>
                         <td>Emma</td>
                         <td>Rédactrice</td>
-                        <td class="description-cell">Rédige les contenus, organise la structure et s'assure de l'accessibilité semantique.</td>
+                        <td class="description-cell">Rédige les descriptions, organise le contenu sémantique et assure une structure accessible et responsive.</td>
                     </tr>
                     <tr>
                         <td class="profile-cell"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Crect width='120' height='120' rx='20' fill='%23e6eaf3'/%3E%3Ctext x='60' y='72' font-family='Segoe UI' font-size='18' fill='%231a2e5a' text-anchor='middle'%3EPhoto%3C/text%3E%3C/svg%3E" alt="Photo membre 5" /></td>
                         <td>Rousseau</td>
                         <td>Camille</td>
                         <td>Testeur QA</td>
-                        <td class="description-cell">Vérifie l'ergonomie, la validité du formulaire et la compatibilité multi-équipe.</td>
+                        <td class="description-cell">Vérifie le fonctionnement du formulaire, les messages d'erreur et la réactivité sur toutes les tailles d'écran.</td>
                     </tr>
                 </tbody>
             </table>
@@ -594,7 +678,7 @@
         <section aria-labelledby="faq-title">
             <div class="section-header">
                 <h2 id="faq-title">FAQ – Questions fréquentes</h2>
-                <p>Réponses rapides sur l'admission, les débouchés, le contact enseignant, les outils et les ressources étudiants.</p>
+                <p>Six réponses rapides pour comprendre le fonctionnement, les moyens de contact et les outils du département.</p>
             </div>
             <div class="faq-item">
                 <button type="button" class="faq-question" aria-expanded="false">
@@ -602,7 +686,7 @@
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Les candidatures se font via Parcoursup ou l'admission parallèle selon les cycles. La sélection repose sur le dossier, l'entretien et parfois des tests de motivation.</p>
+                    <p>Pour intégrer le département, il faut suivre les modalités d'admission de l'EFREI Paris : dossier, entretien et parfois tests selon les filières. Une forte motivation pour le numérique est essentielle.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -611,7 +695,7 @@
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Les diplômés accèdent à des postes de développeur, ingénieur data, architecte cloud, consultant cybersécurité ou chef de projet digital.</p>
+                    <p>Les diplômés peuvent devenir ingénieurs logiciels, architectes cloud, experts cybersécurité, data scientists ou consultants. Le département ouvre sur des carrières variées dans le numérique.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -620,7 +704,7 @@
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Utilisez le formulaire ci-dessous ou consultez les coordonnées de la page Équipe enseignante pour écrire depuis votre adresse @efrei.fr.</p>
+                    <p>Vous pouvez utiliser le formulaire dédié de cette page, ou consulter les coordonnées présentes sur la page Équipe enseignante pour envoyer un email depuis votre adresse étudiante.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -629,7 +713,7 @@
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>On travaille avec Git, VS Code, HTML5, CSS3, JavaScript, Python, SQL et des plateformes collaboratives pour le travail en équipe.</p>
+                    <p>Les cours utilisent Git, VS Code, HTML5, CSS3, JavaScript, Python, SQL, plateformes de e-learning et environnements de développement collaboratifs.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -638,7 +722,7 @@
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Oui, des partenariats avec des acteurs du numérique permettent des stages, des projets en entreprise et des interventions de professionnels.</p>
+                    <p>Oui, le département bénéficie de partenariats avec des entreprises tech pour des projets, des stages et des interventions professionnelles tout au long de l'année.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -647,7 +731,7 @@
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>L'accès se fait via la plateforme interne de l'EFREI avec vos identifiants. Les informations sont communiquées par l'administration lors de la rentrée.</p>
+                    <p>L'accès à l'espace étudiant se fait via la plateforme interne de l'EFREI avec vos identifiants. Les accès sont communiqués lors de la rentrée et par l'administration.</p>
                 </div>
             </div>
         </section>
@@ -655,23 +739,23 @@
         <section aria-labelledby="contacts-title">
             <div class="section-header">
                 <h2 id="contacts-title">Contacts étudiants</h2>
-                <p>Cartes de contact pour les représentants étudiants, avec un effet hover animé sur chaque carte.</p>
+                <p>Cartes de contact pour les délégués et représentants du département, avec un effet hover animé.</p>
             </div>
             <div class="contacts-grid">
                 <article class="contact-card">
-                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='220'%3E%3Crect width='360' height='220' rx='24' fill='%23e6eaf3'/%3E%3Ctext x='180' y='118' font-family='Segoe UI' font-size='20' fill='%231a2e5a' text-anchor='middle'%3EPhoto%3C/text%3E%3C/svg%3E" alt="Photo contact étudiant 1" />
+                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='220'%3E%3Crect width='360' height='220' rx='24' fill='%23e6eaf3'/%3E%3Ctext x='180' y='118' font-family='Segoe UI' font-size='20' fill='%231a2e5a' text-anchor='middle'%3EPhoto%3C/text%3E%3C/svg%3E" alt="Photo délégué 1" />
                     <h3>Leïla Benali</h3>
                     <p>Déléguée générale</p>
                     <p>leila.benali@efrei.fr</p>
                 </article>
                 <article class="contact-card">
-                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='220'%3E%3Crect width='360' height='220' rx='24' fill='%23e6eaf3'/%3E%3Ctext x='180' y='118' font-family='Segoe UI' font-size='20' fill='%231a2e5a' text-anchor='middle'%3EPhoto%3C/text%3E%3C/svg%3E" alt="Photo contact étudiant 2" />
+                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='220'%3E%3Crect width='360' height='220' rx='24' fill='%23e6eaf3'/%3E%3Ctext x='180' y='118' font-family='Segoe UI' font-size='20' fill='%231a2e5a' text-anchor='middle'%3EPhoto%3C/text%3E%3C/svg%3E" alt="Photo délégué 2" />
                     <h3>Maxime Leroy</h3>
                     <p>Secrétaire de promotion</p>
                     <p>maxime.leroy@efrei.fr</p>
                 </article>
                 <article class="contact-card">
-                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='220'%3E%3Crect width='360' height='220' rx='24' fill='%23e6eaf3'/%3E%3Ctext x='180' y='118' font-family='Segoe UI' font-size='20' fill='%231a2e5a' text-anchor='middle'%3EPhoto%3C/text%3E%3C/svg%3E" alt="Photo contact étudiant 3" />
+                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='220'%3E%3Crect width='360' height='220' rx='24' fill='%23e6eaf3'/%3E%3Ctext x='180' y='118' font-family='Segoe UI' font-size='20' fill='%231a2e5a' text-anchor='middle'%3EPhoto%3C/text%3E%3C/svg%3E" alt="Photo délégué 3" />
                     <h3>Sofia Nguyen</h3>
                     <p>Responsable événementiel</p>
                     <p>sofia.nguyen@efrei.fr</p>
@@ -682,7 +766,7 @@
         <section aria-labelledby="contact-teacher-title">
             <div class="section-header">
                 <h2 id="contact-teacher-title">Contacter un enseignant</h2>
-                <p>Formulaire complet avec validation JS pour les étudiants souhaitant contacter un enseignant.</p>
+                <p>Formulaire de contact sécurisé, avec validation des champs et feedback animé.</p>
             </div>
             <form id="teacherForm" novalidate>
                 <div class="form-grid">
@@ -705,7 +789,7 @@
                             <option>Pr. Thomas Girard</option>
                             <option>Dr. Laura Moreau</option>
                             <option>M. Julien Petit</option>
-                            <option>Mme Inès Martin</option>
+                            <option>Mme. Inès Martin</option>
                             <option>Dr. Samuel Boucher</option>
                         </select>
                     </div>
@@ -733,9 +817,9 @@
         <section aria-labelledby="project-title">
             <div class="section-header">
                 <h2 id="project-title">À propos du projet</h2>
-                <p>Description du travail réalisé, des technologies employées et des animations JS intégrées.</p>
+                <p>Présentation du travail réalisé et des technologies employées pour cette page vitrine.</p>
             </div>
-            <p>Cette page a été construite exclusivement en HTML5, CSS3 et JavaScript vanilla, sans framework ni bibliothèque externe. La structure privilégie le sémantique, la responsivité et l'expérience utilisateur.</p>
+            <p>Cette page a été développée en HTML5, CSS3 et JavaScript vanilla, sans framework ni bibliothèque externe. La structure sémantique facilite l'accès, la responsivité et l'animation légère des éléments.</p>
             <div class="progress-list">
                 <div class="progress-item">
                     <div class="progress-label"><span>HTML5</span><span>90%</span></div>
@@ -756,7 +840,7 @@
     <footer class="footer">
         <div class="footer-inner">
             <p>© EFREI 2025-2026</p>
-            <a href="apropos.html">Retour vers À propos</a>
+            <a href="about.html">Retour vers À propos</a>
             <div class="social-links" aria-label="Réseaux sociaux">
                 <a href="#" aria-label="LinkedIn"><span>in</span></a>
                 <a href="#" aria-label="Twitter"><span>t</span></a>
@@ -766,28 +850,33 @@
     </footer>
 
     <script>
+        // Menu burger mobile
         const burgerBtn = document.getElementById('burgerBtn');
         const navLinks = document.getElementById('navLinks');
 
         burgerBtn.addEventListener('click', () => {
-            const isOpen = burgerBtn.classList.toggle('open');
+            const expanded = burgerBtn.classList.toggle('open');
             navLinks.classList.toggle('open');
-            burgerBtn.setAttribute('aria-expanded', isOpen);
+            burgerBtn.setAttribute('aria-expanded', expanded);
         });
 
+        // Accordéon FAQ
         document.querySelectorAll('.faq-question').forEach((button) => {
             button.addEventListener('click', () => {
                 const item = button.closest('.faq-item');
-                const openItem = document.querySelector('.faq-item.open');
-                if (openItem && openItem !== item) {
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach((openItem) => {
                     openItem.classList.remove('open');
                     openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                if (!isOpen) {
+                    item.classList.add('open');
+                    button.setAttribute('aria-expanded', 'true');
                 }
-                const isOpen = item.classList.toggle('open');
-                button.setAttribute('aria-expanded', isOpen);
             });
         });
 
+        // Formulaire de contact enseignant avec validation
         const teacherForm = document.getElementById('teacherForm');
         const feedbackEl = document.getElementById('formFeedback');
 
@@ -804,13 +893,25 @@
             const topic = teacherForm.querySelector('input[name="topic"]:checked');
 
             const errors = [];
-            if (!lastName.value.trim()) errors.push('Veuillez indiquer votre nom.');
-            if (!firstName.value.trim()) errors.push('Veuillez indiquer votre prénom.');
-            const emailPattern = /^[a-zA-Z0-9._%+-]+@efrei\.fr$/;
-            if (!emailPattern.test(email.value.trim())) errors.push('L\'email doit être une adresse @efrei.fr valide.');
-            if (!teacher.value) errors.push('Veuillez sélectionner un enseignant.');
-            if (!topic) errors.push('Veuillez choisir un sujet.');
-            if (message.value.trim().length < 20) errors.push('Le message doit contenir au moins 20 caractères.');
+            if (!lastName.value.trim()) {
+                errors.push('Veuillez indiquer votre nom.');
+            }
+            if (!firstName.value.trim()) {
+                errors.push('Veuillez indiquer votre prénom.');
+            }
+            const emailPattern = /^[a-zA-Z0-9._%+-]+\@efrei\.fr$/;
+            if (!emailPattern.test(email.value.trim())) {
+                errors.push('L\'email doit être une adresse @efrei.fr valide.');
+            }
+            if (!teacher.value) {
+                errors.push('Veuillez sélectionner un enseignant.');
+            }
+            if (!topic) {
+                errors.push('Veuillez choisir un sujet.');
+            }
+            if (message.value.trim().length < 20) {
+                errors.push('Le message doit contenir au moins 20 caractères.');
+            }
 
             if (errors.length) {
                 feedbackEl.textContent = errors[0];
@@ -821,10 +922,13 @@
             }
         });
 
-        window.addEventListener('load', () => {
+        // Animation diffuse des barres de progression
+        document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.progress-fill').forEach((fill) => {
                 const target = fill.dataset.progress;
-                setTimeout(() => { fill.style.width = target + '%'; }, 200);
+                setTimeout(() => {
+                    fill.style.width = target + '%';
+                }, 200);
             });
         });
     </script>
