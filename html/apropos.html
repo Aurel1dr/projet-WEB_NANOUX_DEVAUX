@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos – Département Informatique EFREI Paris</title>
+    <meta name="description" content="Page À propos du département Informatique de l'EFREI Paris : équipe projet, FAQ, contacts étudiants et formulaire enseignant.">
+    <style>
+        /* === VARIABLES GLOBALES === */
+        :root {
+            --navy: #1a2e5a;
+            --yellow: #f5c000;
+            --white: #ffffff;
+            --light: #f4f6fb;
+            --soft: #e8edf7;
+            --text: #162145;
+            --border: rgba(26,46,90,0.14);
+            --radius: 18px;
+            --transition: 0.25s ease;
+        }
+
+        /* === RESET UNIVERSEL === */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+            cursor: pointer;
+        }
+
+        /* === HEADER === */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--white);
+            border-bottom: 2px solid var(--yellow);
+            box-shadow: 0 4px 12px rgba(26,46,90,0.08);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand img {
+            width: 120px;
+            height: auto;
+        }
+
+        .brand-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.2;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links a {
+            padding: 0.8rem 1rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--navy);
+            transition: background var(--transition), color var(--transition);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: var(--yellow);
+            color: var(--navy);
+        }
+
+        /* === MENU BURGER === */
+        .burger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 22px;
+            border: none;
+            background: transparent;
+            padding: 0;
+            cursor: pointer;
+            aria-label: "Menu";
+        }
+
+        .burger span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: var(--navy);
+            border-radius: 2px;
+            transition: transform var(--transition), opacity var(--transition);
+        }
+
+        .burger.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .burger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        /* === SECTION HERO === */
+        .hero {
+            background: linear-gradient(135deg, #002680 0%, #003DA5 50%, #1a56db 100%);
+            color: var(--white);
+            padding: 5rem 1.5rem 4rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            max-width: 720px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* === MAIN === */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        section:nth-of-type(1) { animation-delay: 0.1s; }
+        section:nth-of-type(2) { animation-delay: 0.2s; }
+        section:nth-of-type(3) { animation-delay: 0.3s; }
+        section:nth-of-type(4) { animation-delay: 0.4s; }
+        section:nth-of-type(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: #42507d;
+            font-size: 1rem;
+        }
+
+        /* === TABLEAU ÉQUIPE === */
+        .team-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(26,46,90,0.08);
+        }
+
+        .team-table th,
+        .team-table td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .team-table th {
+            background: var(--soft);
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .team-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .team-table tbody tr:hover {
+            background: var(--light);
+        }
+
+        .profile-pic {
+            width: 70px;
+            height: 70px;
+            border-radius: 14px;
+            border: 2px solid var(--navy);
+            object-fit: cover;
+        }
+
+        .description-text {
+            color: #4f5a85;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* === ACCORDÉON FAQ === */
+        .faq-container {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--white);
+            box-shadow: 0 12px 28px rgba(26,46,90,0.05);
+            transition: box-shadow var(--transition);
+        }
+
+        .faq-item.open {
+            box-shadow: 0 16px 40px rgba(26,46,90,0.12);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 1.3rem 1.4rem;
+            background: var(--light);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            color: var(--navy);
+            text-align: left;
+            transition: background var(--transition);
+        }
+
+        .faq-question:hover {
+            background: rgba(245,192,0,0.12);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--yellow);
+            transition: transform var(--transition);
+            flex-shrink: 0;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 1.4rem;
+            background: var(--white);
+            transition: max-height var(--transition), padding var(--transition);
+            color: #4f5a85;
+            font-size: 0.96rem;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+            padding: 1rem 1.4rem 1.3rem;
+        }
+
+        /* === GRILLE CONTACTS === */
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.8rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.5rem;
+            transition: transform var(--transition), box-shadow var(--transition);
+            box-shadow: 0 12px 30px rgba(26,46,90,0.06);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 50px rgba(26,46,90,0.15);
+        }
+
+        .contact-card img {
+            width: 100%;
+            height: 200px;
+            border-radius: 18px;
+            object-fit: cover;
+            margin-bottom: 1.2rem;
+        }
+
+        .contact-card h3 {
+            margin: 0 0 0.3rem;
+            font-size: 1.15rem;
+            color: var(--navy);
+        }
+
+        .contact-card p {
+            margin: 0.3rem 0;
+            color: #4f5a85;
+            font-size: 0.95rem;
+        }
+
+        /* === FORMULAIRE === */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.2rem;
+        }
+
+        .form-field {
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .form-field.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 0.95rem;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.95rem 1rem;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            font-size: 0.96rem;
+            transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--yellow);
+            box-shadow: 0 0 0 4px rgba(245,192,0,0.12);
+            background: #fffbf0;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .radio-group {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.8rem;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.95rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--light);
+            cursor: pointer;
+            transition: border-color var(--transition), background var(--transition);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .radio-label:hover {
+            border-color: var(--yellow);
+            background: rgba(245,192,0,0.08);
+        }
+
+        .radio-label input {
+            accent-color: var(--navy);
+            width: auto;
+            border: none;
+            padding: 0;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 12px;
+            background: var(--navy);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: transform var(--transition), filter var(--transition);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.08);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .form-message {
+            padding: 0.8rem 1.2rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            min-height: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-message.error {
+            background: rgba(211,47,47,0.1);
+            color: #d32f2f;
+        }
+
+        .form-message.success {
+            background: rgba(15,125,54,0.1);
+            color: #0f7d36;
+        }
+
+        /* === BARRES DE PROGRESSION === */
+        .progress-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .progress-item {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 18px;
+            border-radius: 14px;
+            background: var(--light);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--yellow), #f2cd36);
+            border-radius: 14px;
+            transition: width 1.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        /* === FOOTER === */
+        footer {
+            background: #0f1b3a;
+            color: var(--white);
+            padding: 2.5rem 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .footer-left p,
+        .footer-center a,
+        .footer-right a {
+            margin: 0;
+            color: var(--white);
+            font-size: 0.95rem;
+        }
+
+        .footer-center {
+            text-align: center;
+        }
+
+        .footer-right {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.12);
+            transition: background var(--transition), transform var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--yellow);
+            color: var(--navy);
+            transform: translateY(-3px);
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 1024px) {
+            .contacts-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .footer-right {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 1rem;
+            }
+
+            .brand-title {
+                display: none;
+            }
+
+            .brand img {
+                width: 100px;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: var(--white);
+                padding: 1rem;
+                border-bottom: 2px solid var(--border);
+                gap: 0.3rem;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height var(--transition);
+            }
+
+            .nav-links.active {
+                max-height: 400px;
+            }
+
+            .burger {
+                display: flex;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .form-field.full {
+                grid-column: 1;
+            }
+
+            .radio-group {
+                grid-template-columns: 1fr;
+            }
+
+            .contacts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-inner {
+                padding: 0.8rem;
+            }
+
+            main {
+                padding: 1.5rem 1rem;
+            }
+
+            .team-table th,
+            .team-table td {
+                padding: 0.8rem 0.6rem;
+                font-size: 0.85rem;
+            }
+
+            .profile-pic {
+                width: 50px;
+                height: 50px;
+            }
+
+            .section-header h2 {
+                font-size: 1.3rem;
+            }
+
+            .form-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .form-message {
+                width: 100%;
+            }
+
+            .footer-right {
+                gap: 0.8rem;
+            }
+
+            .social-link {
+                width: 36px;
+                height: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- === HEADER === -->
+    <header>
+        <div class="header-inner">
+            <div class="brand">
+                <svg width="50" height="50" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="fill:#1a2e5a;">
+                    <circle cx="100" cy="100" r="95" fill="none" stroke="currentColor" stroke-width="8"/>
+                    <text x="100" y="115" font-family="Arial, sans-serif" font-size="60" font-weight="bold" text-anchor="middle" fill="currentColor">E</text>
+                </svg>
+                <div class="brand-title">Département Informatique – EFREI Paris</div>
+            </div>
+            <div class="nav-wrapper">
+                <button class="burger" id="burgerBtn" aria-label="Menu mobile" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav>
+                    <div class="nav-links" id="navLinks">
+                        <a href="../index.html">Accueil</a>
+                        <a href="formations.html">Cours & Formations</a>
+                        <a href="equipe.html">Équipe enseignante</a>
+                        <a href="apropos.html" class="active">À propos</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- === SECTION HERO === -->
+    <section class="hero">
+        <h1>À propos du projet</h1>
+        <p>Découvrez l'équipe projet, les questions fréquentes, les contacts étudiants et notre formulaire de contact enseignant, développé en HTML5, CSS3 et JavaScript vanilla.</p>
+    </section>
+
+    <!-- === MAIN CONTENT === -->
+    <main>
+        <!-- SECTION 1 : ÉQUIPE PROJET -->
+        <section>
+            <div class="section-header">
+                <h2>L'équipe projet</h2>
+                <p>Cinq membres avec des rôles distincts et complémentaires pour réaliser cette vitrine.</p>
+            </div>
+            <table class="team-table">
+                <thead>
+                    <tr>
+                        <th>Photo</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Rôle</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><svg class="profile-pic" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#e8edf7"/><circle cx="50" cy="30" r="20" fill="#1a2e5a"/><path d="M 15 65 Q 15 50, 50 50 Q 85 50, 85 65 L 85 100 L 15 100 Z" fill="#1a2e5a"/></svg></td>
+                        <td>Dubois</td>
+                        <td>Lucie</td>
+                        <td>Chef de projet</td>
+                        <td class="description-text">Coordonne les tâches, organise les réunions et assure la cohérence globale du projet web.</td>
+                    </tr>
+                    <tr>
+                        <td><svg class="profile-pic" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#e8edf7"/><circle cx="50" cy="30" r="20" fill="#1a2e5a"/><path d="M 15 65 Q 15 50, 50 50 Q 85 50, 85 65 L 85 100 L 15 100 Z" fill="#1a2e5a"/></svg></td>
+                        <td>Martin</td>
+                        <td>Ana</td>
+                        <td>Designer</td>
+                        <td class="description-text">Créative l'identité visuelle, conçoit les animations CSS et garantit la responsivité.</td>
+                    </tr>
+                    <tr>
+                        <td><svg class="profile-pic" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#e8edf7"/><circle cx="50" cy="30" r="20" fill="#1a2e5a"/><path d="M 15 65 Q 15 50, 50 50 Q 85 50, 85 65 L 85 100 L 15 100 Z" fill="#1a2e5a"/></svg></td>
+                        <td>Leroy</td>
+                        <td>Antoine</td>
+                        <td>Développeur</td>
+                        <td class="description-text">Implémente le menu burger, l'accordéon FAQ et la validation du formulaire JavaScript pur.</td>
+                    </tr>
+                    <tr>
+                        <td><svg class="profile-pic" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#e8edf7"/><circle cx="50" cy="30" r="20" fill="#1a2e5a"/><path d="M 15 65 Q 15 50, 50 50 Q 85 50, 85 65 L 85 100 L 15 100 Z" fill="#1a2e5a"/></svg></td>
+                        <td>Nguyen</td>
+                        <td>Emma</td>
+                        <td>Rédactrice</td>
+                        <td class="description-text">Rédige contenu, structure la sémantique HTML et assure l'accessibilité de la page.</td>
+                    </tr>
+                    <tr>
+                        <td><svg class="profile-pic" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#e8edf7"/><circle cx="50" cy="30" r="20" fill="#1a2e5a"/><path d="M 15 65 Q 15 50, 50 50 Q 85 50, 85 65 L 85 100 L 15 100 Z" fill="#1a2e5a"/></svg></td>
+                        <td>Rousseau</td>
+                        <td>Camille</td>
+                        <td>Testeur QA</td>
+                        <td class="description-text">Valide la logique, teste la compatibilité mobile et assure la qualité globale du code.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECTION 2 : FAQ === -->
+        <section>
+            <div class="section-header">
+                <h2>FAQ – Questions fréquentes</h2>
+                <p>Cliquez sur une question pour voir la réponse associée.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Comment intégrer le département Informatique ?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>L'intégration se fait par Parcoursup, admission parallèle ou écoles d'ingénieurs selon votre profil. Une sélection sur dossier, entretien et tests de motivation complète la procédure.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Quels sont les débouchés professionnels ?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nos diplômés accèdent à des postes d'ingénieur logiciel, architecte cloud, chercheur en IA, consultant cybersécurité ou chef de projet digital, principalement en France et à l'international.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Comment contacter un enseignant ?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Vous pouvez remplir le formulaire dédié sur cette page, consulter la page Équipe enseignante pour les coordonnées directes, ou écrire à l'adresse email du cours en question.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Quels outils utilise-t-on dans les cours ?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nous exploitons Git, VS Code, les technologies web (HTML5, CSS3, JavaScript), Python, SQL, Docker, des frameworks modernes et des outils collaboratifs comme Figma ou Jira.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Y a-t-il des partenariats entreprises ?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Oui, nous avons des partenariats avec des acteurs majeurs du numérique pour des stages, des projets en entreprise, des conférences et des offres d'emploi post-diplôme.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Comment accéder à l'espace étudiant ?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>L'accès se fait via le portail interne de l'EFREI avec vos identifiants. Les modalités d'accès et les codes sont fournis lors de la rentrée académique par le service administratif.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 : CONTACTS ÉTUDIANTS === -->
+        <section>
+            <div class="section-header">
+                <h2>Contacts étudiants</h2>
+                <p>Délégués et représentants disponibles pour vous accompagner au quotidien.</p>
+            </div>
+            <div class="contacts-grid">
+                <article class="contact-card">
+                    <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:200px; border-radius:18px;">
+                        <rect width="300" height="200" fill="#e8edf7"/>
+                        <circle cx="150" cy="60" r="35" fill="#1a2e5a"/>
+                        <path d="M 50 150 Q 50 100, 150 100 Q 250 100, 250 150 L 250 200 L 50 200 Z" fill="#1a2e5a"/>
+                    </svg>
+                    <h3>Leïla Benali</h3>
+                    <p><strong>Déléguée générale</strong></p>
+                    <p>leila.benali@efrei.fr</p>
+                </article>
+
+                <article class="contact-card">
+                    <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:200px; border-radius:18px;">
+                        <rect width="300" height="200" fill="#e8edf7"/>
+                        <circle cx="150" cy="60" r="35" fill="#1a2e5a"/>
+                        <path d="M 50 150 Q 50 100, 150 100 Q 250 100, 250 150 L 250 200 L 50 200 Z" fill="#1a2e5a"/>
+                    </svg>
+                    <h3>Maxime Leroy</h3>
+                    <p><strong>Secrétaire de promotion</strong></p>
+                    <p>maxime.leroy@efrei.fr</p>
+                </article>
+
+                <article class="contact-card">
+                    <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:200px; border-radius:18px;">
+                        <rect width="300" height="200" fill="#e8edf7"/>
+                        <circle cx="150" cy="60" r="35" fill="#1a2e5a"/>
+                        <path d="M 50 150 Q 50 100, 150 100 Q 250 100, 250 150 L 250 200 L 50 200 Z" fill="#1a2e5a"/>
+                    </svg>
+                    <h3>Sofia Nguyen</h3>
+                    <p><strong>Responsable événementiel</strong></p>
+                    <p>sofia.nguyen@efrei.fr</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECTION 4 : FORMULAIRE CONTACT ENSEIGNANT === -->
+        <section>
+            <div class="section-header">
+                <h2>Contacter un enseignant</h2>
+                <p>Remplissez le formulaire ci-dessous pour prendre contact avec un enseignant de votre choix.</p>
+            </div>
+            <form id="teacherForm" novalidate>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="lastName">Nom</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Ex. : Dupont" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="firstName">Prénom</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Ex. : Marie" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="email">Email étudiant</label>
+                        <input type="email" id="email" name="email" placeholder="prenom.nom@efrei.fr" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="teacher">Enseignant</label>
+                        <select id="teacher" name="teacher" required>
+                            <option value="">-- Sélectionnez un enseignant --</option>
+                            <option>Pr. Thomas Girard</option>
+                            <option>Dr. Laura Moreau</option>
+                            <option>M. Julien Petit</option>
+                            <option>Mme Inès Martin</option>
+                            <option>Dr. Samuel Boucher</option>
+                            <option>Mme Véronique Blanc</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field full">
+                        <label>Sujet de votre demande</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="subject" value="Cours" required>
+                                Cours
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="subject" value="Stage">
+                                Stage
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="subject" value="Projet">
+                                Projet
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="subject" value="Autre">
+                                Autre
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-field full">
+                        <label for="message">Message (minimum 20 caractères)</label>
+                        <textarea id="message" name="message" placeholder="Écrivez votre message ici..." minlength="20" required></textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn">Envoyer le message</button>
+                    <div id="formFeedback" class="form-message" role="alert" aria-live="polite"></div>
+                </div>
+            </form>
+        </section>
+
+        <!-- SECTION 5 : À PROPOS DU PROJET === -->
+        <section>
+            <div class="section-header">
+                <h2>À propos du projet</h2>
+                <p>Information sur les technologies et les compétences utilisées pour cette réalisation.</p>
+            </div>
+            <p>Cette page a été entièrement développée en <strong>HTML5 sémantique</strong>, <strong>CSS3 pur</strong> et <strong>JavaScript vanilla</strong>, sans framework ni dépendance externe. Le design est entièrement responsif et conforme aux standards d'accessibilité WCAG.</p>
+
+            <div class="progress-list">
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>HTML5 (structure & sémantique)</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-progress="90"></div>
+                    </div>
+                </div>
+
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>CSS3 (design & animations)</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-progress="80"></div>
+                    </div>
+                </div>
+
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>JavaScript (interactivité)</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-progress="75"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- === FOOTER === -->
+    <footer>
+        <div class="footer-inner">
+            <p>© EFREI 2025-2026 – Département Informatique</p>
+            <a href="apropos.html">← Retour vers À propos</a>
+            <div class="footer-right">
+                <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+                <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+                <a href="#" class="social-link" aria-label="GitHub">⚙</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- === JAVASCRIPT VANILLA === -->
+    <script>
+        // === MENU BURGER === 
+        const burgerBtn = document.getElementById('burgerBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        burgerBtn.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('active');
+            burgerBtn.classList.toggle('active', isOpen);
+            burgerBtn.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Fermer le menu en cliquant sur un lien
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                burgerBtn.classList.remove('active');
+                burgerBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // === ACCORDÉON FAQ ===
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.closest('.faq-item');
+                const isOpen = faqItem.classList.toggle('open');
+                button.setAttribute('aria-expanded', isOpen);
+
+                // Fermer les autres items
+                document.querySelectorAll('.faq-item.open').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('open');
+                        item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+        });
+
+        // === VALIDATION FORMULAIRE ===
+        const teacherForm = document.getElementById('teacherForm');
+        const formFeedback = document.getElementById('formFeedback');
+
+        teacherForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            // Récupérer les valeurs
+            const lastName = document.getElementById('lastName').value.trim();
+            const firstName = document.getElementById('firstName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const teacher = document.getElementById('teacher').value;
+            const subject = document.querySelector('input[name="subject"]:checked');
+            const message = document.getElementById('message').value.trim();
+
+            // Réinitialiser le feedback
+            formFeedback.textContent = '';
+            formFeedback.className = 'form-message';
+
+            // Validations
+            const errors = [];
+
+            if (!lastName) errors.push('Le nom est requis.');
+            if (!firstName) errors.push('Le prénom est requis.');
+
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@efrei\.fr$/;
+            if (!emailRegex.test(email)) {
+                errors.push('Veuillez entrer une adresse email @efrei.fr valide.');
+            }
+
+            if (!teacher) errors.push('Veuillez sélectionner un enseignant.');
+            if (!subject) errors.push('Veuillez choisir un sujet.');
+            if (message.length < 20) {
+                errors.push('Le message doit contenir au moins 20 caractères.');
+            }
+
+            // Afficher les erreurs ou le succès
+            if (errors.length > 0) {
+                formFeedback.textContent = errors[0];
+                formFeedback.classList.add('error');
+            } else {
+                formFeedback.textContent = '✓ Votre message a bien été envoyé. Merci !';
+                formFeedback.classList.add('success');
+                teacherForm.reset();
+            }
+        });
+
+        // === ANIMATION BARRES DE PROGRESSION ===
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.progress-fill').forEach(fill => {
+                const target = fill.dataset.progress;
+                setTimeout(() => {
+                    fill.style.width = target + '%';
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
