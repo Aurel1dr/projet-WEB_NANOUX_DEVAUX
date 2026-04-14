@@ -15,37 +15,88 @@ header {
 }
 
 /* Bannière */
-header img {
+.hero {
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.22);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero img {
     display: block;
     width: 100%;
     height: 100vh;
     object-fit: cover;
 }
 
+.hero-text-box {
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    transform: translateY(-50%);
+    max-width: 420px;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    line-height: 1.4;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+}
+
+.hero-text-box h1 {
+    margin: 0 0 10px;
+    font-size: 3rem;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.hero-text-box h2 {
+    margin: 0 0 16px;
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    opacity: 0.95;
+}
+
+.hero-text-box p {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
 /* Boutons navigation */
 nav {   
     background-color: #1d7dbf;
-    padding: 10px 0;
+    padding: 16px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 nav img{
-    height: 50px;
+    height: 58px;
     width: auto;
 }
 
 nav a {
     color: rgb(0, 0, 0);
     text-decoration: none;
-    padding: 13px 26px;
+    padding: 16px 28px;
     display: inline-block;
     font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: 700;
+    font-size: 17px;
+    transition: transform 0.2s ease;
 }
 
 nav a:hover {
     background-color: #0170b9;
+    transform: scale(1.05);
 }
