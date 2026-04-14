@@ -32,14 +32,28 @@ ul { list-style: none; }
 img { display: block; max-width: 100%; }
 
 /* --- HEADER --- */
-header {
+body.home header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(255,255,255,.95);
+    background: rgba(0,0,0,.30);
     backdrop-filter: blur(8px);
-    border-bottom: 3px solid var(--yellow);
-    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    border-bottom: none;
+    box-shadow: none;
+}
+
+body.home .header-inner {
+    padding: 1.25rem 2rem;
+}
+
+body.home nav a {
+    color: rgba(255,255,255,.90);
+}
+
+body.home nav a:hover,
+body.home nav a.active {
+    background: rgba(255,255,255,.14);
+    color: var(--white);
 }
 
 .campus-banner {
@@ -117,10 +131,9 @@ nav a:hover, nav a.active {
 /* --- HERO --- */
 .hero {
     position: relative;
-    min-height: 88vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    background: var(--blue-dark);
     overflow: hidden;
     padding: 6rem 2rem 4rem;
 }
@@ -128,7 +141,9 @@ nav a:hover, nav a.active {
 .hero-bg {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #001a6e 0%, #003DA5 50%, #0f52ba 100%);
+    background: linear-gradient(180deg, rgba(2,12,36,.78) 0%, rgba(2,12,36,.45) 35%, rgba(2,12,36,.85) 100%),
+        url('img/ecole-ingenieur-generaliste-paris-efrei-scaled-1-1280x720.jpg') center/cover no-repeat;
+    filter: brightness(.82);
 }
 
 /* Decorative grid overlay */
@@ -136,16 +151,16 @@ nav a:hover, nav a.active {
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(245,195,0,.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(245,195,0,.07) 1px, transparent 1px);
-    background-size: 60px 60px;
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size: 80px 80px;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 700px;
-    margin: 0 auto 0 calc(50vw - 600px);
+    max-width: 600px;
+    margin: 0;
     animation: fadeUp .8s ease both;
 }
 
@@ -153,7 +168,7 @@ nav a:hover, nav a.active {
     text-transform: uppercase;
     letter-spacing: .15em;
     font-size: .8rem;
-    color: var(--yellow);
+    color: rgba(255,255,255,.7);
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -205,22 +220,7 @@ nav a:hover, nav a.active {
 
 /* Hero decorative badge */
 .hero-badge {
-    position: absolute;
-    right: 8%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 3px solid var(--yellow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: .15;
-    font-family: var(--font-head);
-    font-size: 3rem;
-    color: var(--white);
-    animation: spin 40s linear infinite;
+    display: none;
 }
 
 @keyframes spin { to { transform: translateY(-50%) rotate(360deg); } }
