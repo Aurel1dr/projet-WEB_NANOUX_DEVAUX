@@ -1,18 +1,6 @@
-const menuToggle = document.getElementById('menuToggle');
-const mainNav    = document.getElementById('mainNav');
-
-if (menuToggle && mainNav) {
-    menuToggle.addEventListener('click', () => {
-        const opened = mainNav.classList.toggle('open');
-        // update aria-expanded for accessibility
-        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', String(!expanded));
-    });
-}
-
 const currentPage = window.location.pathname.split('/').pop();
-// Include links from the header nav and the new subnav so the active page is highlighted
-document.querySelectorAll('nav a, .subnav a').forEach(link => {
+// Highlight active link in header nav
+document.querySelectorAll('nav a').forEach(link => {
     const href = link.getAttribute('href') || '';
     if (currentPage !== '' && href.includes(currentPage)) {
         link.classList.add('active');
