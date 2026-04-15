@@ -95,7 +95,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 3px 40px 3px 190px;
+    padding: 3px 40px 3px 160px;
     z-index: 10;
     flex-shrink: 0;
 }
@@ -132,7 +132,7 @@ nav > div:nth-child(2) a {
     display: flex;
     align-items: center;
     gap: 13px;
-    margin-right: 250px;
+    margin-right: -150px;
 }
 
 nav a:hover {
