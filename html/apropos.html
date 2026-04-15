@@ -1,130 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>À propos – EFREI Paris</title>
-    <style>
-        :root {
-            --navy: #1a2e5a;
-            --yellow: #f5c000;
-            --light: #f4f6fb;
-            --soft: #e8edf7;
-            --border: rgba(26,46,90,0.14);
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', sans-serif; color: var(--navy); background: #fff; line-height: 1.6; }
-
-        header {
-            position: sticky; top: 0; z-index: 100; background: #fff;
-            border-bottom: 2px solid var(--yellow);
-        }
-
-        .header-inner { max-width: 1200px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; }
-
-        .nav-wrapper { display: flex; gap: 1rem; }
-        .burger { display: none; flex-direction: column; width: 28px; height: 22px; border: none; background: 0; cursor: pointer; }
-        .burger span { width: 100%; height: 3px; background: var(--navy); border-radius: 2px; margin: 2px 0; }
-
-        nav { width: 100%; }
-        .nav-links { display: flex; gap: 0.5rem; }
-        .nav-links a { padding: 0.8rem 1rem; border-radius: 10px; color: var(--navy); transition: 0.2s; }
-        .nav-links a:hover, .nav-links a.active { background: var(--yellow); }
-
-        .hero {
-            background: linear-gradient(135deg, #002680 0%, #003DA5 50%, #1a56db 100%);
-            color: #fff; padding: 4rem 1.5rem; text-align: center;
-        }
-        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1rem; }
-        .hero p { font-size: 1rem; max-width: 700px; margin: 0 auto; }
-
-        main { max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem; }
-
-        .section-header { margin-bottom: 2rem; }
-        .section-header h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
-
-        .team-table {
-            width: 100%; border-collapse: collapse; background: #fff;
-            border: 1px solid var(--border); border-radius: 15px; overflow: hidden;
-        }
-        .team-table th, .team-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); }
-        .team-table th { background: var(--soft); font-weight: 700; }
-        .team-table tbody tr:last-child td { border-bottom: none; }
-        .team-table tbody tr:hover { background: var(--light); }
-
-        .profile-pic { width: 60px; height: 60px; border-radius: 10px; border: 2px solid var(--navy); }
-        
-        footer { background: #0f1b3a; color: #fff; padding: 2rem 1.5rem; margin-top: 4rem; text-align: center; }
-        footer p { max-width: 1200px; margin: 0 auto; }
-
-        @media (max-width: 768px) {
-            .nav-links { position: absolute; top: 60px; left: 0; right: 0; flex-direction: column; background: #fff; padding: 1rem; max-height: 0; overflow: hidden; transition: 0.3s; }
-            .nav-links.active { max-height: 300px; }
-            .burger { display: flex; }
-            .team-table th, .team-table td { padding: 0.7rem 0.5rem; font-size: 0.85rem; }
-            .profile-pic { width: 45px; height: 45px; }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="header-inner">
-            <div class="nav-wrapper">
-                <button class="burger" id="burgerBtn">
-                    <span></span><span></span><span></span>
-                </button>
-                <nav>
-                    <div class="nav-links" id="navLinks">
-                        <a href="../index.html">Accueil</a>
-                        <a href="formations.html">Formations</a>
-                        <a href="equipe.html">Équipe</a>
-                        <a href="apropos.html" class="active">À propos</a>
-                    </div>
-                </nav>
+    <head>
+        <title>Green IT - À propos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="../css/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <div style="display: flex; align-items: center; gap: 0px;">
+                <a href="./accueil.html">
+                    <img src="../img/Efrei-logo-couleur.svg" alt="logo EFREI">
+                </a>
+                <div class="nav-title">
+                    <span>Département</span>
+                    <span>Informatique</span>
+                </div>
             </div>
-        </div>
-    </header>
-
-    <section class="hero">
-        <h1>À propos</h1>
-        <p>Présentation de l'équipe projet.</p>
-    </section>
-
-    <main>
-        <section>
-            <div class="section-header">
-                <h2>Équipe projet</h2>
+            <div class="nav-links">
+                <a href="./agendas.html">Agenda</a>
+                <a href="./formation.html">Formation</a>
+                <a href="./equipe.html">Équipe</a>
+                <a href="./apropos.html" class="active">À propos</a>
             </div>
-            <table class="team-table">
-                <thead>
-                    <tr>
-                        <th>Photo</th><th>Nom</th><th>Prénom</th><th>Rôle</th><th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><svg class="profile-pic" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#e8edf7"/><circle cx="50" cy="30" r="20" fill="#1a2e5a"/><path d="M 15 65 Q 15 50, 50 50 Q 85 50, 85 65 L 85 100 L 15 100 Z" fill="#1a2e5a"/></svg></td>
-                        <td>Devaux-Rivière</td><td>Aurélien</td><td>Designer</td><td>À compléter</td>
-                    </tr>
-                    <tr>
-                        <td><svg class="profile-pic" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#e8edf7"/><circle cx="50" cy="30" r="20" fill="#1a2e5a"/><path d="M 15 65 Q 15 50, 50 50 Q 85 50, 85 65 L 85 100 L 15 100 Z" fill="#1a2e5a"/></svg></td>
-                        <td>Nanoux</td><td>Augustin</td><td>Chef de projet</td><td>À compléter</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </main>
+        </nav>
 
-    <footer>
-        <p>© EFREI 2025-2026 – Département Informatique</p>
-    </footer>
+        <main>
+            <!-- ton contenu à propos ici -->
+        </main>
 
-    <script>
-        const burger = document.getElementById('burgerBtn');
-        const nav = document.getElementById('navLinks');
-        burger.addEventListener('click', () => nav.classList.toggle('active'));
-        nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('active')));
-    </script>
-</body>
+        <footer>
+            <p>© 2025 EFREI Paris — Département Informatique - Aurélien DEVAUX-RIVIÈRE & Augustin NANOUX</p>
+        </footer>
+    </body>
 </html>

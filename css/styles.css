@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+main  {
+    flex:1;
+    overflow: hidden;
+}
+
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -83,27 +88,14 @@ header img{
     text-transform: uppercase;
 }
 
-.hero-text-box h2 {
-    margin: 0 0 16px;
-    font-size: 1.35rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    opacity: 0.95;
-}
-
-.hero-text-box p {
-    margin: 0;
-    font-size: 1.25rem;
-}
-
 /* Boutons navigation */
 nav {   
-    background-color: rgba(19, 40, 59, 0.75);
-    backdrop-filter: blur(8px);
+    background-color: rgba(138, 146, 153, 0.402);
+    backdrop-filter: blur(3px);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 40px;
+    padding: 10px 40px 10px 190px;
     z-index: 10;
     flex-shrink: 0;
 }
@@ -114,33 +106,68 @@ nav img{
     filter: brightness(0) invert(1);
 }
 
+nav a img {
+    height: 60px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    display: block;
+}
+
 nav a {
     color: #ffffff;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 100;
     font-size: 15px;
     font-family: 'Inter', sans-serif;
-    padding: 8px 16px;
+    padding: 8px 30px;
     display: inline-block;
     letter-spacing: 0.02em;
 }
 
-nav div {
+.nav-links {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-right: 190px;
 }
 
 nav a:hover {
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 6px;
-    font-weight: 700;
+    text-decoration: underline;
+    background-color: transparent;
+    font-weight: 100;
+}
+
+nav a.active {
+    text-decoration: underline;
+    display: inline-block;
+}
+
+nav a:has(img) {
+    text-decoration: none;
+}
+
+.nav-title {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.1;
+    margin-left: -20px;
+}
+
+.nav-title span:first-child {
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.nav-title span:last-child {
+    font-size: 18px;
+    font-weight: 900;
 }
 
 footer {
-    background-color: rgba(30, 45, 65, 0.75);
-    backdrop-filter: blur(6px);
+    background-color: rgba(138, 146, 153, 0.402);
+    backdrop-filter: blur(2px);
     color: rgba(255, 255, 255, 0.8);
     text-align: center;
     padding: 15px;
