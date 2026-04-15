@@ -11,11 +11,25 @@ body {
     overflow: hidden; /* ← pas de scroll */
     display: flex;
     flex-direction: column; /* ← empile nav / image / footer */
+    background-image: url('../img/banière1.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 header {
     flex:1 ;
     overflow: hidden;
+    position: relative;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.22);
+    pointer-events: none;
+    z-index: 1;
 }
 
 header img{
@@ -84,8 +98,8 @@ header img{
 
 /* Boutons navigation */
 nav {   
-    background-color: rgba(30, 45, 65, 0.75);
-    backdrop-filter: blur(6px);
+    background-color: rgba(19, 40, 59, 0.75);
+    backdrop-filter: blur(8px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -97,12 +111,13 @@ nav {
 nav img{
     height: 60px;
     width: auto;
+    filter: brightness(0) invert(1);
 }
 
 nav a {
-    color: rgba(255, 255, 255, 0.9);
+    color: #ffffff;
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 15px;
     font-family: 'Inter', sans-serif;
     padding: 8px 16px;
@@ -117,9 +132,10 @@ nav div {
 }
 
 nav a:hover {
-    color: white;
-    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 6px;
+    font-weight: 700;
 }
 
 footer {
