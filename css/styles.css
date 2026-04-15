@@ -95,7 +95,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 40px 10px 190px;
+    padding: 3px 40px 3px 190px;
     z-index: 10;
     flex-shrink: 0;
 }
@@ -107,7 +107,7 @@ nav img{
 }
 
 nav a img {
-    height: 60px;
+    height: 44px;
     width: auto;
     filter: brightness(0) invert(1);
     display: block;
@@ -124,11 +124,15 @@ nav a {
     letter-spacing: 0.02em;
 }
 
+nav > div:nth-child(2) a {
+    font-size: 15px; /* ajustez cette valeur (ex: 16px, 20px) selon votre goût */
+}
+
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-right: 190px;
+    gap: 13px;
+    margin-right: 250px;
 }
 
 nav a:hover {
