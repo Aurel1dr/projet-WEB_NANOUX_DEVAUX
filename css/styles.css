@@ -169,6 +169,19 @@ nav a:has(img) {
     font-weight: 900;
 }
 
+nav .myefrei-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+nav .myefrei-link img {
+    height: 44px;
+    width: auto;
+    display: block;
+    filter: none;
+}
+
 footer {
     background-color: rgba(138, 146, 153, 0.402);
     backdrop-filter: blur(2px);
