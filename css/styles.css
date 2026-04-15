@@ -67,10 +67,10 @@ header img{
 
 .hero-text-box {
     position: absolute;
-    top: 50%;
+    top: 31%;
     left: 4%;
     transform: translateY(-50%);
-    max-width: 420px;
+    max-width: 500px;
     padding: 20px;
     font-family: 'Inter', sans-serif;
     color: #ffffff;
@@ -116,7 +116,7 @@ nav a img {
 nav a {
     color: #ffffff;
     text-decoration: none;
-    font-weight: 100;
+    font-weight: 600;
     font-size: 15px;
     font-family: 'Inter', sans-serif;
     padding: 8px 30px;
