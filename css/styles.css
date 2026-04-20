@@ -32,7 +32,7 @@ header::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.22);
+    background: transparent;
     pointer-events: none;
     z-index: 1;
 }
@@ -138,7 +138,6 @@ nav > div:nth-child(2) a {
 nav a:hover {
     text-decoration: underline;
     background-color: transparent;
-    font-weight: 100;
 }
 
 nav a.active {
