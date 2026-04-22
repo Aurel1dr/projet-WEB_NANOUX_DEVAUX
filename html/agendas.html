@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title>Département Informatique - Agenda</title>
+        <title>Green IT - Agenda</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body class="agenda-body">
         <nav>
             <div style="display: flex; align-items: center; gap: 0px;">
                 <a href="./accueil.html" class="active efrei-logo">
@@ -31,11 +31,66 @@
         </nav>
 
         <main>
-            <h1>Page pussy en construction</main>h1>
+            <section class="agenda-page">
+                <div class="agenda-header">
+                    <div>
+                        <p class="eyebrow">Planning</p>
+                        <h1>Planning des cours</h1>
+                        <p class="agenda-description">Modifier les cours, dates, horaires et couleurs directement dans <code>js/calendar-data.js</code>.</p>
+                    </div>
+                    <div class="agenda-actions">
+                        <button id="todayBtn" class="calendar-btn">AUJOURD'HUI</button>
+                        <button id="prevWeekBtn" class="calendar-btn" data-direction="prev">Semaine précédente</button>
+                        <button id="nextWeekBtn" class="calendar-btn" data-direction="next">Semaine suivante</button>
+                    </div>
+                </div>
+
+                <div class="agenda-panels">
+                    <aside class="panel panel-sidebar">
+                        <div class="calendar-card">
+                            <div class="calendar-card-header">
+                                <h2>Mois</h2>
+                                <span id="monthLabel"></span>
+                            </div>
+                            <div class="month-weekdays">
+                                <span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span>
+                            </div>
+                            <div id="monthGrid" class="month-grid"></div>
+                        </div>
+
+                        <div class="panel card event-types">
+                            <h2>Types d'événements</h2>
+                            <div id="legend"></div>
+                        </div>
+
+                        <div class="panel card info-card">
+                            <h2>Informations</h2>
+                            <p>Les cours, dates et horaire sont définis dans : <code>js/calendar-data.js</code>.</p>
+                            <p>Copiez un objet existant et modifiez <strong>title</strong>, <strong>start</strong>, <strong>end</strong> et <strong>color</strong>.</p>
+                        </div>
+                    </aside>
+
+                    <section class="panel panel-calendar">
+                        <div class="week-summary">
+                            <span>Semaine du</span>
+                            <strong id="weekRange"></strong>
+                        </div>
+                        <div class="agenda-grid">
+                            <div class="time-column">
+                                <div class="time-label"></div>
+                            </div>
+                            <div id="daysColumns" class="days-columns"></div>
+                        </div>
+                    </section>
+                </div>
+            </section>
         </main>
 
         <footer>
             <p>© 2025 EFREI Paris — Département Informatique - Aurélien DEVAUX-RIVIÈRE & Augustin NANOUX</p>
         </footer>
+
+        <script src="../js/calendar-data.js"></script>
+        <script src="../js/calendar.js"></script>
     </body>
 </html>
