@@ -36,12 +36,12 @@ window.calendarEvents = [
     },
     {
         id: 'cours-lxp-mer-22',
-        title: 'Semaine LXP - Base de données',
-        type: 'Cours',
+        title: 'DE Base de données',
+        type: 'Examen',
         location: 'Salles multi',
         start: '2026-04-22T10:00',
-        end: '2026-04-22T12:00',
-        color: '#E07A3F'
+        end: '2026-04-22T12:50',
+        color: '#D35D92'
     },
     {
         id: 'cours-efrei-jeu-23',
@@ -54,11 +54,11 @@ window.calendarEvents = [
     },
     {
         id: 'cours-efrei-ven-24',
-        title: 'Efrei Tech & Réalité augmentée',
-        type: 'Cours',
+        title: 'Permanence Java',
+        type: 'Permanence',
         location: 'Salles multi',
         start: '2026-04-24T10:00',
         end: '2026-04-24T15:00',
-        color: '#E07A3F'
+        color: '#8A71E9'
     }
 ];
