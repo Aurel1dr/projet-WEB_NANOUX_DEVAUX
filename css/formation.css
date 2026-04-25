@@ -15,12 +15,13 @@
             }
             .formation-hero h1 {
                 font-size: 2.5rem;
-                color: #1a1a1a;
+                color: #ffffff;
                 margin-bottom: 10px;
             }
             .formation-hero p {
-                color: #666;
+                color: #ffffff; /* Un rouge plus vif qui pète bien */
                 font-size: 1.1rem;
+                font-weight: 600; /* Met le texte en gras */
             }
 
             /* 3. STYLE DE L'ACCORDÉON PRINCIPAL */
@@ -38,7 +39,8 @@
                 justify-content: space-between;
                 align-items: center;
                 padding: 20px 25px;
-                background: #fcfcfc;
+                background: #ffffff;
+                backdrop-filter: blur(10px);
                 border: none;
                 cursor: pointer;
                 text-align: left;
@@ -59,7 +61,7 @@
             }
             .acc-sub {
                 font-size: 0.9rem;
-                color: #777;
+                color: #dbd9d9;
                 margin-top: 4px;
             }
             .acc-arrow {
@@ -108,7 +110,7 @@
                 display: flex;
                 justify-content: space-between;
                 padding: 15px 20px;
-                background: #fafafa;
+                background: #7c6f6f;
                 border: none;
                 cursor: pointer;
                 font-weight: 600;
