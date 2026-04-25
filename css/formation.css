@@ -39,7 +39,7 @@
                 justify-content: space-between;
                 align-items: center;
                 padding: 20px 25px;
-                background: #ffffff;
+                background: #dbd9d9;
                 backdrop-filter: blur(10px);
                 border: none;
                 cursor: pointer;
@@ -61,7 +61,7 @@
             }
             .acc-sub {
                 font-size: 0.9rem;
-                color: #dbd9d9;
+                color: #777;
                 margin-top: 4px;
             }
             .acc-arrow {
@@ -110,7 +110,7 @@
                 display: flex;
                 justify-content: space-between;
                 padding: 15px 20px;
-                background: #7c6f6f;
+                background: #f0f0f052;
                 border: none;
                 cursor: pointer;
                 font-weight: 600;
