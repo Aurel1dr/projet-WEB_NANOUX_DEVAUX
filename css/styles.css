@@ -93,7 +93,7 @@ header img{
 /* Boutons navigation */
 nav {   
     background-color: rgba(138, 146, 153, 0.3);
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: space-between;
