@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title>Département Informatique - Formation</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" type="text/css" href="../css/styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+        <head>
+    <title>Département Informatique - Formation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/formation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+        
     </head>
     <body>
         <nav>
@@ -24,18 +28,201 @@
                 <a href="./equipe.html">Équipe</a>
                 <a href="./apropos.html">À propos</a>
             </div>
-
             <a href="https://myefrei.fr" class="myefrei-link" target="_blank" rel="noopener noreferrer">
                 <img src="../img/logo_MyEfrei.svg" alt="myefrei">
             </a>
         </nav>
 
         <main>
-            construction
+            <div class="formation-hero">
+                <h1>Nos formations</h1>
+                <p>De la prépa aux masters spécialisés, retrouvez les programmes et accédez aux ressources pédagogiques.</p>
+            </div>
+
+            <div class="accordion-group">
+
+                <div class="acc-item" id="acc-prepa">
+                    <button class="acc-header" onclick="toggleAcc('acc-prepa')">
+                        <div class="acc-header-left">
+                            <span class="acc-badge badge-prepa">PRÉPA</span>
+                            <div>
+                                <div class="acc-title">Cycle Préparatoire</div>
+                                <div class="acc-sub">2 ans · Fondamentaux scientifiques &amp; informatiques</div>
+                            </div>
+                        </div>
+                        <span class="acc-arrow">▼</span>
+                    </button>
+                    <div class="acc-body">
+                        <div class="acc-body-inner">
+                            <p class="acc-desc">Le cycle préparatoire prépare aux grandes écoles d'ingénieurs en deux ans. Les bases en mathématiques, physique, algorithmique et programmation y sont solidement construites, avec un accent fort sur la rigueur scientifique et les outils numériques fondamentaux.</p>
+                            <div class="sub-acc-group">
+
+                                <div class="sub-acc-item" id="sub-p1">
+                                    <button class="sub-acc-header" onclick="toggleSub('sub-p1')">
+                                        <span>📘 P1 — Première année prépa</span> <span class="sub-arrow">▼</span>
+                                    </button>
+                                    <div class="sub-acc-body">
+                                        <div class="sub-acc-inner">
+                                            <a href="#" class="resource-link">📄 Algorithmique &amp; structures de données <span class="res-badge corrige">Corrigé</span></a>
+                                            <a href="#" class="resource-link">📄 Mathématiques — Analyse &amp; algèbre <span class="res-badge annale">Annale</span></a>
+                                            <a href="#" class="resource-link">📄 Programmation Python — Exercices <span class="res-badge corrige">Corrigé</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sub-acc-item" id="sub-p2">
+                                    <button class="sub-acc-header" onclick="toggleSub('sub-p2')">
+                                        <span>📗 P2 — Deuxième année prépa</span> <span class="sub-arrow">▼</span>
+                                    </button>
+                                    <div class="sub-acc-body">
+                                        <div class="sub-acc-inner">
+                                            <a href="#" class="resource-link">📄 Bases de données — Introduction SQL <span class="res-badge corrige">Corrigé</span></a>
+                                            <a href="#" class="resource-link">📄 Programmation Orientée Objet (Java) <span class="res-badge annale">Annale</span></a>
+                                            <a href="#" class="resource-link">📄 Réseaux &amp; systèmes — Fondamentaux <span class="res-badge corrige">Corrigé</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item" id="acc-bachelor">
+                    <button class="acc-header" onclick="toggleAcc('acc-bachelor')">
+                        <div class="acc-header-left">
+                            <span class="acc-badge badge-bachelor">BACHELOR</span>
+                            <div>
+                                <div class="acc-title">Bachelor Informatique</div>
+                                <div class="acc-sub">3 ans · Développement, réseaux, systèmes</div>
+                            </div>
+                        </div>
+                        <span class="acc-arrow">▼</span>
+                    </button>
+                    <div class="acc-body">
+                        <div class="acc-body-inner">
+                            <p class="acc-desc">Le Bachelor Informatique forme des professionnels opérationnels en 3 ans post-bac. Développement logiciel, architecture réseau, cybersécurité, gestion de projets — avec de nombreux projets en équipe et des stages en entreprise.</p>
+                            <div class="sub-acc-group">
+
+                                <div class="sub-acc-item" id="sub-b1">
+                                    <button class="sub-acc-header" onclick="toggleSub('sub-b1')">
+                                        <span>💻 B1 — Première année Bachelor</span> <span class="sub-arrow">▼</span>
+                                    </button>
+                                    <div class="sub-acc-body">
+                                        <div class="sub-acc-inner">
+                                            <a href="#" class="resource-link">📄 Développement Web — HTML/CSS/JS <span class="res-badge corrige">Corrigé</span></a>
+                                            <a href="#" class="resource-link">📄 Systèmes d'exploitation — Linux <span class="res-badge corrige">Corrigé</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sub-acc-item" id="sub-b2">
+                                    <button class="sub-acc-header" onclick="toggleSub('sub-b2')">
+                                        <span>💻 B2 — Deuxième année Bachelor</span> <span class="sub-arrow">▼</span>
+                                    </button>
+                                    <div class="sub-acc-body">
+                                        <div class="sub-acc-inner">
+                                            <a href="#" class="resource-link">📄 Architectures réseaux — TCP/IP <span class="res-badge corrige">Corrigé</span></a>
+                                            <a href="#" class="resource-link">📄 APIs REST &amp; Web Services <span class="res-badge annale">Annale</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-item" id="acc-master">
+                    <button class="acc-header" onclick="toggleAcc('acc-master')">
+                        <div class="acc-header-left">
+                            <span class="acc-badge badge-master">MASTER</span>
+                            <div>
+                                <div class="acc-title">Cycle Ingénieur / Master</div>
+                                <div class="acc-sub">5 ans post-bac · Spécialisations avancées</div>
+                            </div>
+                        </div>
+                        <span class="acc-arrow">▼</span>
+                    </button>
+                    <div class="acc-body">
+                        <div class="acc-body-inner">
+                            <p class="acc-desc">Le cycle ingénieur forme des experts en informatique sur 5 ans. Après un socle commun, les étudiants choisissent une spécialisation parmi les Majors disponibles.</p>
+                            <div class="sub-acc-group">
+
+                                <div class="sub-acc-item" id="sub-m1">
+                                    <button class="sub-acc-header" onclick="toggleSub('sub-m1')">
+                                        <span>🎓 M1 — Tronc commun ingénieur</span> <span class="sub-arrow">▼</span>
+                                    </button>
+                                    <div class="sub-acc-body">
+                                        <div class="sub-acc-inner">
+                                            <a href="#" class="resource-link">📄 Algorithmique avancée &amp; graphes <span class="res-badge corrige">Corrigé</span></a>
+                                            <a href="#" class="resource-link">📄 Machine Learning — Introduction <span class="res-badge corrige">Corrigé</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sub-acc-item" id="sub-cyber">
+                                    <button class="sub-acc-header" onclick="toggleSub('sub-cyber')">
+                                        <span>🔐 Major — Cybersécurité</span> <span class="sub-arrow">▼</span>
+                                    </button>
+                                    <div class="sub-acc-body">
+                                        <div class="sub-acc-inner">
+                                            <a href="#" class="resource-link">📄 Cryptographie appliquée <span class="res-badge corrige">Corrigé</span></a>
+                                            <a href="#" class="resource-link">📄 Pentest &amp; Ethical Hacking <span class="res-badge annale">Annale</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </main>
 
         <footer>
-            <p>© 2025 EFREI Paris — Département Informatique - Aurélien DEVAUX-RIVIÈRE & Augustin NANOUX</p>
+            <p style="text-align: center; padding: 20px; color: #666; font-size: 0.9rem;">© 2025 EFREI Paris — Département Informatique - Aurélien DEVAUX-RIVIÈRE &amp; Augustin NANOUX</p>
         </footer>
+
+        <script>
+        function toggleAcc(id) {
+            const item = document.getElementById(id);
+            const body = item.querySelector('.acc-body');
+            const arrow = item.querySelector('.acc-arrow');
+            const isOpen = item.classList.contains('open');
+
+            // Ferme tous les autres
+            document.querySelectorAll('.acc-item').forEach(el => {
+                el.classList.remove('open');
+                el.querySelector('.acc-body').style.maxHeight = null;
+                el.querySelector('.acc-arrow').style.transform = 'rotate(0deg)';
+            });
+
+            // Ouvre celui cliqué
+            if (!isOpen) {
+                item.classList.add('open');
+                body.style.maxHeight = body.scrollHeight + 1000 + 'px'; // +1000 pour laisser la place aux sous-menus
+                arrow.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        function toggleSub(id) {
+            const item = document.getElementById(id);
+            const body = item.querySelector('.sub-acc-body');
+            const arrow = item.querySelector('.sub-arrow');
+            const isOpen = item.classList.contains('open');
+            
+            item.classList.toggle('open', !isOpen);
+            body.style.maxHeight = isOpen ? null : body.scrollHeight + 'px';
+            arrow.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+            
+            // Recalculer la taille du parent pour pas que ça coupe
+            const parentBody = item.closest('.acc-body');
+            if (parentBody) {
+                parentBody.style.maxHeight = parentBody.scrollHeight + 500 + 'px';
+            }
+        }
+        </script>
     </body>
 </html>
