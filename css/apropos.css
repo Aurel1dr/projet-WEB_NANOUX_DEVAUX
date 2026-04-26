@@ -35,17 +35,17 @@ body.apropos-body main {
 .apropos-hero h1 {
     font-size: 2.4rem;
     font-weight: 800;
-    color: #1a1a1a;
+    color: #1b57fb;
     margin-bottom: 8px;
 }
 
 .apropos-hero p {
     font-size: 1.05rem;
-    color: #555;
+    color: #1b57fb;
 }
 
 /* ===== SECTION DEUX CARTES ===== */
-.etudiant-section {
+.etudiants-section {
     display: flex;
     flex-direction: row;
     gap: 30px;
@@ -59,11 +59,12 @@ body.apropos-body main {
     box-shadow: 0 8px 32px rgba(0,0,0,0.15);
     width: 300px;
     display: flex;
+    flex-direction: column;
     flex-shrink: 0;
     transition: transform 0.25s ease;
 }
 
-.etudiants-card:hover {
+.etudiant-card:hover {
     transform: translateY(-5px);
 }
 
@@ -210,7 +211,7 @@ body.apropos-body main {
 }
 .skill-percent {
     font-weight: 700;
-    color: #e07a3f;
+    color: #1b57fb;
     font-size: 0.95rem;
 }
 
@@ -226,7 +227,7 @@ body.apropos-body main {
 /* La barre orange qui se remplit — largeur contrôlée par le style inline */
 .skill-fill {
     height: 100%;
-    background: #e07a3f;
+    background: #1b57fb;
     border-radius: 10px;
     width: 0%;              /* commence à 0, JS l'anime jusqu'au vrai % */
     transition: width 1.2s ease;   /* animation CSS de remplissage */
