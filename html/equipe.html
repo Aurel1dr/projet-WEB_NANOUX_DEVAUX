@@ -5,12 +5,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../css/equipe.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     </head>
-    <body>
+
+    <body class="equipe-body">
+
+        <!-- ===== NAVIGATION (identique aux autres pages) ===== -->
         <nav>
             <div style="display: flex; align-items: center; gap: 0px;">
-                <a href="./accueil.html" class="active efrei-logo">
+                <a href="./accueil.html" class="efrei-logo">
                     <img src="../img/Efrei-logo-couleur.svg" alt="logo EFREI">
                 </a>
                 <div class="nav-title">
@@ -24,18 +28,256 @@
                 <a href="./equipe.html" class="active">Équipe</a>
                 <a href="./apropos.html">À propos</a>
             </div>
-
             <a href="https://myefrei.fr" class="myefrei-link" target="_blank" rel="noopener noreferrer">
-                 <img src="../img/logo_MyEfrei.svg" alt="myefrei">
+                <img src="../img/logo_MyEfrei.svg" alt="myefrei">
             </a>
         </nav>
 
         <main>
-            <!-- ton contenu équipe ici -->
+
+            <!-- TITRE DE LA PAGE -->
+            <div class="equipe-hero">
+                <h1>Notre Équipe</h1>
+                <p>Les enseignants-chercheurs du département Informatique de l'EFREI Paris</p>
+            </div>
+
+            <!-- CONTENEUR DE TOUTES LES CARTES -->
+            <div class="equipe-container">
+
+
+                <!-- ========== CARTE 1 ========== -->
+                <div class="prof-card">
+                    <div class="prof-photo">
+                        <img src="../prof img/Asma-GABIS.jpg" alt="Asma Gabis">
+                    </div>
+                    <div class="prof-info">
+                        <div class="prof-role">Responsable du département Informatique · Enseignante-chercheuse</div>
+                        <div class="prof-name">Asma GABIS</div>
+                        <div class="prof-divider"></div>
+                        <p class="prof-bio">
+                            Elle a obtenu son diplôme d'ingénieur d'État en informatique en 2006 à l'École Nationale Supérieure d'Informatique (ESI), avant d'obtenir en 2010 son Magistère. En 2021, elle obtient son doctorat et rejoint l'EFREI en 2022. Elle est aujourd'hui responsable du département Informatique.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ========== CARTE 2 ========== -->
+                <div class="prof-card">
+                    <div class="prof-photo">
+                        <img src="../prof img/Jean-Charles-HUET.jpg" alt="Jean-Charles Huet">
+                    </div>
+                    <div class="prof-info">
+                        <div class="prof-role">Enseignant-chercheur · Responsable programmes Logiciel & SI</div>
+                        <div class="prof-name">Jean-Charles HUET</div>
+                        <div class="prof-divider"></div>
+                        <p class="prof-bio">
+                            Il a obtenu son doctorat en 2011 à l'Université Blaise Pascal (Clermont-Ferrand II). Durant sa thèse, il occupait un poste d'ingénieur hospitalier au CHU de Clermont-Ferrand et a participé à l'automatisation du circuit du médicament. Il a rejoint l'EFREI en 2018 et est responsable des programmes en Logiciel et Systèmes d'Information du Programme Grande École.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ========== CARTE 3 ========== -->
+                <div class="prof-card">
+                    <div class="prof-photo">
+                        <img src="../prof img/Rado-RAKOTONAVIRO.jpg" alt="Rado Rakotonarivo">
+                    </div>
+                    <div class="prof-info">
+                        <div class="prof-role">Enseignant-chercheur en Informatique</div>
+                        <div class="prof-name">Rado RAKOTONARIVO</div>
+                        <div class="prof-divider"></div>
+                        <p class="prof-bio">
+                            Rado RAKOTONARIVO a obtenu son Master en Mathématiques, Informatique et Statistiques Appliquées de l'Université d'Antananarivo (Madagascar) en 2016. Il a poursuivi son cursus par un doctorat en informatique au sein du Laboratoire d'Informatique de Paris Nord (LIPN) de l'Université Sorbonne Paris Nord. Il rejoint l'EFREI en 2022.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ========== CARTE 4 ========== -->
+                <div class="prof-card">
+                    <div class="prof-photo">
+                        <img src="../prof img/Mohamad-GHASSANY.jpg" alt="Mohamad Ghassany">
+                    </div>
+                    <div class="prof-info">
+                        <div class="prof-role">Enseignant-chercheur · Responsable majeure Data & IA</div>
+                        <div class="prof-name">Mohamad GHASSANY</div>
+                        <div class="prof-divider"></div>
+                        <p class="prof-bio">
+                            Il obtient son master en Mathématiques Appliquées et Statistiques à l'Université Grenoble Alpes, avant d'obtenir son doctorat en 2013 à l'Université Paris 13. Il rejoint l'EFREI en 2021 et est aujourd'hui manager en cycle M des pôles Data & IT, ainsi que responsable de la majeure « Data and Artificial Intelligence ».
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ========== CARTE 5 ========== -->
+                <div class="prof-card">
+                    <div class="prof-photo">
+                        <img src="../prof img/Sliman-LAYTH.jpg" alt="Layth Sliman">
+                    </div>
+                    <div class="prof-info">
+                        <div class="prof-role">Professeur · Axe Sécurité, Résilience et Confiance Numérique · HDR</div>
+                        <div class="prof-name">Layth SLIMAN</div>
+                        <div class="prof-divider"></div>
+                        <p class="prof-bio">
+                            Ingénieur en informatique diplômé de l'INSA Lyon, il réalise son doctorat à l'INSA Lyon en collaboration avec l'Université des Ryukyus au Japon. Il obtient ensuite son HDR à l'Université Paris-Saclay avant de rejoindre l'EFREI en 2010, où il dirige l'axe de recherche « Sécurité, Résilience et Confiance Numérique ».
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ========== CARTE 6 ========== -->
+                <div class="prof-card">
+                    <div class="prof-photo">
+                        <img src="../prof img/youssef-ait-el-mahjoub.jpg" alt="Youssef Ait El Mahjoub">
+                    </div>
+                    <div class="prof-info">
+                        <div class="prof-role">Enseignant-chercheur · Responsable filière IT</div>
+                        <div class="prof-name">Youssef AIT EL MAHJOUB</div>
+                        <div class="prof-divider"></div>
+                        <p class="prof-bio">
+                            Diplômé d'un Master en Informatique, Algorithmique et Modélisation à l'interface des Sciences (AMIS) à l'Université de Versailles-Saint-Quentin-en-Yvelines (UVSQ) en 2016, il soutient sa thèse en 2021. Il rejoint l'EFREI en 2022 et est responsable de la filière IT.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ========== CARTE 7 ========== -->
+                <div class="prof-card">
+                    <div class="prof-photo">
+                        <img src="../prof img/Boussad-AIT-SALEM.jpg" alt="Boussad Ait Salem">
+                    </div>
+                    <div class="prof-info">
+                        <div class="prof-role">Enseignant-chercheur · Responsable majeure Cybersécurité & Cloud</div>
+                        <div class="prof-name">Boussad AIT SALEM</div>
+                        <div class="prof-divider"></div>
+                        <p class="prof-bio">
+                            Il prépare sa thèse à l'Université de Limoges au sein de l'équipe PICC (Protection de l'Information, Codage, Cryptographie) du laboratoire Xlim. Il obtient son doctorat en 2011 puis effectue un post-doctorat à Orange Labs. Il rejoint l'EFREI en 2020 et est responsable de la majeure « Cybersécurité et Cloud ».
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ========== CARTE 8 ========== -->
+                <div class="prof-card">
+                    <div class="prof-photo">
+                        <img src="../prof img/Djallel-DILMI.jpg" alt="Djallel Dilmi">
+                    </div>
+                    <div class="prof-info">
+                        <div class="prof-role">Enseignant-chercheur · Responsable majeure Big Data & Machine Learning</div>
+                        <div class="prof-name">Djallel DILMI</div>
+                        <div class="prof-divider"></div>
+                        <p class="prof-bio">
+                            Enseignant-chercheur spécialisé en Deep Learning et Intelligence Artificielle, il travaille sur le développement de nouvelles architectures de traitement, notamment les mécanismes d'attention. Il rejoint l'EFREI en 2023 et est responsable de la majeure « Big Data & Machine Learning ».
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ========== CARTE 9 ========== -->
+                <div class="prof-card">
+                    <div class="prof-photo">
+                        <img src="../prof img/Benoit-CHARROUX.jpg" alt="Benoit Charroux">
+                    </div>
+                    <div class="prof-info">
+                        <div class="prof-role">Enseignant-chercheur · Responsable des programmes transverses</div>
+                        <div class="prof-name">Benoit CHARROUX</div>
+                        <div class="prof-divider"></div>
+                        <p class="prof-bio">
+                            Il obtient un DEA en électronique à l'Université Paris XI, puis prépare sa thèse à l'ENSEA, obtenant son doctorat de l'Université Paris XI. Ses travaux de recherche portent sur le traitement d'images et la reconnaissance de formes. Il rejoint l'EFREI en 2011 et est responsable des programmes transverses.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ========== CARTE 10 ========== -->
+                <div class="prof-card">
+                    <div class="prof-photo">
+                        <img src="../prof img/Marwa-HARZI.jpg" alt="Marwa Harzi">
+                    </div>
+                    <div class="prof-info">
+                        <div class="prof-role">Enseignante-chercheuse · Axe Réseaux · Responsable parcours LSI Apprentissage</div>
+                        <div class="prof-name">Marwa HARZI</div>
+                        <div class="prof-divider"></div>
+                        <p class="prof-bio">
+                            Elle obtient son doctorat en informatique en 2018, rattachée au Centre de Recherche en Informatique de Lens (Université d'Artois) en cotutelle avec le Laboratoire de Recherche Opérationnelle de l'ISG Tunis. Elle rejoint l'EFREI en 2021 et est responsable du parcours Logiciels et Systèmes d'Information du Cycle Ingénieur en Apprentissage.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ========== CARTE 11 ========== -->
+                <div class="prof-card">
+                    <div class="prof-photo">
+                        <img src="../prof img/Hammoud-KHODOR.jpg" alt="Khodor Hammoud">
+                    </div>
+                    <div class="prof-info">
+                        <div class="prof-role">Enseignant-chercheur · Responsable majeure Data Engineering</div>
+                        <div class="prof-name">Khodor HAMMOUD</div>
+                        <div class="prof-divider"></div>
+                        <p class="prof-bio">
+                            Khodor Hammoud a obtenu son doctorat en 2021 à l'Université de Paris-Cité. Il débute sa carrière d'enseignant à l'EFREI dès février 2020, pendant son doctorat. Il est aujourd'hui responsable de la majeure « Data Engineering ».
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ========== CARTE 12 ========== -->
+                <div class="prof-card">
+                    <div class="prof-photo">
+                        <img src="../prof img/Feriel-BOUAKKAZ.jpg" alt="Fériel Bouakkaz">
+                    </div>
+                    <div class="prof-info">
+                        <div class="prof-role">Enseignante-chercheuse · Axe Cybersécurité</div>
+                        <div class="prof-name">Fériel BOUAKKAZ</div>
+                        <div class="prof-divider"></div>
+                        <p class="prof-bio">
+                            Après un Master Recherche spécialisé en réseaux et sécurité informatique obtenu en 2012, elle entame une thèse en 2013 sur l'agrégation de données sécurisée dans les réseaux de capteurs sans fil. Elle obtient son doctorat en 2016 et intègre l'EFREI en 2019 en tant qu'enseignante-chercheuse en Cybersécurité.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ========== CARTE 13 ========== -->
+                <div class="prof-card">
+                    <div class="prof-photo">
+                        <img src="../prof img/Yessin-NEGGAZ.jpg" alt="Yessin Neggaz">
+                    </div>
+                    <div class="prof-info">
+                        <div class="prof-role">Enseignant-chercheur · Responsable majeure Networks & Cloud Infrastructure</div>
+                        <div class="prof-name">Yessin NEGGAZ</div>
+                        <div class="prof-divider"></div>
+                        <p class="prof-bio">
+                            Yessin NEGGAZ a obtenu son doctorat en informatique à l'Université de Bordeaux en octobre 2016. Il occupe ensuite plusieurs postes d'enseignement et de recherche avant de rejoindre l'EFREI en 2018, où il est responsable de la majeure « Networks & Cloud Infrastructure ».
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ========== CARTE 14 ========== -->
+                <div class="prof-card">
+                    <div class="prof-photo">
+                        <img src="../prof img/Lamine-BOUGUEROUA.jpg" alt="Lamine Bougeroua">
+                    </div>
+                    <div class="prof-info">
+                        <div class="prof-role">Enseignant-chercheur · Axe Data & Intelligence Artificielle</div>
+                        <div class="prof-name">Lamine BOUGEROUA</div>
+                        <div class="prof-divider"></div>
+                        <p class="prof-bio">
+                            Diplômé ingénieur en informatique en 1998, il obtient un Master Spécialisé en bases de données avancées à l'Université de Versailles en 2001, puis son doctorat à l'Université Paris-Est Créteil en 2007. Il rejoint l'Esigetel en 2006, devenu l'EFREI suite à la fusion des deux établissements en 2016.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ========== CARTE 15 ========== -->
+                <div class="prof-card">
+                    <div class="prof-photo">
+                        <img src="../prof img/Ilyes-JENHANI.png" alt="Ilyes Jenhani">
+                    </div>
+                    <div class="prof-info">
+                        <div class="prof-role">Enseignant-chercheur · Responsable majeure Software Engineering</div>
+                        <div class="prof-name">Ilyes JENHANI</div>
+                        <div class="prof-divider"></div>
+                        <p class="prof-bio">
+                            Ilyes Jenhani a obtenu son doctorat en Informatique en 2010 dans le cadre d'une thèse en cotutelle entre l'Université d'Artois (France) et l'Université de Tunis (Tunisie). Il a rejoint l'EFREI en 2024 et est responsable de la majeure « Software Engineering ».
+                        </p>
+                    </div>
+                </div>
+
+
+            </div><!-- fin .equipe-container -->
+
         </main>
 
         <footer>
-            <p>© 2025 EFREI Paris — Département Informatique - Aurélien DEVAUX-RIVIÈRE & Augustin NANOUX</p>
+            <p>© 2025 EFREI Paris — Département Informatique - Aurélien DEVAUX-RIVIÈRE &amp; Augustin NANOUX</p>
         </footer>
+
     </body>
 </html>

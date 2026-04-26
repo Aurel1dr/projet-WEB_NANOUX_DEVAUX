@@ -1,0 +1,108 @@
+body.equipe-body {
+    overflow-y: auto;
+    height: auto;
+}
+
+body.equipe-body main {
+    overflow: visible;   
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+
+.equipe-container {
+    max-width: 1000px;       
+    margin: 0 auto;        
+    padding: 0 30px;         
+    display: flex;        
+    flex-direction: column;  
+    gap: 50px;            
+}
+
+.equipe-hero {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.equipe-hero h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    font-weight: 800;
+}
+
+.equipe-hero p {
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.prof-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    min-height: 340px;
+}
+
+.prof-photo {
+    width: 320px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.prof-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+/* ---- TEXTE DU PROF (colonne droite) ---- */
+.prof-info {
+    padding: 35px 40px;     
+    display: flex;
+    flex-direction: column;  
+    justify-content: center; 
+    gap: 12px;           
+}
+
+.prof-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.prof-role {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1b57fb;         
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.prof-bio {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;        
+}
+
+
+.prof-divider {
+    width: 50px;
+    height: 3px;
+    background: #1b57fb;  
+    border-radius: 2px;
+}
+
+/* ---- RESPONSIVE : sur petit écran, la carte passe en colonne ---- */
+@media (max-width: 700px) {
+    .prof-card {
+        flex-direction: column;   /* ← photo au-dessus, texte en dessous */
+    }
+    .prof-photo {
+        width: 100%;              /* ← photo pleine largeur */
+        height: 280px;            /* ← hauteur fixe en mode mobile */
+    }
+}
