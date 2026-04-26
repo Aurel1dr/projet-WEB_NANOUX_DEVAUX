@@ -191,43 +191,40 @@
         </footer>
 
         <script>
-        function toggleAcc(id) {
-            const item = document.getElementById(id);
-            const body = item.querySelector('.acc-body');
-            const arrow = item.querySelector('.acc-arrow');
-            const isOpen = item.classList.contains('open');
+                function toggleAcc(id) {
+                    const item = document.getElementById(id);
+                    const body = item.querySelector('.acc-body');
+                    const arrow = item.querySelector('.acc-arrow');
+                    const isOpen = item.classList.contains('open');
 
-            // Ferme tous les autres
-            document.querySelectorAll('.acc-item').forEach(el => {
-                el.classList.remove('open');
-                el.querySelector('.acc-body').style.maxHeight = null;
-                el.querySelector('.acc-arrow').style.transform = 'rotate(0deg)';
-            });
+    
+                    if (!isOpen) {
+                        item.classList.add('open');
+                        body.style.maxHeight = body.scrollHeight + 1000 + 'px'; 
+                        arrow.style.transform = 'rotate(180deg)';
+                    } else {
+                        item.classList.remove('open');
+                        body.style.maxHeight = null;
+                        arrow.style.transform = 'rotate(0deg)';
+                    }
+                }
 
-            // Ouvre celui cliqué
-            if (!isOpen) {
-                item.classList.add('open');
-                body.style.maxHeight = body.scrollHeight + 1000 + 'px'; // +1000 pour laisser la place aux sous-menus
-                arrow.style.transform = 'rotate(180deg)';
-            }
-        }
-
-        function toggleSub(id) {
-            const item = document.getElementById(id);
-            const body = item.querySelector('.sub-acc-body');
-            const arrow = item.querySelector('.sub-arrow');
-            const isOpen = item.classList.contains('open');
-            
-            item.classList.toggle('open', !isOpen);
-            body.style.maxHeight = isOpen ? null : body.scrollHeight + 'px';
-            arrow.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
-            
-            // Recalculer la taille du parent pour pas que ça coupe
-            const parentBody = item.closest('.acc-body');
-            if (parentBody) {
-                parentBody.style.maxHeight = parentBody.scrollHeight + 500 + 'px';
-            }
-        }
+                function toggleSub(id) {
+                    const item = document.getElementById(id);
+                    const body = item.querySelector('.sub-acc-body');
+                    const arrow = item.querySelector('.sub-arrow');
+                    const isOpen = item.classList.contains('open');
+                    
+                    item.classList.toggle('open', !isOpen);
+                    body.style.maxHeight = isOpen ? null : body.scrollHeight + 'px';
+                    arrow.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+                    
+                    
+                    const parentBody = item.closest('.acc-body');
+                    if (parentBody && !isOpen) {
+                        parentBody.style.maxHeight = (parentBody.scrollHeight + body.scrollHeight) + 'px';
+                    }
+                }
         </script>
     </body>
 </html>
