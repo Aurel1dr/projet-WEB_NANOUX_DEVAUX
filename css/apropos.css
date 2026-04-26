@@ -1,0 +1,233 @@
+/* ===== SCROLL ===== */
+body.apropos-body {
+    overflow-y: auto;
+    height: auto;
+}
+
+body.apropos-body main {
+    overflow: visible;
+    padding-top: 90px;
+    padding-bottom: 80px;
+}
+
+/* =====  ===== */
+.apropos-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* ===== rectangle blanc ===== */
+.apropos-hero {
+    text-align: center;
+    padding: 30px 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 2px solid #1b57fb;
+    max-width: 700px;
+    margin: 0 auto 10px auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+.apropos-hero h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.apropos-hero p {
+    font-size: 1.05rem;
+    color: #555;
+}
+
+/* ===== SECTION DEUX CARTES ===== */
+.etudiant-section {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+}
+
+.etudiant-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    width: 300px;
+    display: flex;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.etudiants-card:hover {
+    transform: translateY(-5px);
+}
+
+.etudiant-photo {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+}
+
+.etudiant-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+.etudiant-info {
+    padding: 20px;
+    text-align: center;
+    border-top: 3px solid #1b57fb;
+}
+
+.etudiant-name {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+}
+
+.etudiant-role {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1b57fb;
+    text-transform: uppercase;
+    letter-spacing: 0.06rem;
+    margin-bottom: 12px;
+}
+
+.etudiant-bio {
+    font-size: 0.88rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ===== SECTION TIMELINE ===== */
+.timeline-section {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.section-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 40px;   
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 12px;            
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #1b57fb;   
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -34px;           
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    background: #1b57fb;
+    border-radius: 50%;     
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #1b57fb;
+}
+
+.timeline-date {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #1b57fb;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+.timeline-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+}
+.timeline-desc {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ===== SECTION JAUGES DE COMPÉTENCES ===== */
+.skills-section {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+/* Chaque ligne jauge */
+.skill-item {
+    margin-bottom: 22px;
+}
+.skill-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Ligne du dessus : nom à gauche, % à droite */
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.skill-name {
+    font-weight: 700;
+    color: #1a1a1a;
+    font-size: 0.95rem;
+}
+.skill-percent {
+    font-weight: 700;
+    color: #e07a3f;
+    font-size: 0.95rem;
+}
+
+/* La barre grise de fond */
+.skill-bar {
+    width: 100%;
+    height: 10px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* La barre orange qui se remplit — largeur contrôlée par le style inline */
+.skill-fill {
+    height: 100%;
+    background: #e07a3f;
+    border-radius: 10px;
+    width: 0%;              /* commence à 0, JS l'anime jusqu'au vrai % */
+    transition: width 1.2s ease;   /* animation CSS de remplissage */
+}

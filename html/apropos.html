@@ -5,9 +5,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
+        <link rel="stylesheet" type="text/css" href="../css/apropos.css">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body class="apropos-body">
         <nav>
             <div style="display: flex; align-items: center; gap: 0px;">
                 <a href="./accueil.html" class="active efrei-logo">
@@ -31,11 +32,146 @@
         </nav>
 
         <main>
-            <!-- ton contenu à propos ici -->
+            <div class="apropos-container">
+
+                <!-- 1. RECTANGLE TITRE -->
+                <div class="apropos-hero">
+                    <h1>À propos</h1>
+                    <p>Projet TI402 — Département Informatique EFREI Paris 2025-2026</p>
+                </div>
+
+                <!-- 2. CARTES ÉTUDIANTS -->
+                <div class="etudiants-section">
+
+                    <div class="etudiant-card">
+                        <div class="etudiant-photo">
+                            <img src="../img/photo-aurélien.jpg" alt="Aurélien Devaux-Rivière">
+                        </div>
+                        <div class="etudiant-info">
+                            <div class="etudiant-name">Aurélien DEVAUX-RIVIÈRE</div>
+                            <div class="etudiant-role">Développeur Frontend</div>
+                            <p class="etudiant-bio">
+                                Responsable de la page d'accueil, de la navigation,
+                                et du design général du site. A travaillé sur le CSS
+                                et la mise en page responsive.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="etudiant-card">
+                        <div class="etudiant-photo">
+                            <img src="../img/photo-Augustin.jpg" alt="Augustin Nanoux">
+                        </div>
+                        <div class="etudiant-info">
+                            <div class="etudiant-name">Augustin NANOUX</div>
+                            <div class="etudiant-role">Développeur Frontend</div>
+                            <p class="etudiant-bio">
+                                Responsable de la page agenda, du calendrier
+                                interactif en JavaScript, et de la page formation
+                                avec les accordéons.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 3. TIMELINE DU PROJET -->
+                <div class="timeline-section">
+                    <h2 class="section-title">Étapes du projet</h2>
+                    <div class="timeline">
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">Semaine 1</div>
+                            <div class="timeline-title">Conception & maquette</div>
+                            <p class="timeline-desc">Définition du contenu du site, création du wireframe sur Miro, choix de la charte graphique.</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">Semaine 2</div>
+                            <div class="timeline-title">Structure HTML & navigation</div>
+                            <p class="timeline-desc">Création des 5 pages HTML, mise en place de la navigation, du header et du footer communs.</p>
+                        </div>
+                        <div class="timeline-item">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">Semaine 3</div>
+                            <div class="timeline-title">Page Agenda</div>
+                            <p class="timeline-desc">Développement du calendrier interactif en JavaScript avec navigation par semaine et affichage des événements.</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">Semaine 4</div>
+                            <div class="timeline-title">Page Formation</div>
+                            <p class="timeline-desc">Mise en place des accordéons imbriqués pour présenter les programmes Prépa, Bachelor et Master.</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">Semaine 5</div>
+                            <div class="timeline-title">Page Équipe & À propos</div>
+                            <p class="timeline-desc">Présentation des enseignants-chercheurs du département et page de présentation du projet.</p>
+                        </div>
+
+                    </div>
+                </div>  
+    <!-- 4. JAUGES DE COMPÉTENCES -->
+                <div class="skills-section">
+                    <h2 class="section-title">Technologies utilisées</h2>
+
+        <!-- data-percent = la valeur cible, le JS s'en sert pour animer -->
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">HTML5</span>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-percent="90"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">CSS3</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-percent="80"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percent">65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-percent="65"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Design Responsive</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-percent="75"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div><!-- fin apropos-container -->
         </main>
 
         <footer>
             <p>© 2025 EFREI Paris — Département Informatique - Aurélien DEVAUX-RIVIÈRE & Augustin NANOUX</p>
         </footer>
+
+        <script src="../js/apropos.js"></script>
+        
     </body>
 </html>
