@@ -1,4 +1,4 @@
- main {
+        main {
                 /* C'est ça qui empêche ton contenu de passer sous la nav ! Ajuste les 100px selon la taille de ta nav */
                 padding-top: 100px; 
                 max-width: 900px;
@@ -155,3 +155,19 @@
             }
             .res-badge.corrige { background: #e0f2fe; color: #0369a1; }
             .res-badge.annale { background: #ffedd5; color: #c2410c; }
+
+html, body {
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100vh;
+}
+
+/* 2. Assure la marge en bas pour le footer fixe */
+main {
+    padding-bottom: 200px !important; 
+}
+
+/* 3. Fixe l'image de fond */
+body {
+    background-attachment: fixed;
+}
