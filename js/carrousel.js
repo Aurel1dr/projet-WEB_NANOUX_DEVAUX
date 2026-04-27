@@ -94,7 +94,7 @@ function demarrerTimer() {
     timerAuto = setInterval(() => {
         const suivant = (indexActuel + 1) % nombreDeDiapos;
         allerA(suivant);
-    }, 4000);
+    }, 6000);
 }
 
 function reinitialiserTimer() {

@@ -87,14 +87,18 @@ header img{
 } 
 
 /* Boutons navigation */
-nav {   
-    background-color: rgba(138, 146, 153, 0.3);
-    backdrop-filter: blur(9px);
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(30, 80, 200, 0.1);
+    backdrop-filter: blur(12px);
+    z-index: 100;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 3px 40px 3px 160px;
-    z-index: 10;
     flex-shrink: 0;
 }
 
@@ -180,8 +184,8 @@ nav .myefrei-link img {
 } /* image MyEfrei dans le nav */
 
 footer {
-    background-color: rgba(138, 146, 153, 0.3);
-    backdrop-filter: blur(9px);
+    background-color: rgba(30, 80, 200, 0.1);
+    backdrop-filter: blur(12px);
     color: rgba(255, 255, 255, 0.8);
     text-align: center;
     padding: 15px;
@@ -219,7 +223,7 @@ footer {
     display: flex;
     width: 400%; /* 400% : 4 images */
     height: 100%;
-    transition: transform 0.6s ease-in-out; /* durée anim */
+    transition: transform 0.7s ease-in-out; /* durée anim */
 }
 
 .diapo {
