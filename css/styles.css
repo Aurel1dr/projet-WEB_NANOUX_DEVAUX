@@ -192,3 +192,20 @@ footer {
     font-size: 13px;
     flex-shrink: 0;
 } /* pied de page : fond semi-transparent et texte centré */
+
+
+.diapo {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.diapo img {
+    width: 99%;
+    height: 100%;
+    object-fit: cover;        /* remplit sans déformer */
+    object-position: center;  /* centre le cadrage */
+    display: block;
+}
+    /* diaporama : positionnement et style des images pour le carroussel */
