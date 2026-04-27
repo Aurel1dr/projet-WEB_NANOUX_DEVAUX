@@ -93,7 +93,7 @@ header img{
 /* Boutons navigation */
 nav {   
     background-color: rgba(138, 146, 153, 0.3);
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(9px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -127,7 +127,7 @@ nav a {
 } /* style de base des liens dans la navigation */
 
 nav > div:nth-child(2) a {
-    font-size: 15px; /* ajustez cette valeur (ex: 16px, 20px) selon votre goût */
+    font-size: 16px; /* ajustez cette valeur (ex: 16px, 20px) selon votre goût */
 }
 
 .nav-links {
@@ -185,7 +185,7 @@ nav .myefrei-link img {
 
 footer {
     background-color: rgba(138, 146, 153, 0.3);
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(9px);
     color: rgba(255, 255, 255, 0.8);
     text-align: center;
     padding: 15px;
