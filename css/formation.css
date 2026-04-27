@@ -23,6 +23,52 @@
                 font-size: 1.1rem;
                 font-weight: 600; /* Met le texte en gras */
             }
+            
+            
+body.formation-body {
+overflow-y: auto;
+height: auto;
+}
+
+body.formation-body main {
+    overflow: visible;
+    padding-top: 90px;
+    padding-bottom: 80px;
+}
+
+/* =====  ===== */
+.formation-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* ===== rectangle blanc ===== */
+.formation-hero {
+    text-align: center;
+    padding: 30px 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 2px solid #1b57fb;
+    max-width: 700px;
+    margin: 0 auto 80px auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+.formation-hero h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #1b57fb;
+    margin-bottom: 8px;
+}
+
+.formation-hero p {
+    font-size: 1.05rem;
+    color: #1b57fb;
+}
 
             /* 3. STYLE DE L'ACCORDÉON PRINCIPAL */
             .acc-item {
@@ -47,7 +93,7 @@
                 transition: background-color 0.2s ease;
             }
             .acc-header:hover {
-                background: #f5f5f5;
+                background: #ffffff;
             }
             .acc-header-left {
                 display: flex;
@@ -57,7 +103,7 @@
             .acc-title {
                 font-weight: 600;
                 font-size: 1.2rem;
-                color: #333;
+                color: #1b57fb;
             }
             .acc-sub {
                 font-size: 0.9rem;
