@@ -1,198 +1,49 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}/* Reset globale pour tout le site */
-
-main  {
-    flex:1;
-    overflow: hidden;
-} /* flex grow & l'overflow */
-
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    height: 100vh;
-    overflow: hidden; /* ← pas de scroll */
-    display: flex;
-    flex-direction: column; /* ← empile nav / image / footer */
-    background-image: url('../img/banière1.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-} /* Corps de la page : police, layout en colonne, image de fond et contrôle du scroll */
-
-header {
-    flex:1 ;
-    overflow: hidden;
-    position: relative;
-} /* bannière : position relative pour overlay et contenu en position absolue */
-
-header::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: transparent;
-    pointer-events: none;
-    z-index: 1;
-} /* overlay sombre (assombrissement) au-dessus de l'image header. */
-
-header img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block
-} /* règle d'affichage de l'image dans le header (full width / object-fit) */
-
-
-/* --------- Bannière ----------*/
-.hero {
-    position: relative;
-} 
-
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.22);
-    pointer-events: none;
-    z-index: 1;
-} 
-
-.hero img {
-    display: block;
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-} 
-
-.hero-text-box {
-    position: absolute;
-    top: 31%;
-    left: 4%;
-    transform: translateY(-50%);
-    max-width: 500px;
-    padding: 20px;
-    font-family: 'Inter', sans-serif;
-    color: #ffffff;
-    line-height: 1.4;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-    z-index: 2;
+/* --------- Agenda ----------*/
+/* ===== SCROLL ===== */
+body.agendas-body {
+    overflow-y: auto;
+    height: auto;
 }
 
-
-.hero-text-box h1 {
-    margin: 0 0 10px;
-    font-size: 13 px;
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    font-weight: 800;
-    text-transform: uppercase;
-} 
-
-/* Boutons navigation */
-nav {   
-    background-color: rgba(138, 146, 153, 0.3);
-    backdrop-filter: blur(6px);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 3px 40px 3px 160px;
-    z-index: 10;
-    flex-shrink: 0;
+body.agenda-body main {
+    overflow: visible;
+    padding-top: 90px;
+    padding-bottom: 80px;
 }
 
-nav img{
-    height: 60px;
-    width: auto;
-    filter: brightness(0) invert(1);
-}
-
-nav a img {
-    height: 44px;
-    width: auto;
-    filter: brightness(0) invert(1);
-    display: block;
-} /* images contenues dans les liens du nav */
-
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-    font-family: 'Inter', sans-serif;
-    padding: 8px 30px;
-    display: inline-block;
-    letter-spacing: 0.02em;
-} /* style de base des liens dans la navigation */
-
-nav > div:nth-child(2) a {
-    font-size: 15px; /* ajustez cette valeur (ex: 16px, 20px) selon votre goût */
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    margin-right: -150px;
-} /* conteneur flex des liens principaux (agenda/formation/équipe/à propos) */
-
-nav a:hover {
-    text-decoration: underline;
-    background-color: transparent;
-} /* état hover des liens du nav */
-
-nav a.active {
-    text-decoration: underline;
-    display: inline-block;
-} /* style appliqué au lien actif (page courante) */
-
-nav a:has(img) {
-    text-decoration: none;
-} /* exceptions : liens qui contiennent une image (logos) */
-
-.nav-title {
+/* =====  ===== */
+.agenda-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 25px;
     display: flex;
     flex-direction: column;
-    color: white;
-    font-family: 'Inter', sans-serif;
-    line-height: 1.1;
-    margin-left: -20px;
-} /* petit texte à côté du logo (Deux lignes) */
+    gap: 60px;
+}
 
-.nav-title span:first-child {
-    font-size: 18px;
-    font-weight: 900;
-} /* style première ligne du texte du logo */
-
-.nav-title span:last-child {
-    font-size: 18px;
-    font-weight: 900;
-} /* style deuxième ligne du texte du logo */
-
-nav .myefrei-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-} /* style du lien du logo MyEfrei */
-
-nav .myefrei-link img {
-    height: 60px;
-    width: auto;
-    display: block;
-    filter: brightness(0) invert(1);
-} /* image MyEfrei dans le nav */
-
-footer {
-    background-color: rgba(138, 146, 153, 0.3);
-    backdrop-filter: blur(6px);
-    color: rgba(255, 255, 255, 0.8);
+/* ===== rectangle blanc ===== */
+.agenda-hero {
     text-align: center;
-    padding: 15px;
-    font-size: 13px;
-    flex-shrink: 0;
-} /* pied de page : fond semi-transparent et texte centré */
+    padding: 30px 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 2px solid #1b57fb;
+    max-width: 700px;
+    margin: 0 auto 10px auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
 
+.agenda-hero h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #1b57fb;
+    margin-bottom: 8px;
+}
+
+.agenda-hero p {
+    font-size: 1.05rem;
+    color: #1b57fb;
+}
 
 
 .agenda-page {
@@ -213,12 +64,17 @@ footer {
 }
 
 .eyebrow {
-    margin-bottom: 12px;
-    color: #40658f;
-    font-size: 0.88rem;
+    display: inline-block;
+    background: #ffffff;
+    color: #1b57fb;
+    font-size: 0.78rem;
     font-weight: 700;
-    text-transform: uppercase;
     letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 2px solid #1b57fb;
+    margin-bottom: 12px;
 }
 
 .agenda-header h1 {

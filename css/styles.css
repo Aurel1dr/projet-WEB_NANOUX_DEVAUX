@@ -6,14 +6,14 @@
 
 main  {
     flex:1;
-    overflow: hidden;
+    overflow: visible;
 } /* flex grow & l'overflow */
 
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     height: 100vh;
-    overflow: hidden; /* ← pas de scroll */
+    overflow-y: auto; /* ← pas de scroll */
     display: flex;
     flex-direction: column; /* ← empile nav / image / footer */
     background-image: url('../img/banière1.png');
