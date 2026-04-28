@@ -134,7 +134,7 @@ nav > div:nth-child(2) a {
     display: flex;
     align-items: center;
     gap: 13px;
-    margin-right: -150px;
+
 } /* conteneur flex des liens principaux (agenda/formation/équipe/à propos) */
 
 nav a:hover {
@@ -307,7 +307,7 @@ footer {
 /* points indicateurs du bas */
 #carrousel-points {
     position: absolute;
-    bottom: 28px;
+    bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
