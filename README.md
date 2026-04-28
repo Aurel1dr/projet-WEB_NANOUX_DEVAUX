@@ -8,7 +8,8 @@
  
 ## 📸 Aperçu
  
-![Accueil](../img/banière1.png)
+<img width="1918" height="917" alt="image" src="https://github.com/user-attachments/assets/c8f9b844-d710-4dbd-a250-7d849d12577e" />
+
  
 ---
  
