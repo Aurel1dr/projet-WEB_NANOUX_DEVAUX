@@ -41,5 +41,99 @@ projet/
     ├── banière3.png
     ├── Efrei-logo-couleur.svg
     └── logo_MyEfrei.svg
+
+---
+ 
+## 🚀 Pages
+ 
+### 🏠 Accueil
+- Carrousel d'images plein écran avec texte superposé
+- Navigation sticky transparente avec backdrop blur
+### 📚 Formation
+- Accordéons à deux niveaux : **Prépa / Bachelor / Master** → années et majors
+- Ressources pédagogiques avec badges **Corrigé** et **Annale**
+### 👨‍🏫 Équipe
+- Grille de cartes enseignants avec **effet de retournement 3D**
+- Recto : photo + nom en bas à gauche
+- Verso : formation, cours dispensés, thèmes de recherche, tags
+- Bouton ↻ pour tourner la carte
+### 📅 Agenda
+- Calendrier hebdomadaire interactif
+- Mini calendrier mensuel en sidebar
+- Données des cours configurables dans `js/calendar-data.js`
+### ℹ️ À propos
+- **Chatbot IA** propulsé par l'API Claude (Anthropic)
+- Liens vers les réseaux sociaux : LinkedIn, Instagram, Snapchat
+- Adresse et contact du département
+---
+ 
+## ⚙️ Installation
+ 
+Aucune dépendance, aucun framework. Ouvrez simplement `html/accueil.html` dans un navigateur.
+ 
+```bash
+git clone https://github.com/votre-repo/dept-info-efrei.git
+cd dept-info-efrei
+# Ouvrir html/accueil.html dans votre navigateur
+```
+ 
+> ⚠️ Pour le chatbot IA (page À propos), une clé API Anthropic est nécessaire. Elle est gérée côté client via l'API Claude.
+ 
+---
+ 
+## 🛠️ Personnalisation
+ 
+### Ajouter un cours au planning
+Ouvrez `js/calendar-data.js` et copiez un objet existant :
+```js
+{
+    title: "Nom du cours",
+    start: "2025-09-15T09:00",
+    end:   "2025-09-15T11:00",
+    color: "#3b82f6"
+}
+```
+ 
+### Ajouter un professeur
+Dans `html/equipe.html`, ajoutez un objet dans le tableau `profs` :
+```js
+{
+    name: "Prénom Nom",
+    role: "Enseignant en ...",
+    photo: "../img/profs/nom.jpg",  // ou null pour les initiales
+    studies: "Doctorat en ...",
+    courses: "Cours 1, Cours 2",
+    research: "Thème de recherche",
+    tags: ["Tag1", "Tag2"]
+}
+```
+ 
+### Ajouter une ressource pédagogique
+Dans `html/formation.html`, dans le bon `sub-acc-inner` :
+```html
+<a href="lien-vers-fichier.pdf" class="resource-link">
+    Nom de la ressource <span class="res-badge corrige">Corrigé</span>
+</a>
+```
+ 
+---
+ 
+## 🎨 Charte graphique
+ 
+| Élément | Valeur |
+|---|---|
+| Couleur principale | `#1b57fb` |
+| Couleur hover/accent | `#0056b3` |
+| Badge Prépa | `#3b82f6` |
+| Badge Bachelor | `#10b981` |
+| Badge Master | `#8b5cf6` |
+| Police | Inter (Google Fonts) |
+ 
+---
+ 
+## 📄 Licence
+ 
+Projet étudiant — EFREI Paris 2025. Tous droits réservés.
+ 
 ```
  
