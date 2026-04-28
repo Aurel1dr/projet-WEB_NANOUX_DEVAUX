@@ -1,8 +1,8 @@
-# 🎓 Département Informatique — EFREI Paris
+# 🎓 Département Informatique - EFREI Paris
  
 > Site web du département informatique de l'EFREI Paris, réalisé dans le cadre d'un projet étudiant.
  
-**Aurélien DEVAUX-RIVIÈRE & Augustin NANOUX** — 2025
+**Aurélien DEVAUX-RIVIÈRE & Augustin NANOUX** - 2025
  
 ---
  
@@ -77,8 +77,6 @@ git clone https://github.com/votre-repo/dept-info-efrei.git
 cd dept-info-efrei
 # Ouvrir html/accueil.html dans votre navigateur
 ```
- 
-> ⚠️ Pour le chatbot IA (page À propos), une clé API Anthropic est nécessaire. Elle est gérée côté client via l'API Claude.
  
 ---
  
