@@ -132,7 +132,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
             // On mémorise l'image de la diapo active pour la bannière
             const diapoActive = document.querySelectorAll('.diapo')[indexActuel];
-            const imgSrc = diapoActive ? diapoActive.querySelector('img').src : '';
+            const imgSrc = diapoActive ? diapoActive.querySelector('img').getAttribute('src') : '';
             sessionStorage.setItem('bannerImg', imgSrc);
 
             carrousel.classList.add("small");

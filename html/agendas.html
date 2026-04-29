@@ -9,15 +9,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     </head>
     
-    <script>
-    const bannerImg = sessionStorage.getItem('bannerImg');
-    if (bannerImg) {
-        const banner = document.createElement('div');
-        banner.className = 'page-banner';
-        banner.innerHTML = `<img src="${bannerImg}" alt="">`;
-        document.body.insertBefore(banner, document.body.firstChild);
-    }
-</script>
 <body class="agenda-body">
         <nav>
             <div style="display: flex; align-items: center; gap: 0px;">
@@ -100,12 +91,22 @@
         </main>
 
         <footer>
-    <div class="footer-content">
-        <a href="./apropos.html" class="footer-link">© 2026 EFREI Paris - Département Informatique - Aurélien DEVAUX-RIVIÈRE & Augustin NANOUX</a>
-    </div>
-</footer>
+            <div class="footer-content">
+                <a href="./apropos.html" class="footer-link">© 2026 EFREI Paris - Département Informatique - Aurélien DEVAUX-RIVIÈRE & Augustin NANOUX</a>
+            </div>
+        </footer>
 
         <script src="../js/calendar-data.js"></script>
         <script src="../js/calendrier.js"></script>
+<script>
+    const savedImg = sessionStorage.getItem('bannerImg');
+    if (savedImg) {
+        const banner = document.createElement('div');
+        banner.className = 'page-banner';
+        banner.innerHTML = `<img src="${savedImg}" alt="">`;
+        document.body.insertBefore(banner, document.body.firstChild);
+    }
+</script>
+        
     </body>
 </html>
