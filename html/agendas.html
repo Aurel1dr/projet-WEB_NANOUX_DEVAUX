@@ -98,15 +98,15 @@
 
         <script src="../js/calendar-data.js"></script>
         <script src="../js/calendrier.js"></script>
-<script>
-    const savedImg = sessionStorage.getItem('bannerImg');
-    if (savedImg) {
-        const banner = document.createElement('div');
-        banner.className = 'page-banner';
-        banner.innerHTML = `<img src="${savedImg}" alt="">`;
-        document.body.insertBefore(banner, document.body.firstChild);
-    }
-</script>
+        <script>
+            const savedImg = sessionStorage.getItem('bannerImg');
+            if (savedImg) {
+                const banner = document.createElement('div');
+                banner.className = 'page-banner';
+                banner.innerHTML = `<img src="${savedImg}" alt="">`;
+                document.body.insertBefore(banner, document.body.firstChild);
+            }
+        </script>
         
     </body>
 </html>

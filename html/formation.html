@@ -84,7 +84,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -174,7 +173,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -191,13 +189,13 @@
 
         <script src="../js/formation.js"></script>
         <script>
-    const savedImg = sessionStorage.getItem('bannerImg');
-    if (savedImg) {
-        const banner = document.createElement('div');
-        banner.className = 'page-banner';
-        banner.innerHTML = `<img src="${savedImg}" alt="">`;
-        document.body.insertBefore(banner, document.body.firstChild);
-    }
-</script>
+            const savedImg = sessionStorage.getItem('bannerImg');
+            if (savedImg) {
+                const banner = document.createElement('div');
+                banner.className = 'page-banner';
+                banner.innerHTML = `<img src="${savedImg}" alt="">`;
+                document.body.insertBefore(banner, document.body.firstChild);
+            }
+        </script>
     </body>
 </html>

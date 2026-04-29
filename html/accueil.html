@@ -6,15 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">    </head><!-- Fin de la balise d'entête -->
-<script>
-    const bannerImg = sessionStorage.getItem('bannerImg');
-    if (bannerImg) {
-        const banner = document.createElement('div');
-        banner.className = 'page-banner';
-        banner.innerHTML = `<img src="${bannerImg}" alt="">`;
-        document.body.insertBefore(banner, document.body.firstChild);
-    }
-</script>
+        <script>
+            const bannerImg = sessionStorage.getItem('bannerImg');
+            if (bannerImg) {
+                const banner = document.createElement('div');
+                banner.className = 'page-banner';
+                banner.innerHTML = `<img src="${bannerImg}" alt="">`;
+                document.body.insertBefore(banner, document.body.firstChild);
+            }
+        </script>
     <body><!-- Début du code de la page web -->
             <nav>
                 <div style="display: flex; align-items: center; gap: 0px;">
