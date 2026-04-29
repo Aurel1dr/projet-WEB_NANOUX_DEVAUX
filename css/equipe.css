@@ -117,3 +117,30 @@ body.equipe-body main {
         height: 280px;            /* ← hauteur fixe en mode mobile */
     }
 }
+
+
+
+/* --------- BOUTON CONTACT MAIL --------- */
+.prof-info {
+    position: relative;
+}
+
+.prof-contact-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.prof-contact-btn:hover {
+    transform: scale(1.1);
+}
+
+.prof-contact-btn img {
+    width: 30px;
+    height: 30px;
+    filter: invert(27%) sepia(95%) saturate(1700%) hue-rotate(213deg) brightness(90%);
+}
