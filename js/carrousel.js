@@ -112,3 +112,40 @@ allerA(0);
 
 // On démarre le défilement automatique
 demarrerTimer();
+
+
+
+// ===== TEST ANIMATION NAV =====
+
+window.addEventListener("DOMContentLoaded", () => {
+
+    const carrousel = document.getElementById("carrousel");
+
+    if (!carrousel) return;
+
+    const links = document.querySelectorAll(".nav-links a");
+
+    links.forEach(link => {
+        link.addEventListener("click", function(e) {
+            e.preventDefault();
+
+            const url = this.href;
+
+            console.log("CLICK OK"); // 🔥 pour vérifier
+
+            // stop carrousel
+            if (typeof timerAuto !== "undefined") {
+                clearInterval(timerAuto);
+            }
+
+            carrousel.classList.add("small");
+
+            setTimeout(() => {
+                window.location.href = url;
+            }, 800);
+        });
+    });
+
+});
+
+
