@@ -81,6 +81,7 @@ nav a.active {
 }
 
 /* ========== FOOTER ========== */
+/* ========== FOOTER ========== */
 footer {
     position: fixed;
     bottom: 0;
@@ -92,8 +93,27 @@ footer {
     text-align: center;
     padding: 15px;
     font-size: 13px;
+    z-index: 100; /* Assure que le footer reste au-dessus du contenu */
 }
 
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Aligne le texte et le lien verticalement */
+    gap: 5px;
+    align-items: center;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
 /* ========== CARROUSEL ========== */
 
 #carrousel {
@@ -197,7 +217,7 @@ footer {
 /* ========== POINTS ========== */
 #carrousel-points {
     position: absolute;
-    bottom: 60px;
+    bottom: 80px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
