@@ -33,7 +33,7 @@ nav {
     left: 0;
     right: 0;
     background-color: rgba(30, 80, 200, 0.1);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(8px);
     z-index: 100;
     display: flex;
     align-items: center;
@@ -87,7 +87,7 @@ footer {
     left: 0;
     right: 0;
     background-color: rgba(30, 80, 200, 0.1);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(8px);
     color: rgba(255, 255, 255, 0.8);
     text-align: center;
     padding: 15px;
@@ -228,4 +228,29 @@ footer {
 
 #carrousel.small {
     height: 180px;
+}
+
+/* ========== BANNIÈRE PERSISTANTE (autres pages) ========== */
+.page-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 180px;
+    z-index: 0;
+    overflow: hidden;
+    animation: slideDown 0.6s ease both;
+}
+
+.page-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    filter: brightness(0.6);
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-180px); opacity: 0; }
+    to   { transform: translateY(0);      opacity: 1; }
 }

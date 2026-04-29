@@ -8,7 +8,17 @@
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     </head>
-    <body class="agenda-body">
+    
+    <script>
+    const bannerImg = sessionStorage.getItem('bannerImg');
+    if (bannerImg) {
+        const banner = document.createElement('div');
+        banner.className = 'page-banner';
+        banner.innerHTML = `<img src="${bannerImg}" alt="">`;
+        document.body.insertBefore(banner, document.body.firstChild);
+    }
+</script>
+<body class="agenda-body">
         <nav>
             <div style="display: flex; align-items: center; gap: 0px;">
                 <a href="./accueil.html" class="active efrei-logo">

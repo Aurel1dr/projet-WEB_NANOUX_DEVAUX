@@ -118,9 +118,7 @@ demarrerTimer();
 // ===== TEST ANIMATION NAV =====
 
 window.addEventListener("DOMContentLoaded", () => {
-
     const carrousel = document.getElementById("carrousel");
-
     if (!carrousel) return;
 
     const links = document.querySelectorAll(".nav-links a");
@@ -128,15 +126,14 @@ window.addEventListener("DOMContentLoaded", () => {
     links.forEach(link => {
         link.addEventListener("click", function(e) {
             e.preventDefault();
-
             const url = this.href;
 
-            console.log("CLICK OK"); // 🔥 pour vérifier
+            if (typeof timerAuto !== "undefined") clearInterval(timerAuto);
 
-            // stop carrousel
-            if (typeof timerAuto !== "undefined") {
-                clearInterval(timerAuto);
-            }
+            // On mémorise l'image de la diapo active pour la bannière
+            const diapoActive = document.querySelectorAll('.diapo')[indexActuel];
+            const imgSrc = diapoActive ? diapoActive.querySelector('img').src : '';
+            sessionStorage.setItem('bannerImg', imgSrc);
 
             carrousel.classList.add("small");
 
@@ -145,7 +142,5 @@ window.addEventListener("DOMContentLoaded", () => {
             }, 800);
         });
     });
-
 });
-
 
