@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
         <link rel="stylesheet" type="text/css" href="../css/formation.css">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     </head>
     <body class="formation-body">
         <nav>
@@ -179,23 +178,24 @@
                 </div>
 
             </div>
+        </div>
         </main>
 
-        <footer>
-    <div class="footer-content">
-        <a href="./apropos.html" class="footer-link">© 2026 EFREI Paris - Département Informatique - Aurélien DEVAUX-RIVIÈRE & Augustin NANOUX</a>
-    </div>
-</footer>
+    <footer>
+        <div class="footer-content">
+            <a href="./apropos.html" class="footer-link">© 2026 EFREI Paris - Département Informatique - Aurélien DEVAUX-RIVIÈRE & Augustin NANOUX</a>
+        </div>
+    </footer>
 
-        <script src="../js/formation.js"></script>
-        <script>
-            const savedImg = sessionStorage.getItem('bannerImg');
-            if (savedImg) {
-                const banner = document.createElement('div');
-                banner.className = 'page-banner';
-                banner.innerHTML = `<img src="${savedImg}" alt="">`;
-                document.body.insertBefore(banner, document.body.firstChild);
-            }
-        </script>
+    <script src="../js/formation.js"></script>
+    <script>
+        const savedImg = sessionStorage.getItem('bannerImg');
+        if (savedImg) {
+            const banner = document.createElement('div');
+            banner.className = 'page-banner';
+            banner.innerHTML = `<img src="${savedImg}" alt="">`;
+            document.body.insertBefore(banner, document.body.firstChild);
+        }
+    </script>
     </body>
 </html>
