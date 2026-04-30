@@ -190,3 +190,6 @@ body.formation-body main {
 .res-badge.corrige { background: #e0f2fe; color: #0369a1; }
 .res-badge.annale { background: #ffedd5; color: #c2410c; }
 
+footer {
+    position: relative;
+}

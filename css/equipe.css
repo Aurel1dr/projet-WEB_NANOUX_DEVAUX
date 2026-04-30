@@ -144,3 +144,7 @@ body.equipe-body main {
     height: 30px;
     filter: invert(27%) sepia(95%) saturate(1700%) hue-rotate(213deg) brightness(90%);
 }
+
+footer {
+    position: relative;
+}

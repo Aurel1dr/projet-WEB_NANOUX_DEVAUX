@@ -232,3 +232,10 @@ body.apropos-body main {
     width: 0%;              /* commence à 0, JS l'anime jusqu'au vrai % */
     transition: width 1.2s ease;   /* animation CSS de remplissage */
 }
+
+
+
+
+footer {
+    position: relative;
+}

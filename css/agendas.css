@@ -404,3 +404,10 @@ body.agenda-body main {
         padding-left: 8px;
     }
 }
+
+
+
+
+body.agenda-body footer {
+    position: relative;
+}
