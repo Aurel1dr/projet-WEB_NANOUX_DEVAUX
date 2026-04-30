@@ -5,6 +5,7 @@
         <meta charset="UTF-8"> <!-- précise l'encodage des caractère à UTF-8-->
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/darkmode.css">
 
         <script defer>
             document.addEventListener('DOMContentLoaded', function() {
@@ -30,8 +31,10 @@
                     <a href="./apropos.html" class="nav-btn">À propos</a>
                 </div>
 
-              
-                <a href="https://myefrei.fr" class="myefrei-link" target="_blank" rel="noopener noreferrer">
+<label class="dark-switch" title="Mode sombre">
+    <input type="checkbox" id="dark-toggle-input" onchange="toggleDark()">
+    <span class="dark-slider"></span>
+</label>                <a href="https://myefrei.fr" class="myefrei-link" target="_blank" rel="noopener noreferrer">
                     <img src="../img/img_logo/logo_MyEfrei.svg" alt="myefrei">
                 </a>
             </nav>  
@@ -90,6 +93,6 @@
             </footer>
 
             <script src="../js/carrousel.js"></script>
-
+            <script src="../js/darkmode.js"></script>
     </body><!-- Fin du code de la page web -->
 </html><!-- Fin du document -->

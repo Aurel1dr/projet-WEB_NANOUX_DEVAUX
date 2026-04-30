@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
         <link rel="stylesheet" type="text/css" href="../css/apropos.css">
+        <link rel="stylesheet" href="../css/darkmode.css">
+
     </head>
 
     <body class="apropos-body">
@@ -26,7 +28,10 @@
                 <a href="./equipe.html">Équipe</a>
                 <a href="./apropos.html" class="active">À propos</a>
             </div>
-            <a href="https://myefrei.fr" class="myefrei-link" target="_blank" rel="noopener noreferrer">
+<label class="dark-switch" title="Mode sombre">
+    <input type="checkbox" id="dark-toggle-input" onchange="toggleDark()">
+    <span class="dark-slider"></span>
+</label>            <a href="https://myefrei.fr" class="myefrei-link" target="_blank" rel="noopener noreferrer">
                 <img src="../img/img_logo/Logo_MyEfrei.svg" alt="myefrei">
             </a>
         </nav>
@@ -214,7 +219,8 @@
                             <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
                         </div>
                         <button type="submit" class="form-btn">Envoyer</button>
-                        <p id="form-confirm" style="display:none; color: #1b57fb; margin-top: 10px;">✓ Message envoyé !</p>
+                        <!-- nouveau -->
+                        <p id="form-confirm" style="display:none; margin-top: 10px;" class="form-confirm-msg">✓ Message envoyé !</p>
                     </form>
                 </div>
 
@@ -240,6 +246,6 @@
             }
         </script>
         <script src="../js/apropos.js"></script>
-
+        <script src="../js/darkmode.js"></script>
     </body>
 </html>

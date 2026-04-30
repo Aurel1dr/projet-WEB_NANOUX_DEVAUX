@@ -1,0 +1,524 @@
+/* ============================================================
+   darkmode.css  —  à placer dans css/  et linker sur toutes les pages
+   ============================================================ */
+
+/* ── THÈME CLAIR (défaut) ── */
+:root {
+    --bg-page:          transparent;          /* fond = image de fond du body */
+    --bg-nav:           rgba(30, 80, 200, 0.15);
+    --bg-footer:        rgba(30, 80, 200, 0.15);
+    --bg-card:          #ffffff;
+    --bg-card-header:   rgba(238, 235, 235, 0.85);
+    --bg-sub-header:    rgba(240, 240, 240, 0.32);
+    --bg-sub-hover:     #f0f0f0;
+    --bg-resource:      #ffffff;
+    --bg-hero:          #ffffff;
+    --bg-sidebar-card:  rgba(255, 255, 255, 0.95);
+    --bg-week-summary:  rgba(255, 255, 255, 0.95);
+    --bg-agenda-grid:   rgba(255, 255, 255, 0.90);
+    --bg-time-col:      #f7fbff;
+    --bg-day-col:       #ffffff;
+    --bg-day-header:    rgba(255, 255, 255, 0.90);
+    --bg-month-cell:    rgba(15, 24, 34, 0.04);
+    --bg-skill-bar:     #f0f0f0;
+    --bg-etudiant-card: #ffffff;
+    --bg-timeline:      #ffffff;
+    --bg-skills:        #ffffff;
+
+    --text-primary:     #1a1a2e;
+    --text-secondary:   #555555;
+    --text-muted:       #777777;
+    --text-nav:         #ffffff;
+    --text-footer:      rgba(255,255,255,0.8);
+    --text-hero-title:  #1b57fb;
+    --text-hero-body:   #1b57fb;
+    --text-acc-title:   #1b57fb;
+    --text-acc-sub:     #777777;
+    --text-resource:    #333333;
+    --text-day-header:  #5f758a;
+    --text-day-strong:  #102733;
+    --text-time:        #5f758a;
+    --text-section-title:#1a1a1a;
+    --text-timeline-desc:#666666;
+    --text-etudiant-name:#1a1a1a;
+    --text-etudiant-bio: #666666;
+    --text-info-card:   #4a647d;
+
+    --border-card:      #eaeaea;
+    --border-hero:      #1b57fb;
+    --border-sub:       #f0f0f0;
+    --border-sidebar:   rgba(15, 24, 34, 0.08);
+    --border-etudiant:  #1b57fb;
+
+    --shadow-card:      0 4px 6px rgba(0,0,0,0.04);
+    --shadow-hero:      0 4px 20px rgba(0,0,0,0.12);
+    --shadow-sidebar:   0 24px 80px rgba(15,24,34,0.08);
+    --shadow-etudiant:  0 8px 32px rgba(0,0,0,0.15);
+
+    --accent:           #1b57fb;
+    --accent-hover:     #0d44cc;
+
+    --nav-backdrop:     blur(6px);
+    --body-filter:      none;
+    --bg-image-opacity: 1;
+}
+
+/* ── THÈME SOMBRE ── */
+html.dark {
+    --bg-nav:           rgba(13, 17, 23, 0.97);
+    --bg-footer:        rgba(13, 17, 23, 0.97);
+    --bg-card:          #161b22;
+    --bg-card-header:   rgba(22, 27, 34, 0.95);
+    --bg-sub-header:    rgba(30, 37, 48, 0.80);
+    --bg-sub-hover:     #1f2937;
+    --bg-resource:      #1f2937;
+    --bg-hero:          #161b22;
+    --bg-sidebar-card:  rgba(22, 27, 34, 0.97);
+    --bg-week-summary:  rgba(22, 27, 34, 0.97);
+    --bg-agenda-grid:   rgba(22, 27, 34, 0.95);
+    --bg-time-col:      #161b22;
+    --bg-day-col:       #0d1117;
+    --bg-day-header:    rgba(22, 27, 34, 0.97);
+    --bg-month-cell:    rgba(255,255,255,0.05);
+    --bg-skill-bar:     #21262d;
+    --bg-etudiant-card: #161b22;
+    --bg-timeline:      #161b22;
+    --bg-skills:        #161b22;
+
+    --text-primary:     #e6edf3;
+    --text-secondary:   #8b949e;
+    --text-muted:       #6e7681;
+    --text-nav:         #e6edf3;
+    --text-footer:      rgba(230,237,243,0.7);
+    --text-hero-title:  #58a6ff;
+    --text-hero-body:   #8b949e;
+    --text-acc-title:   #58a6ff;
+    --text-acc-sub:     #6e7681;
+    --text-resource:    #c9d1d9;
+    --text-day-header:  #8b949e;
+    --text-day-strong:  #e6edf3;
+    --text-time:        #6e7681;
+    --text-section-title:#e6edf3;
+    --text-timeline-desc:#8b949e;
+    --text-etudiant-name:#e6edf3;
+    --text-etudiant-bio: #8b949e;
+    --text-info-card:   #8b949e;
+
+    --border-card:      #30363d;
+    --border-hero:      #388bfd;
+    --border-sub:       #21262d;
+    --border-sidebar:   rgba(255,255,255,0.06);
+    --border-etudiant:  #388bfd;
+
+    --shadow-card:      0 4px 6px rgba(0,0,0,0.4);
+    --shadow-hero:      0 4px 20px rgba(0,0,0,0.5);
+    --shadow-sidebar:   0 24px 80px rgba(0,0,0,0.4);
+    --shadow-etudiant:  0 8px 32px rgba(0,0,0,0.5);
+
+    --accent:           #388bfd;
+    --accent-hover:     #58a6ff;
+
+    --nav-backdrop:     blur(0px);
+    --body-filter:      brightness(0.85);
+}
+
+/* ── Image de fond assombrie en dark mode ── */
+html.dark body {
+    background-image: none;
+    background-color: #0d1117;
+}
+
+/* ── Application des variables ── */
+
+/* Nav & Footer */
+nav {
+    background-color: var(--bg-nav) !important;
+    backdrop-filter: var(--nav-backdrop);
+    -webkit-backdrop-filter: var(--nav-backdrop);
+}
+nav a { color: var(--text-nav) !important; }
+.nav-title span { color: var(--text-nav) !important; }
+
+footer {
+    background-color: var(--bg-footer) !important;
+    color: var(--text-footer) !important;
+}
+footer p { color: var(--text-footer) !important; }
+
+/* Hero rectangles */
+.formation-hero,
+.equipe-hero,
+.apropos-hero,
+.agenda-hero {
+    background: var(--bg-hero) !important;
+    border-color: var(--border-hero) !important;
+    box-shadow: var(--shadow-hero) !important;
+}
+.formation-hero h1,
+.equipe-hero h1,
+.apropos-hero h1,
+.agenda-hero h1 { color: var(--text-hero-title) !important; }
+
+.formation-hero p,
+.equipe-hero p,
+.apropos-hero p,
+.agenda-hero p { color: var(--text-hero-body) !important; }
+
+/* Accordéons */
+.acc-item {
+    background: var(--bg-card) !important;
+    border-color: var(--border-card) !important;
+    box-shadow: var(--shadow-card) !important;
+}
+.acc-header {
+    background: var(--bg-card-header) !important;
+}
+.acc-header:hover { background: var(--bg-card) !important; }
+.acc-title { color: var(--text-acc-title) !important; }
+.acc-sub   { color: var(--text-acc-sub) !important; }
+.acc-body-inner { border-color: var(--border-card) !important; }
+.acc-desc  { color: var(--text-secondary) !important; }
+
+/* Sous-accordéons */
+.sub-acc-item  { border-color: var(--border-sub) !important; }
+.sub-acc-header {
+    background: var(--bg-sub-header) !important;
+    color: var(--text-primary) !important;
+}
+.sub-acc-header:hover { background: var(--bg-sub-hover) !important; }
+.sub-acc-inner {
+    background: var(--bg-resource) !important;
+    border-color: var(--border-sub) !important;
+}
+
+/* Liens ressources */
+.resource-link {
+    color: var(--text-resource) !important;
+    background: var(--bg-resource) !important;
+}
+.resource-link:hover {
+    background: var(--accent) !important;
+    color: #ffffff !important;
+}
+
+/* Cartes profs (équipe) */
+.prof-card {
+    background: var(--bg-card) !important;
+    box-shadow: var(--shadow-etudiant) !important;
+}
+.prof-name  { color: var(--text-primary) !important; }
+.prof-bio   { color: var(--text-secondary) !important; }
+
+/* Cartes étudiants (à propos) */
+.etudiant-card {
+    background: var(--bg-etudiant-card) !important;
+    box-shadow: var(--shadow-etudiant) !important;
+}
+.etudiant-name  { color: var(--text-etudiant-name) !important; }
+.etudiant-bio   { color: var(--text-etudiant-bio) !important; }
+.etudiant-info  { border-color: var(--border-etudiant) !important; }
+
+/* Timeline */
+.timeline-section { background: var(--bg-timeline) !important; box-shadow: var(--shadow-etudiant) !important; }
+.section-title    { color: var(--text-section-title) !important; }
+.timeline-title   { color: var(--text-primary) !important; }
+.timeline-desc    { color: var(--text-timeline-desc) !important; }
+
+/* Jauges compétences */
+.skills-section { background: var(--bg-skills) !important; box-shadow: var(--shadow-etudiant) !important; }
+.skill-name     { color: var(--text-primary) !important; }
+.skill-bar      { background: var(--bg-skill-bar) !important; }
+
+/* Agenda — sidebar */
+.calendar-card,
+.card {
+    background: var(--bg-sidebar-card) !important;
+    border-color: var(--border-sidebar) !important;
+    box-shadow: var(--shadow-sidebar) !important;
+}
+.calendar-card-header h2,
+.card h2 { color: var(--text-primary) !important; }
+.calendar-card-header span { color: var(--accent) !important; }
+.month-weekdays { color: var(--text-muted) !important; }
+.month-cell {
+    background: var(--bg-month-cell) !important;
+    color: var(--text-primary) !important;
+}
+.month-cell-active {
+    background: var(--accent) !important;
+    color: #ffffff !important;
+}
+.info-card p  { color: var(--text-info-card) !important; }
+
+/* Agenda — grille hebdo */
+.week-summary {
+    background: var(--bg-week-summary) !important;
+    border-color: var(--border-sidebar) !important;
+}
+.week-summary span  { color: var(--text-muted) !important; }
+.week-summary strong{ color: var(--text-primary) !important; }
+
+.agenda-grid {
+    background: var(--bg-agenda-grid) !important;
+    border-color: var(--border-sidebar) !important;
+}
+.time-column { background: var(--bg-time-col) !important; }
+.time-step   { color: var(--text-time) !important; }
+.day-column  { background: var(--bg-day-col) !important; border-color: var(--border-sidebar) !important; }
+.day-header  {
+    background: var(--bg-day-header) !important;
+    border-color: var(--border-sidebar) !important;
+}
+.day-header span  { color: var(--text-day-header) !important; }
+.day-header strong{ color: var(--text-day-strong) !important; }
+
+/* Eyebrow planning */
+.eyebrow {
+    background: var(--bg-hero) !important;
+    color: var(--accent) !important;
+    border-color: var(--accent) !important;
+}
+
+/* ── Bouton dark mode ── */
+/* ── Switch iOS ── */
+.dark-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.dark-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.dark-slider {
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.2);
+    border: 1.5px solid rgba(255,255,255,0.3);
+    border-radius: 26px;
+    transition: background 0.3s;
+}
+
+.dark-slider::before {
+    content: "🌙";
+    position: absolute;
+    left: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    line-height: 1;
+}
+
+.dark-switch input:checked + .dark-slider {
+    background: #388bfd;
+    border-color: #388bfd;
+}
+
+.dark-switch input:checked + .dark-slider::before {
+    content: "☀️";
+    transform: translateY(-50%) translateX(22px);
+}
+
+#dark-toggle:hover {
+    background: rgba(255,255,255,0.25);
+    transform: rotate(20deg);
+}
+
+html.dark .legend-item {
+    background: #1f2937 !important;
+    color: var(--text-primary) !important;
+}
+html.dark .legend-item span:last-child {
+    color: var(--text-primary) !important;
+}
+
+html.dark table {
+    background: #161b22 !important;
+    color: var(--text-primary) !important;
+}
+html.dark th {
+    background: var(--accent) !important;
+    color: white !important;
+}
+html.dark td {
+    color: var(--text-primary) !important;
+    border-color: var(--border-card) !important;
+}
+html.dark tr {
+    background: #161b22 !important;
+}
+html.dark tr:nth-child(even) {
+    background: #1f2937 !important;
+}
+
+html.dark .timeline-section,
+html.dark .skills-section,
+html.dark .etudiant-card,
+html.dark .prof-card {
+    background: #161b22 !important;
+    color: var(--text-primary) !important;
+}
+
+
+/* ── À propos : sections blanches ── */
+html.dark .skills-section,
+html.dark .timeline-section {
+    background: #161b22 !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important;
+}
+
+html.dark .section-title {
+    color: #e6edf3 !important;
+}
+
+html.dark .timeline-date  { color: #388bfd !important; }
+html.dark .timeline-title { color: #e6edf3 !important; }
+html.dark .timeline-desc  { color: #8b949e !important; }
+html.dark .timeline::before { background: #388bfd !important; }
+html.dark .timeline-dot   { background: #388bfd !important; box-shadow: 0 0 0 2px #388bfd !important; }
+
+html.dark .skill-name    { color: #e6edf3 !important; }
+html.dark .skill-percent { color: #388bfd !important; }
+html.dark .skill-bar     { background: #21262d !important; }
+
+/* ── Table "Technologies utilisées" ── */
+html.dark table {
+    background: #161b22 !important;
+    color: #e6edf3 !important;
+    border-color: #30363d !important;
+}
+html.dark thead tr,
+html.dark th {
+    background: #388bfd !important;
+    color: #ffffff !important;
+}
+html.dark tbody tr {
+    background: #161b22 !important;
+    color: #e6edf3 !important;
+}
+html.dark tbody tr:nth-child(even) {
+    background: #1f2937 !important;
+}
+html.dark td {
+    color: #e6edf3 !important;
+    border-color: #30363d !important;
+}
+
+/* ── Wrapper blanc autour de la table ── */
+html.dark .skills-section,
+html.dark [style*="background: white"],
+html.dark [style*="background:#fff"],
+html.dark [style*="background: #fff"] {
+    background: #161b22 !important;
+}
+
+/* ── Formulaire "Nous contacter" ── */
+html.dark input[type="text"],
+html.dark input[type="email"],
+html.dark textarea {
+    background: #1f2937 !important;
+    color: #e6edf3 !important;
+    border-color: #30363d !important;
+}
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+    color: #6e7681 !important;
+}
+html.dark label {
+    color: #e6edf3 !important;
+}
+
+
+
+/* ── À propos : toutes les sections blanches ── */
+html.dark .tableau-section,
+html.dark .skills-section,
+html.dark .timeline-section,
+html.dark .contact-section {
+    background: #161b22 !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important;
+}
+
+html.dark .section-title {
+    color: #e6edf3 !important;
+}
+
+/* Timeline */
+html.dark .timeline-date   { color: #388bfd !important; }
+html.dark .timeline-title  { color: #e6edf3 !important; }
+html.dark .timeline-desc   { color: #8b949e !important; }
+html.dark .timeline::before { background: #388bfd !important; }
+html.dark .timeline-dot    { background: #388bfd !important; box-shadow: 0 0 0 2px #388bfd !important; }
+
+/* Table */
+html.dark .tech-table {
+    background: #161b22 !important;
+    color: #e6edf3 !important;
+    border-color: #30363d !important;
+    width: 100%;
+}
+html.dark .tech-table th {
+    background: #388bfd !important;
+    color: #ffffff !important;
+}
+html.dark .tech-table td {
+    color: #e6edf3 !important;
+    border-color: #30363d !important;
+    background: #161b22 !important;
+}
+html.dark .tech-table tr:nth-child(even) td {
+    background: #1f2937 !important;
+}
+
+/* Jauges */
+html.dark .skill-name    { color: #e6edf3 !important; }
+html.dark .skill-percent { color: #388bfd !important; }
+html.dark .skill-bar     { background: #21262d !important; }
+
+/* Formulaire */
+html.dark .contact-section label { color: #e6edf3 !important; }
+html.dark .contact-form input,
+html.dark .contact-form textarea {
+    background: #1f2937 !important;
+    color: #e6edf3 !important;
+    border: 1px solid #30363d !important;
+}
+html.dark .contact-form input::placeholder,
+html.dark .contact-form textarea::placeholder {
+    color: #6e7681 !important;
+}
+
+/* Cartes étudiants */
+html.dark .etudiant-card {
+    background: #161b22 !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important;
+}
+html.dark .etudiant-name { color: #e6edf3 !important; }
+html.dark .etudiant-role { color: #388bfd !important; }
+html.dark .etudiant-bio  { color: #8b949e !important; }
+html.dark .etudiant-info { border-color: #388bfd !important; }
+
+
+
+
+.form-confirm-msg { color: #1b57fb; }
+html.dark .form-confirm-msg { color: #58a6ff !important; }
+
+/*Pour déplacer bouton darkmode de droite à gauche le - permet d'aller à droite et le + permet d'aller à gauche*/
+.dark-switch {
+    margin-right: -650px; /* espace entre le toggle et le lien MyEFREI */
+}

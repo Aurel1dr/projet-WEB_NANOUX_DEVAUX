@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" type="text/css" href="../css/agendas.css">
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/darkmode.css">
+
     </head>
     
 <body class="agenda-body">
@@ -25,8 +27,10 @@
                 <a href="./equipe.html">Équipe</a>
                 <a href="./apropos.html">À propos</a>
             </div>
-
-            <a href="https://myefrei.fr" class="myefrei-link" target="_blank" rel="noopener noreferrer">
+<label class="dark-switch" title="Mode sombre">
+    <input type="checkbox" id="dark-toggle-input" onchange="toggleDark()">
+    <span class="dark-slider"></span>
+</label>            <a href="https://myefrei.fr" class="myefrei-link" target="_blank" rel="noopener noreferrer">
                 <img src="../img/img_logo/Logo_MyEfrei.svg" alt="myefrei">
             </a>
         </nav>
@@ -106,6 +110,6 @@
                 document.body.insertBefore(banner, document.body.firstChild);
             }
         </script>
-        
+        <script src="../js/darkmode.js"></script>
     </body>
 </html>
