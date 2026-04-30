@@ -121,6 +121,46 @@
                 </div>
                 <!-- fin timeline-section -->
 
+                <div class="tableau-section">
+                    <h2 class="section-title">Technologies utilisées</h2>
+                    <table class="tech-table">
+                        <thead>
+                            <tr>
+                                <th>Technologies</th>
+                                <th>Version</th>
+                                <th>Usage</th>
+                                <th>Niveau</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>HTML</td>
+                                <td>HTML5</td>
+                                <td>Structure des pages</td>
+                                <td>Avancé</td>
+                            </tr>
+                            <tr>
+                                <td>CSS</td>
+                                <td>CSS3</td>
+                                <td>Style et responsive</td>
+                                <td>Intermédiaire</td>
+                            </tr>
+                            <tr>
+                                <td>JavaScript</td>
+                                <td>ES6+</td>
+                                <td>Interactions dynamiques</td>
+                                <td>Intermédiaire</td>
+                            </tr>
+                            <tr>
+                                <td>Git</td>
+                                <td>2.x</td>
+                                <td>Gestion de version</td>
+                                <td>Débutant</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
                 <!-- 4. JAUGES DE COMPÉTENCES -->
                 <div class="skills-section">
                     <h2 class="section-title">Technologies utilisées</h2>
@@ -167,6 +207,26 @@
 
                 </div>
                 <!-- fin skills-section -->
+
+                <div class="contact-section">
+                    <h2 class="section-title">Nous contacter</h2>
+                    <form class="contact-form" onsubmit="envoyerMessage(event)">
+                        <div class="form-group">
+                            <label for="nom">Nom</label>
+                            <input type="text" id="nom" name="nom" placeholder="Votre nom" required>  
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+                        </div>
+                        <button type="submit" class="form-btn">Envoyer</button>
+                        <p id="form-confirm" style="display:none; color: #1b57fb; margin-top: 10px;">✓ Message envoyé !</p>
+                    </form>
+                </div>
 
             </div>
             <!-- fin apropos-container -->

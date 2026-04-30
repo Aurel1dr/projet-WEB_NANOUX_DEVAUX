@@ -15,3 +15,9 @@ window.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
+function envoyerMessage(e) {
+    e.preventDefault();
+    document.getElementById('form-confirm').style.display = 'block';
+    e.target.reset();
+}
