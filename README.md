@@ -29,11 +29,15 @@ projet/
 │   ├── formation.css       # Styles page Formation
 │   ├── equipe.css          # Styles page Équipe
 │   ├── agendas.css         # Styles page Agenda
+    ├── darkmode.css        # Bouton darkmode (thème)
 │   └── apropos.css         # Styles page À propos
 │
 ├── js/
 │   ├── formation.js        # Logique accordéons
 │   ├── calendrier.js       # Logique calendrier hebdomadaire
+    ├── apropos.js
+    ├── carrousel.js
+    ├── darkmode.js
 │   └── calendar-data.js    # Données des cours (à modifier)
 │
 └── img/
