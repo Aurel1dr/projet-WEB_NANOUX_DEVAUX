@@ -155,10 +155,6 @@ function renderPage(initialDate = new Date()) {
     const weekRange = document.getElementById('weekRange');
     const currentMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
 
-    document.querySelectorAll('.calendar-btn[data-direction]').forEach(btn => {
-        btn.disabled = false;
-    });
-
     weekRange.textContent = getWeekRangeLabel(weekStart);
     renderMonthCalendar(selectedDate, currentMonth);
     renderWeekView(selectedDate, window.calendarEvents);
