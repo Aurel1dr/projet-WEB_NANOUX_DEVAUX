@@ -125,7 +125,8 @@ body.agenda-body main {
 
 .panel-sidebar {
     display: grid;
-    gap: 200px;
+    gap: 20px;
+    align-self: flex-start;
 }
 
 .calendar-card,
