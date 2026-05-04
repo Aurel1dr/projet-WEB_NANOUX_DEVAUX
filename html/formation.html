@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
         <link rel="stylesheet" type="text/css" href="../css/formation.css">
+
     </head>
     <body class="formation-body">
         <nav>
@@ -26,6 +27,10 @@
                 <a href="./equipe.html">Équipe</a>
                 <a href="./apropos.html">À propos</a>
             </div>
+            <label class="dark-switch" title="Mode sombre">
+                <input type="checkbox" id="dark-toggle-input" onchange="toggleDark()">
+                <span class="dark-slider"></span>
+            </label>
             <a href="https://myefrei.fr" class="myefrei-link" target="_blank" rel="noopener noreferrer">
                 <img src="../img/img_logo/Logo_MyEfrei.svg" alt="myefrei">
             </a>
@@ -33,171 +38,333 @@
 
         <main>
             <div class="formation-container">
+
                 <div class="formation-hero">
                     <h1>Nos formations</h1>
-                    <p>De la prépa aux masters spécialisés, retrouvez les programmes proposés à l'EFREI et accédez aux ressources pédagogiques de celle-ci.</p>
+                    <p>De la prépa aux masters spécialisés, retrouvez les programmes proposés à l'EFREI et accédez aux ressources pédagogiques.</p>
                 </div>
 
-            <div class="accordion-group">
-                <div class="acc-item" id="acc-prepa">
-                    <button class="acc-header" onclick="toggleAcc('acc-prepa')">
-                        <div class="acc-header-left">
-                            <span class="acc-badge badge-prepa">PRÉPA</span>
-                            <div>
-                                <div class="acc-title">Cycle Préparatoire</div>
-                                <div class="acc-sub">2 ans · Fondamentaux scientifiques &amp; informatiques</div>
-                            </div>
-                        </div>
-                        <span class="acc-arrow">▼</span>
-                    </button>
-                    <div class="acc-body">
-                        <div class="acc-body-inner">
-                            <p class="acc-desc">Le cycle préparatoire prépare aux grandes écoles d'ingénieurs en deux ans. Les bases en mathématiques, physique, algorithmique et programmation y sont solidement construites, avec un accent fort sur la rigueur scientifique et les outils numériques fondamentaux.</p>
-                            <div class="sub-acc-group">
+                <!-- GRILLE 2 COLONNES -->
+                <div class="accordion-grid">
 
-                                <div class="sub-acc-item" id="sub-p1">
-                                    <button class="sub-acc-header" onclick="toggleSub('sub-p1')">
-                                        <span> P1 - Première année prépa</span> <span class="sub-arrow">▼</span>
-                                    </button>
-                                    <div class="sub-acc-body">
-                                        <div class="sub-acc-inner">
-                                            <a href="#" class="resource-link"> Algorithmique 1 &amp; structures de données <span class="res-badge corrige">Corrigé</span></a>
-                                            <a href="#" class="resource-link"> Structures de données &amp; porgrammation <span class="res-badge annale">Annale</span></a>
-                                            <a href="#" class="resource-link"> Programmation Python - Exercices <span class="res-badge corrige">Corrigé</span></a>
-                                            <a href="#" class="resource-link"> Complexité <span class="res-badge corrige">Corrigé</span></a>
+                    <!-- ── COLONNE GAUCHE ── -->
+                    <div class="accordion-col">
 
-                                        </div>
+                        <!-- PRÉPA -->
+                        <div class="acc-item" id="acc-prepa">
+                            <button class="acc-header" onclick="toggleAcc('acc-prepa')">
+                                <div class="acc-header-left">
+                                    <span class="acc-badge badge-prepa">PRÉPA</span>
+                                    <div>
+                                        <div class="acc-title">Cycle Préparatoire</div>
+                                        <div class="acc-sub">2 ans · Tronc commun scientifique</div>
                                     </div>
                                 </div>
+                                <span class="acc-arrow">▼</span>
+                            </button>
+                            <div class="acc-body">
+                                <div class="acc-body-inner">
+                                    <p class="acc-desc">Le cycle préparatoire (P1 &amp; P2) pose les fondamentaux en mathématiques, physique, algorithmique et programmation. Il prépare l'intégration dans le cycle ingénieur ou le bachelor.</p>
+                                    <a href="https://www.efrei.fr/programmes/cycle-preparatoire/" target="_blank" class="prog-link">🔗 Voir le programme sur efrei.fr</a>
+                                    <div class="sub-acc-group">
 
-                                <div class="sub-acc-item" id="sub-p2">
-                                    <button class="sub-acc-header" onclick="toggleSub('sub-p2')">
-                                        <span> P2 - Deuxième année prépa</span> <span class="sub-arrow">▼</span>
-                                    </button>
-                                    <div class="sub-acc-body">
-                                        <div class="sub-acc-inner">
-                                            <a href="#" class="resource-link"> TI301 - Structures des Données &amp; Programmation 2 <span class="res-badge corrige">Corrigé</span></a>
-                                            <a href="#" class="resource-link"> TI305 - Réseaux 1 : Concepts de Base <span class="res-badge annale">Annale</span></a>
-                                            <a href="#" class="resource-link"> TI307 - Introduction aux Systèmes Linux<span class="res-badge corrige">Corrigé</span></a>
-                                            <a href="#" class="resource-link"> TI402 - Programmation Web 1 : - HTML, CSS, JS<span class="res-badge corrige">Corrigé</span></a>
-                                            <a href="#" class="resource-link"> TI404 - Bases de données 1 : Concepts de Base <span class="res-badge corrige">Corrigé</span></a>
-
+                                        <div class="sub-acc-item" id="sub-p1">
+                                            <button class="sub-acc-header" onclick="toggleSub('sub-p1')">
+                                                <span>P1 — Première année prépa</span><span class="sub-arrow">▼</span>
+                                            </button>
+                                            <div class="sub-acc-body">
+                                                <div class="sub-acc-inner">
+                                                    <a href="#" class="resource-link">Algorithmique 1 &amp; structures de données<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">Structures de données &amp; programmation<span class="res-badge annale">Annale</span></a>
+                                                    <a href="#" class="resource-link">Programmation Python — Exercices<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">Complexité algorithmique<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">Mathématiques — Algèbre linéaire<span class="res-badge annale">Annale</span></a>
+                                                    <a href="#" class="resource-link">Physique — Électricité &amp; mécanique<span class="res-badge annale">Annale</span></a>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="acc-item" id="acc-bachelor">
-                    <button class="acc-header" onclick="toggleAcc('acc-bachelor')">
-                        <div class="acc-header-left">
-                            <span class="acc-badge badge-bachelor">BACHELOR</span>
-                            <div>
-                                <div class="acc-title">Bachelor Informatique</div>
-                                <div class="acc-sub">3 ans · Développement, réseaux, systèmes</div>
-                            </div>
-                        </div>
-                        <span class="acc-arrow">▼</span>
-                    </button>
-                    <div class="acc-body">
-                        <div class="acc-body-inner">
-                            <p class="acc-desc">Le Bachelor Informatique forme des professionnels opérationnels en 3 ans post-bac. Développement logiciel, architecture réseau, cybersécurité, gestion de projets — avec de nombreux projets en équipe et des stages en entreprise.</p>
-                            <div class="sub-acc-group">
-
-                                <div class="sub-acc-item" id="sub-b1">
-                                    <button class="sub-acc-header" onclick="toggleSub('sub-b1')">
-                                        <span> B1 - Première année Bachelor</span> <span class="sub-arrow">▼</span>
-                                    </button>
-                                    <div class="sub-acc-body">
-                                        <div class="sub-acc-inner">
-                                            <a href="#" class="resource-link"> Développement Web — HTML/CSS/JS <span class="res-badge corrige">Corrigé</span></a>
-                                            <a href="#" class="resource-link"> Systèmes d'exploitation — Linux <span class="res-badge corrige">Corrigé</span></a>
+                                        <div class="sub-acc-item" id="sub-p2">
+                                            <button class="sub-acc-header" onclick="toggleSub('sub-p2')">
+                                                <span>P2 — Deuxième année prépa</span><span class="sub-arrow">▼</span>
+                                            </button>
+                                            <div class="sub-acc-body">
+                                                <div class="sub-acc-inner">
+                                                    <a href="#" class="resource-link">TI301 — Structures de données &amp; Prog. 2<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">TI305 — Réseaux 1 : Concepts de Base<span class="res-badge annale">Annale</span></a>
+                                                    <a href="#" class="resource-link">TI307 — Introduction aux Systèmes Linux<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">TI402 — Programmation Web 1 : HTML, CSS, JS<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">TI404 — Bases de données 1<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">Probabilités &amp; statistiques<span class="res-badge annale">Annale</span></a>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
 
-                                <div class="sub-acc-item" id="sub-b2">
-                                    <button class="sub-acc-header" onclick="toggleSub('sub-b2')">
-                                        <span> B2 - Deuxième année Bachelor</span> <span class="sub-arrow">▼</span>
-                                    </button>
-                                    <div class="sub-acc-body">
-                                        <div class="sub-acc-inner">
-                                            <a href="#" class="resource-link"> Architectures réseaux — TCP/IP <span class="res-badge corrige">Corrigé</span></a>
-                                            <a href="#" class="resource-link"> APIs REST &amp; Web Services <span class="res-badge annale">Annale</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="acc-item" id="acc-master">
-                    <button class="acc-header" onclick="toggleAcc('acc-master')">
-                        <div class="acc-header-left">
-                            <span class="acc-badge badge-master">MASTER</span>
-                            <div>
-                                <div class="acc-title">Cycle Ingénieur / Master</div>
-                                <div class="acc-sub">5 ans post-bac · Spécialisations avancées</div>
-                            </div>
-                        </div>
-                        <span class="acc-arrow">▼</span>
-                    </button>
-                    <div class="acc-body">
-                        <div class="acc-body-inner">
-                            <p class="acc-desc">Le cycle ingénieur forme des experts en informatique sur 5 ans. Après un socle commun, les étudiants choisissent une spécialisation parmi les Majors disponibles.</p>
-                            <div class="sub-acc-group">
-
-                                <div class="sub-acc-item" id="sub-m1">
-                                    <button class="sub-acc-header" onclick="toggleSub('sub-m1')">
-                                        <span> M1 - Tronc commun ingénieur</span> <span class="sub-arrow">▼</span>
-                                    </button>
-                                    <div class="sub-acc-body">
-                                        <div class="sub-acc-inner">
-                                            <a href="#" class="resource-link"> Algorithmique avancée &amp; graphes <span class="res-badge corrige">Corrigé</span></a>
-                                            <a href="#" class="resource-link"> Machine Learning — Introduction <span class="res-badge corrige">Corrigé</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="sub-acc-item" id="sub-cyber">
-                                    <button class="sub-acc-header" onclick="toggleSub('sub-cyber')">
-                                        <span> Major - Cybersécurité</span> <span class="sub-arrow">▼</span>
-                                    </button>
-                                    <div class="sub-acc-body">
-                                        <div class="sub-acc-inner">
-                                            <a href="#" class="resource-link"> Cryptographie appliquée <span class="res-badge corrige">Corrigé</span></a>
-                                            <a href="#" class="resource-link"> Pentest &amp; Ethical Hacking <span class="res-badge annale">Annale</span></a>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-            </div>
-        </div>
+                        <!-- BACHELOR -->
+                        <div class="acc-item" id="acc-bachelor">
+                            <button class="acc-header" onclick="toggleAcc('acc-bachelor')">
+                                <div class="acc-header-left">
+                                    <span class="acc-badge badge-bachelor">BACHELOR</span>
+                                    <div>
+                                        <div class="acc-title">Bachelor Informatique</div>
+                                        <div class="acc-sub">3 ans · Bac+3 professionnel</div>
+                                    </div>
+                                </div>
+                                <span class="acc-arrow">▼</span>
+                            </button>
+                            <div class="acc-body">
+                                <div class="acc-body-inner">
+                                    <p class="acc-desc">Le Bachelor en Sciences du Numérique forme en 3 ans des professionnels opérationnels en développement, réseaux et cybersécurité. Le cursus intègre stages et projets industriels.</p>
+                                    <a href="https://www.efrei.fr/programmes/bachelor-sciences-du-numerique/" target="_blank" class="prog-link">🔗 Voir le programme sur efrei.fr</a>
+                                    <div class="sub-acc-group">
+
+                                        <div class="sub-acc-item" id="sub-b1">
+                                            <button class="sub-acc-header" onclick="toggleSub('sub-b1')">
+                                                <span>B1 — Première année</span><span class="sub-arrow">▼</span>
+                                            </button>
+                                            <div class="sub-acc-body">
+                                                <div class="sub-acc-inner">
+                                                    <a href="#" class="resource-link">Développement Web — HTML/CSS/JS<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">Systèmes d'exploitation — Linux<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">POO Java — Héritage &amp; polymorphisme<span class="res-badge annale">Annale</span></a>
+                                                    <a href="#" class="resource-link">Bases de données relationnelles — SQL<span class="res-badge annale">Annale</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="sub-acc-item" id="sub-b2">
+                                            <button class="sub-acc-header" onclick="toggleSub('sub-b2')">
+                                                <span>B2 — Deuxième année</span><span class="sub-arrow">▼</span>
+                                            </button>
+                                            <div class="sub-acc-body">
+                                                <div class="sub-acc-inner">
+                                                    <a href="#" class="resource-link">Architectures réseaux — TCP/IP<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">APIs REST &amp; Web Services<span class="res-badge annale">Annale</span></a>
+                                                    <a href="#" class="resource-link">UML &amp; Génie Logiciel<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">Développement mobile — Android<span class="res-badge annale">Annale</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="sub-acc-item" id="sub-b3">
+                                            <button class="sub-acc-header" onclick="toggleSub('sub-b3')">
+                                                <span>B3 — Troisième année</span><span class="sub-arrow">▼</span>
+                                            </button>
+                                            <div class="sub-acc-body">
+                                                <div class="sub-acc-inner">
+                                                    <a href="#" class="resource-link">Cybersécurité — Fondamentaux<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">DevOps &amp; Cloud Computing<span class="res-badge annale">Annale</span></a>
+                                                    <a href="#" class="resource-link">Projet de fin de Bachelor<span class="res-badge corrige">Corrigé</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /col gauche -->
+
+                    <!-- ── COLONNE DROITE ── -->
+                    <div class="accordion-col">
+
+                        <!-- CYCLE INGÉNIEUR TRONC COMMUN -->
+                        <div class="acc-item" id="acc-ingenieur">
+                            <button class="acc-header" onclick="toggleAcc('acc-ingenieur')">
+                                <div class="acc-header-left">
+                                    <span class="acc-badge badge-master">INGÉNIEUR</span>
+                                    <div>
+                                        <div class="acc-title">Cycle Ingénieur — Tronc commun</div>
+                                        <div class="acc-sub">M1 &amp; M2 · Socle commun avant spécialisation</div>
+                                    </div>
+                                </div>
+                                <span class="acc-arrow">▼</span>
+                            </button>
+                            <div class="acc-body">
+                                <div class="acc-body-inner">
+                                    <p class="acc-desc">Les deux premières années du cycle ingénieur posent un socle commun solide : algorithmique avancée, architecture logicielle, réseaux, bases de données avancées et gestion de projet.</p>
+                                    <a href="https://www.efrei.fr/programmes/cycle-ingenieur/" target="_blank" class="prog-link">🔗 Voir le programme sur efrei.fr</a>
+                                    <div class="sub-acc-group">
+
+                                        <div class="sub-acc-item" id="sub-m1">
+                                            <button class="sub-acc-header" onclick="toggleSub('sub-m1')">
+                                                <span>M1 — Première année ingénieur</span><span class="sub-arrow">▼</span>
+                                            </button>
+                                            <div class="sub-acc-body">
+                                                <div class="sub-acc-inner">
+                                                    <a href="#" class="resource-link">Algorithmique avancée &amp; graphes<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">Architecture des systèmes distribués<span class="res-badge annale">Annale</span></a>
+                                                    <a href="#" class="resource-link">Machine Learning — Introduction<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">Management de projet IT<span class="res-badge annale">Annale</span></a>
+                                                    <a href="#" class="resource-link">Bases de données avancées<span class="res-badge corrige">Corrigé</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="sub-acc-item" id="sub-m2">
+                                            <button class="sub-acc-header" onclick="toggleSub('sub-m2')">
+                                                <span>M2 — Deuxième année ingénieur</span><span class="sub-arrow">▼</span>
+                                            </button>
+                                            <div class="sub-acc-body">
+                                                <div class="sub-acc-inner">
+                                                    <a href="#" class="resource-link">Architecture logicielle &amp; Design Patterns<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">Cloud Computing — AWS &amp; Azure<span class="res-badge annale">Annale</span></a>
+                                                    <a href="#" class="resource-link">Sécurité des Systèmes d'Information<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">Entrepreneuriat &amp; Innovation<span class="res-badge annale">Annale</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MAJORS -->
+                        <div class="acc-item" id="acc-majors">
+                            <button class="acc-header" onclick="toggleAcc('acc-majors')">
+                                <div class="acc-header-left">
+                                    <span class="acc-badge badge-master">MAJORS</span>
+                                    <div>
+                                        <div class="acc-title">Spécialisations — Majors</div>
+                                        <div class="acc-sub">M3 · 7 spécialisations disponibles</div>
+                                    </div>
+                                </div>
+                                <span class="acc-arrow">▼</span>
+                            </button>
+                            <div class="acc-body">
+                                <div class="acc-body-inner">
+                                    <p class="acc-desc">En 3ème année du cycle ingénieur, chaque étudiant choisit une Major parmi les spécialisations du département. Chaque major mène à un double diplôme ingénieur + master.</p>
+                                    <a href="https://www.efrei.fr/programmes/cycle-ingenieur/les-majeures/" target="_blank" class="prog-link">🔗 Toutes les Majors sur efrei.fr</a>
+                                    <div class="sub-acc-group">
+
+                                        <div class="sub-acc-item" id="sub-ia">
+                                            <button class="sub-acc-header" onclick="toggleSub('sub-ia')">
+                                                <span>🤖 Data &amp; Artificial Intelligence</span><span class="sub-arrow">▼</span>
+                                            </button>
+                                            <div class="sub-acc-body">
+                                                <div class="sub-acc-inner">
+                                                    <a href="https://www.efrei.fr/programmes/cycle-ingenieur/les-majeures/data-artificial-intelligence/" target="_blank" class="resource-link resource-external">Voir la majeure sur efrei.fr<span class="res-badge ext">↗</span></a>
+                                                    <a href="#" class="resource-link">Deep Learning — CNN, RNN, Transformers<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">NLP &amp; Traitement du langage<span class="res-badge annale">Annale</span></a>
+                                                    <a href="#" class="resource-link">Vision par ordinateur<span class="res-badge corrige">Corrigé</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="sub-acc-item" id="sub-cyber2">
+                                            <button class="sub-acc-header" onclick="toggleSub('sub-cyber2')">
+                                                <span>🔐 Cybersécurité &amp; Cloud</span><span class="sub-arrow">▼</span>
+                                            </button>
+                                            <div class="sub-acc-body">
+                                                <div class="sub-acc-inner">
+                                                    <a href="https://www.efrei.fr/programmes/cycle-ingenieur/les-majeures/cybersecurite-cloud/" target="_blank" class="resource-link resource-external">Voir la majeure sur efrei.fr<span class="res-badge ext">↗</span></a>
+                                                    <a href="#" class="resource-link">Cryptographie appliquée<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">Pentest &amp; Ethical Hacking<span class="res-badge annale">Annale</span></a>
+                                                    <a href="#" class="resource-link">Sécurité des systèmes embarqués<span class="res-badge corrige">Corrigé</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="sub-acc-item" id="sub-data-eng">
+                                            <button class="sub-acc-header" onclick="toggleSub('sub-data-eng')">
+                                                <span>📊 Data Engineering</span><span class="sub-arrow">▼</span>
+                                            </button>
+                                            <div class="sub-acc-body">
+                                                <div class="sub-acc-inner">
+                                                    <a href="https://www.efrei.fr/programmes/cycle-ingenieur/les-majeures/data-engineering/" target="_blank" class="resource-link resource-external">Voir la majeure sur efrei.fr<span class="res-badge ext">↗</span></a>
+                                                    <a href="#" class="resource-link">Big Data — Hadoop, Spark<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">DataOps &amp; pipelines de données<span class="res-badge annale">Annale</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="sub-acc-item" id="sub-bigdata">
+                                            <button class="sub-acc-header" onclick="toggleSub('sub-bigdata')">
+                                                <span>🧠 Big Data &amp; Machine Learning</span><span class="sub-arrow">▼</span>
+                                            </button>
+                                            <div class="sub-acc-body">
+                                                <div class="sub-acc-inner">
+                                                    <a href="https://www.efrei.fr/programmes/cycle-ingenieur/les-majeures/big-data-machine-learning/" target="_blank" class="resource-link resource-external">Voir la majeure sur efrei.fr<span class="res-badge ext">↗</span></a>
+                                                    <a href="#" class="resource-link">Apprentissage automatique avancé<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">Traitement de données massives<span class="res-badge annale">Annale</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="sub-acc-item" id="sub-cloud">
+                                            <button class="sub-acc-header" onclick="toggleSub('sub-cloud')">
+                                                <span>☁️ Networks &amp; Cloud Infrastructure</span><span class="sub-arrow">▼</span>
+                                            </button>
+                                            <div class="sub-acc-body">
+                                                <div class="sub-acc-inner">
+                                                    <a href="https://www.efrei.fr/programmes/cycle-ingenieur/les-majeures/networks-cloud-infrastructure/" target="_blank" class="resource-link resource-external">Voir la majeure sur efrei.fr<span class="res-badge ext">↗</span></a>
+                                                    <a href="#" class="resource-link">Kubernetes &amp; orchestration<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">AWS / GCP — Architecture cloud<span class="res-badge annale">Annale</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="sub-acc-item" id="sub-software">
+                                            <button class="sub-acc-header" onclick="toggleSub('sub-software')">
+                                                <span>💻 Software Engineering</span><span class="sub-arrow">▼</span>
+                                            </button>
+                                            <div class="sub-acc-body">
+                                                <div class="sub-acc-inner">
+                                                    <a href="https://www.efrei.fr/programmes/cycle-ingenieur/les-majeures/software-engineering/" target="_blank" class="resource-link resource-external">Voir la majeure sur efrei.fr<span class="res-badge ext">↗</span></a>
+                                                    <a href="#" class="resource-link">Architecture microservices<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">Tests logiciels &amp; qualité<span class="res-badge annale">Annale</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="sub-acc-item" id="sub-lsi">
+                                            <button class="sub-acc-header" onclick="toggleSub('sub-lsi')">
+                                                <span>🖥️ Logiciels &amp; Systèmes d'Information</span><span class="sub-arrow">▼</span>
+                                            </button>
+                                            <div class="sub-acc-body">
+                                                <div class="sub-acc-inner">
+                                                    <a href="https://www.efrei.fr/programmes/cycle-ingenieur/les-majeures/logiciels-systemes-information/" target="_blank" class="resource-link resource-external">Voir la majeure sur efrei.fr<span class="res-badge ext">↗</span></a>
+                                                    <a href="#" class="resource-link">ERP &amp; Systèmes d'information<span class="res-badge corrige">Corrigé</span></a>
+                                                    <a href="#" class="resource-link">Modélisation &amp; simulation<span class="res-badge annale">Annale</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /col droite -->
+
+                </div><!-- /accordion-grid -->
+
+            </div><!-- /formation-container -->
         </main>
 
-    <footer>
-        <div class="footer-content">
-            <a href="./apropos.html" class="footer-link">© 2026 EFREI Paris - Département Informatique - Aurélien DEVAUX-RIVIÈRE & Augustin NANOUX</a>
-        </div>
-    </footer>
+        <footer>
+            <div class="footer-content">
+                <a href="./apropos.html" class="footer-link">© 2026 EFREI Paris - Département Informatique - Aurélien DEVAUX-RIVIÈRE &amp; Augustin NANOUX</a>
+            </div>
+        </footer>
 
-    <script src="../js/formation.js"></script>
-    <script>
-        const savedImg = sessionStorage.getItem('bannerImg');
-        if (savedImg) {
-            const banner = document.createElement('div');
-            banner.className = 'page-banner';
-            banner.innerHTML = `<img src="${savedImg}" alt="">`;
-            document.body.insertBefore(banner, document.body.firstChild);
-        }
-    </script>
+        <script src="../js/formation.js"></script>
+        <script src="../js/darkmode.js"></script>
+        <script>
+            const savedImg = sessionStorage.getItem('bannerImg');
+            if (savedImg) {
+                const banner = document.createElement('div');
+                banner.className = 'page-banner';
+                banner.innerHTML = `<img src="${savedImg}" alt="">`;
+                document.body.insertBefore(banner, document.body.firstChild);
+            }
+        </script>
     </body>
 </html>
