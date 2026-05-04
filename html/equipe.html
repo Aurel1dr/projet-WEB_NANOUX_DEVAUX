@@ -6,8 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
         <link rel="stylesheet" type="text/css" href="../css/equipe.css">
-        <link rel="stylesheet" href="../css/darkmode.css">
-
     </head>
 
     <body class="equipe-body">
@@ -23,25 +21,16 @@
                     <span>Informatique</span>
                 </div>
             </div>
-            
             <div class="nav-links">
                 <a href="./agendas.html">Agenda</a>
                 <a href="./formation.html">Formation</a>
                 <a href="./equipe.html" class="active">Équipe</a>
                 <a href="./apropos.html">À propos</a>
             </div>
-            
-            <label class="dark-switch" title="Mode sombre">
-                <input type="checkbox" id="dark-toggle-input" onchange="toggleDark()">
-                <span class="dark-slider"></span>
-            </label>            
-            
             <a href="https://myefrei.fr" class="myefrei-link" target="_blank" rel="noopener noreferrer">
                 <img src="../img/img_logo/Logo_MyEfrei.svg" alt="myefrei">
             </a>
         </nav>
-
-
 
         <main>
 
@@ -316,7 +305,6 @@
             </div>
         </footer>
 
-
         <script>
             const savedImg = sessionStorage.getItem('bannerImg');
             if (savedImg) {
@@ -326,8 +314,5 @@
                 document.body.insertBefore(banner, document.body.firstChild);
             }
         </script>
-        
-        <script src="../js/darkmode.js"></script>
-        
     </body>
 </html>
