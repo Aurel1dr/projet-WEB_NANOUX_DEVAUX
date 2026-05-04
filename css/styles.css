@@ -194,24 +194,36 @@ footer {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10;
-    background-color: rgba(255, 255, 255, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    color: white;
-    font-size: 1.6rem;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
+    z-index: 100;               /* au-dessus de l'overlay (overlay z-index:1) */
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0;
+    display: block;
+    border: none;
+    padding: 0;
     cursor: pointer;
-    backdrop-filter: blur(4px);
+    font-size: 0;
+    line-height: 0;
+    background-color: transparent;
+    box-shadow: none;
 }
 
-#btn-prev { left: 24px; }
-#btn-next { right: 24px; }
+#btn-prev { 
+    left: 4px;
+    background-image: url('../img/img_logo/flèche-gauche.svg');
+}
+
+#btn-next {
+    right: 4px;
+    background-image: url('../img/img_logo/flèche-droite.svg');
+}
 
 #btn-prev:hover,
 #btn-next:hover {
-    background-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-50%) translateY(-4px);
 }
 
 /* ========== POINTS ========== */
