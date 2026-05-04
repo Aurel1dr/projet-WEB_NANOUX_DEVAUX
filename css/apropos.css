@@ -336,6 +336,33 @@ body.apropos-body main {
 }
 
 
+/* ===== bouton sociales ===== */
+.etudiant-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.etudiant-social-img {
+    width: 20px;
+    height: 20px;
+    max-width: 20px;
+    max-height: 20px;
+    object-fit: contain;
+    overflow: hidden;
+    filter: invert(27%) sepia(95%) saturate(1700%) hue-rotate(213deg) brightness(90%);
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.etudiant-social:hover img {
+    transform: scale(1.2);
+    filter: invert(50%) sepia(95%) saturate(1700%) hue-rotate(213deg) brightness(120%);
+}
+
+
+
+
 
 
 
