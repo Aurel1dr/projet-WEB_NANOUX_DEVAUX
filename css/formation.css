@@ -1,7 +1,8 @@
 /* ============================================================
-   formation.css
+   formation.css — design moderne, lisible, aéré
    ============================================================ */
 
+/* ── SCROLL ── */
 html, body {
     overflow-y: auto !important;
     height: auto !important;
@@ -14,130 +15,128 @@ body.formation-body {
     background-attachment: fixed;
 }
 
+/* ── MAIN : centré, aéré ── */
 body.formation-body main {
     overflow: visible;
     padding-top: 200px !important;
-    padding-bottom: 80px;
-    /* plus de max-width sur le main : la grille gère sa propre largeur */
-    max-width: 2250px;
+    padding-bottom: 100px;
+    max-width: 1700px;
     margin: 0 auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 
-/* ===== Hero ===== */
+/* ════════════════════════════════════════
+   HERO — rectangle "Nos formations"
+   ════════════════════════════════════════ */
 .formation-hero {
     text-align: center;
-    padding: 30px 40px;
+    padding: 40px 56px;
     background: #ffffff;
-    border-radius: 12px;
+    border-radius: 16px;
     border: 2px solid #1b57fb;
-    max-width: 700px;
-    margin: 0 auto 50px auto;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    max-width: 720px;
+    /* Espace augmenté entre le hero et les accordéons */
+    margin: 0 auto 200px auto;
+    box-shadow: 0 4px 28px rgba(27, 87, 251, 0.1);
 }
 
 .formation-hero h1 {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
     font-weight: 800;
     color: #1b57fb;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
 }
 
 .formation-hero p {
     font-size: 1.05rem;
-    color: #1b57fb;
+    color: #4a6fa5;
+    line-height: 1.65;
 }
 
-/* ===== GRILLE 2 COLONNES ===== */
+/* ════════════════════════════════════════
+   GRILLE 2 COLONNES
+   ════════════════════════════════════════ */
 .accordion-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* C'EST ICI L'ÉCART ENTRE LES BOITES : on réduit les 350px qui étaient beaucoup trop larges */
-    gap: 40px; 
-    align-items: start; 
-    /* C'EST ICI POUR CENTRER ET GÉRER LA LARGEUR : ça force les 2 colonnes à rester bien au centre de la page */
-    max-width: 1600 px; 
-    margin: 0 auto; 
+    gap: 28px;
+    align-items: start; /* hauteur naturelle, pas d'étirement */
+    max-width: 9060px;
+    margin: 0 auto;    /* ← et ça pour centrer */
 }
 
 .accordion-col {
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Espacement vertical entre les blocs */
+    gap: 24px;
 }
 
-/* Sur petit écran : retour en 1 colonne */
-@media (max-width: 900px) {
-    .accordion-grid {
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 860px) {
+    .accordion-grid { grid-template-columns: 1fr; }
+    body.formation-body main { padding-left: 1.5rem; padding-right: 1.5rem; }
 }
 
-/* ===== Accordéon principal ===== */
-/* ===== Le contour bleu et l'ombre (comme le Hero) ===== */
+/* ════════════════════════════════════════
+   ACCORDÉON PRINCIPAL
+   ════════════════════════════════════════ */
 .acc-item {
-    background: #ffffff !important;
-    border: 2px solid #4b70d649 !important; /* Le !important force l'apparition de la bordure */
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.12) !important;
+    background: #ffffff;
+    /* Bordure bleue douce, cohérente avec le hero */
+    border: 1.5px solid #c7d9ff;
+    border-radius: 16px;
+    /* Ombre portée légère */
+    box-shadow: 0 4px 20px rgba(27, 87, 251, 0.07);
     overflow: hidden;
+    /* Transition au survol */
+    transition: box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
+.acc-item:hover {
+    box-shadow: 0 8px 36px rgba(27, 87, 251, 0.16);
+    border-color: #1b57fb;
+}
+
+/* Header : fond blanc pur, texte centré, padding généreux */
 .acc-header {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    /* align-items: center pour aligner verticalement badge + texte + flèche */
     align-items: center;
-    /* C'EST ICI LA HAUTEUR : j'ai mis 40px en haut/bas pour les rendre bien épais */
-    padding: 100px 40px; 
-    background: #ffffff !important; /* C'EST ICI QU'ON DÉTRUIT LE GRIS POUR DU BLANC PUR */    
-    backdrop-filter: blur(10px);
+    /* Padding vertical augmenté pour des blocs hauts et aérés */
+    padding: 42px 36px;
+    background: #ffffff;
     border: none;
     cursor: pointer;
     text-align: left;
-    transition: background-color 0.2s ease;
+    gap: 16px;
+    transition: background 0.2s ease;
 }
 
-
-/* ===== Quand on passe la souris ===== */
-.acc-header:hover { 
-    background: #1b57fb21 !important; /* Un très léger bleu clair pour montrer qu'on peut cliquer */
+.acc-header:hover {
+    /* Bleu très très clair au survol — donne le signal de clic */
+    background: #f0f5ff;
 }
 
 .acc-header-left {
     display: flex;
+    /* Centrer verticalement badge et bloc texte */
     align-items: center;
-    gap: 20px;
+    gap: 18px;
+    flex: 1;
 }
 
-.acc-title {
-    font-weight: 800;
-    font-size: 1.6rem;
-    color: #1b57fb;
-}
-
-.acc-sub {
-    font-size: 1rem;
-    color: #777;
-    margin-top: 4px;
-}
-
-.acc-arrow {
-    font-size: 1.2rem;
-    color: #999;
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
-}
-
-/* ===== Badges ===== */
+/* ── Badge ── */
 .acc-badge {
-    padding: 5px 12px;
+    padding: 7px 16px;
     border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: bold;
+    font-size: 0.72rem;
+    font-weight: 800;
     color: white;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     white-space: nowrap;
     flex-shrink: 0;
 }
@@ -145,34 +144,71 @@ body.formation-body main {
 .badge-bachelor { background: #10b981; }
 .badge-master   { background: #8b5cf6; }
 
-/* ===== Corps accordéon ===== */
+/* ── Textes du header ── */
+.acc-title {
+    font-weight: 700;
+    /* Taille augmentée pour une vraie hiérarchie */
+    font-size: 1.65rem;
+    color: #1b57fb;
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.acc-sub {
+    font-size: 1.45rem;
+    color: #7a8ba8;
+    margin-bottom: 8px;
+}
+
+/* Mini description visible AVANT de cliquer — comble l'espace vide */
+.acc-preview {
+    font-size: 0.95rem;
+    color: #4a5e80;
+    line-height: 1.55;
+    font-weight: 400;
+}
+
+/* Flèche */
+.acc-arrow {
+    font-size: 0.85rem;
+    color: #1b57fb;
+    opacity: 0.5;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+/* ════════════════════════════════════════
+   CORPS DE L'ACCORDÉON (contenu déplié)
+   ════════════════════════════════════════ */
 .acc-body {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.2s ease-in-out;
+    transition: max-height 0.5s ease-in-out;
 }
 
 .acc-body-inner {
-    padding: 20px;
-    border-top: 1px solid #eaeaea;
+    padding: 24px 28px;
+    /* Séparation visuelle nette entre header et contenu */
+    border-top: 2px solid #e8efff;
 }
 
+/* Description du programme */
 .acc-desc {
-    color: #444;
+    color: #4a5e80;
     line-height: 1.7;
-    margin-bottom: 14px;
-    font-size: 1.15rem;
+    margin-bottom: 18px;
+    font-size: 1.25rem;
 }
 
-/* ===== Lien vers efrei.fr ===== */
+/* Lien efrei.fr */
 .prog-link {
     display: inline-block;
-    margin-bottom: 16px;
-    font-size: 1rem;
-    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 0.82rem;
+    font-weight: 700;
     color: #1b57fb;
     text-decoration: none;
-    padding: 8px 18px;
+    padding: 7px 18px;
     border: 1.5px solid #1b57fb;
     border-radius: 20px;
     transition: background 0.2s, color 0.2s;
@@ -182,13 +218,25 @@ body.formation-body main {
     color: #ffffff;
 }
 
-/* ===== Sous-accordéons ===== */
-.sub-acc-group { display: flex; flex-direction: column; gap: 8px; }
+/* ════════════════════════════════════════
+   SOUS-ACCORDÉONS (années / majors)
+   ════════════════════════════════════════ */
+.sub-acc-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 
 .sub-acc-item {
-    border: 1px solid #f0f0f0;
-    border-radius: 8px;
+    /* Bordure visible dès le départ pour identifier chaque bloc */
+    border: 1.5px solid #dce8ff;
+    border-radius: 10px;
     overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.sub-acc-item:hover {
+    border-color: #1b57fb;
 }
 
 .sub-acc-header {
@@ -196,19 +244,30 @@ body.formation-body main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 16px;
-    background: rgba(240,240,240,0.32);
+    padding: 20px 18px;
+    /* Fond légèrement bleuté — différencie du blanc pur du parent */
+    background: #f5f8ff;
     border: none;
     cursor: pointer;
     font-weight: 600;
-    color: #444;
-    font-size: 1.1rem;
+    color: #2d3f6b;
+    font-size: 1.05rem;
     transition: background 0.2s;
     gap: 8px;
 }
 
-.sub-acc-header:hover { background: #f0f0f0; }
-.sub-arrow { transition: transform 0.3s ease; flex-shrink: 0; }
+.sub-acc-header:hover {
+    background: #e4edff;
+    color: #1b57fb;
+}
+
+.sub-arrow {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    color: #1b57fb;
+    opacity: 0.6;
+}
 
 .sub-acc-body {
     max-height: 0;
@@ -217,56 +276,83 @@ body.formation-body main {
 }
 
 .sub-acc-inner {
-    padding: 10px 16px;
+    padding: 8px 14px 12px;
     background: #ffffff;
-    border-top: 1px solid #f0f0f0;
+    /* Séparation nette entre header du sous-acc et ses ressources */
+    border-top: 1.5px solid #dce8ff;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    /* Pas de gap — on utilise des séparateurs CSS à la place */
+    gap: 0;
 }
 
-/* ===== Liens ressources ===== */
+/* ════════════════════════════════════════
+   LIENS RESSOURCES
+   Chaque lien est séparé par une ligne légère
+   pour éviter l'effet "bloc de texte unique"
+   ════════════════════════════════════════ */
 .resource-link {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 12px;
-    color: #333;
+    /* Padding vertical généreux pour aérer */
+    padding: 14px 14px;
+    color: #2d3f6b;
     text-decoration: none;
-    border-radius: 6px;
-    font-size: 0.82rem;
-    transition: background 0.2s, color 0.2s;
-    gap: 8px;
+    border-radius: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background 0.18s, color 0.18s, padding-left 0.18s;
+    gap: 12px;
+    /* Séparateur entre chaque ressource */
+    border-bottom: 1px solid #eef2ff;
+}
+
+/* Dernier lien : pas de bordure en bas */
+.resource-link:last-child {
+    border-bottom: none;
 }
 
 .resource-link:hover {
-    background: #f0f4ff;
+    background: #f0f5ff;
     color: #1b57fb;
+    /* Légère indentation au survol pour indiquer l'interactivité */
+    padding-left: 18px;
+    border-radius: 7px;
 }
 
-/* Lien externe (↗ vers efrei.fr) */
+/* Lien externe vers efrei.fr (↗) */
 .resource-external {
     color: #1b57fb;
-    font-weight: 600;
-    border-bottom: 1px solid #e8efff;
-    margin-bottom: 4px;
+    font-weight: 700;
+    font-size: 0.84rem;
+    /* Séparation plus marquée en dessous du lien externe */
+    border-bottom: 2px solid #dce8ff;
+    margin-bottom: 2px;
+    padding-bottom: 12px;
     border-radius: 0;
-    padding-bottom: 10px;
-}
-.resource-external:hover {
-    background: #e8efff;
-    color: #0d44cc;
 }
 
-/* ===== Badges ressources ===== */
+.resource-external:hover {
+    background: #e8f0ff;
+    color: #0d44cc;
+    padding-left: 18px;
+    border-radius: 7px;
+}
+
+/* ════════════════════════════════════════
+   BADGES RESSOURCES
+   ════════════════════════════════════════ */
 .res-badge {
-    font-size: 0.7rem;
-    padding: 3px 9px;
+    font-size: 0.68rem;
+    padding: 3px 10px;
     border-radius: 12px;
-    font-weight: 600;
+    font-weight: 700;
     white-space: nowrap;
     flex-shrink: 0;
+    letter-spacing: 0.03em;
 }
-.res-badge.corrige  { background: #e0f2fe; color: #0369a1; }
-.res-badge.annale   { background: #ffedd5; color: #c2410c; }
-.res-badge.ext      { background: #ede9fe; color: #7c3aed; }
+.res-badge.corrige { background: #dbeafe; color: #1d4ed8; }
+.res-badge.annale  { background: #ffedd5; color: #c2410c; }
+.res-badge.ext     { background: #ede9fe; color: #7c3aed; }
+
