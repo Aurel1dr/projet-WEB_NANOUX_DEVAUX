@@ -1,3 +1,10 @@
+/* ============================================================
+   calendrier.js  —  Calendrier hebdomadaire avec filtre promos
+   ============================================================ */
+
+/* ── État du filtre actif (null = toutes les promos affichées) ── */
+let activePromo = null;
+
 function formatDate(date, options = {}) {
     return new Intl.DateTimeFormat('fr-FR', options).format(date);
 }
@@ -26,6 +33,22 @@ function getMonthLabel(date) {
     return formatDate(date, { month: 'long', year: 'numeric' });
 }
 
+/* ── Résolution couleur d'un événement ── */
+function resolveColor(event) {
+    if (event.color && event.color !== '') return event.color;
+    if (event.promo && window.promoColors && window.promoColors[event.promo]) {
+        return window.promoColors[event.promo];
+    }
+    return '#4E6E8E';
+}
+
+/* ── Filtre : retourne les événements visibles selon la promo active ── */
+function filteredEvents() {
+    if (!activePromo) return window.calendarEvents;
+    return window.calendarEvents.filter(e => e.promo === activePromo);
+}
+
+/* ── Construction des labels horaires ── */
 function buildHourLabels() {
     const container = document.querySelector('.time-column');
     for (let hour = 8; hour <= 18; hour++) {
@@ -36,29 +59,53 @@ function buildHourLabels() {
     }
 }
 
-function renderLegend(events) {
+/* ── Panneau latéral : liste des promotions avec filtres ── */
+function renderPromoPanel() {
     const legendEl = document.getElementById('legend');
-    const types = {};
-    events.forEach(event => {
-        const color = event.color || window.calendarTypes[event.type] || '#4E6E8E';
-        types[event.type] = color;
-    });
     legendEl.innerHTML = '';
-    Object.entries(types).forEach(([type, color]) => {
-        const item = document.createElement('div');
-        item.className = 'legend-item';
-        item.innerHTML = `<span class="legend-dot" style="background:${color}"></span><span>${type}</span>`;
-        legendEl.appendChild(item);
+
+    /* Bouton "Toutes" */
+    const allBtn = document.createElement('div');
+    allBtn.className = 'legend-item promo-filter-btn' + (activePromo === null ? ' promo-active' : '');
+    allBtn.innerHTML = `
+        <span class="legend-dot" style="background: linear-gradient(135deg,#43A047,#1E88E5,#FB8C00,#E53935)"></span>
+        <span>Toutes les promos</span>
+    `;
+    allBtn.addEventListener('click', () => {
+        activePromo = null;
+        renderAll();
+    });
+    legendEl.appendChild(allBtn);
+
+    /* Un bouton par promotion */
+    const promos = Object.keys(window.promoColors || {});
+    promos.forEach(promo => {
+        const color = window.promoColors[promo];
+        const btn = document.createElement('div');
+        btn.className = 'legend-item promo-filter-btn' + (activePromo === promo ? ' promo-active' : '');
+        btn.style.setProperty('--promo-color', color);
+        btn.innerHTML = `
+            <span class="legend-dot" style="background:${color}"></span>
+            <span>${promo}</span>
+        `;
+        btn.addEventListener('click', () => {
+            activePromo = (activePromo === promo) ? null : promo; /* toggle */
+            renderAll();
+        });
+        legendEl.appendChild(btn);
     });
 }
 
+/* ── Mini-calendrier mensuel ── */
+let _currentSelectedDate = new Date();
+
 function renderMonthCalendar(selectedDate, currentDate) {
     const monthLabel = document.getElementById('monthLabel');
-    const monthGrid = document.getElementById('monthGrid');
+    const monthGrid  = document.getElementById('monthGrid');
     monthLabel.textContent = getMonthLabel(currentDate);
     monthGrid.innerHTML = '';
 
-    const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+    const firstDay   = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
     const startIsoDay = firstDay.getDay() === 0 ? 7 : firstDay.getDay();
     const startOffset = startIsoDay - 1;
 
@@ -79,33 +126,46 @@ function renderMonthCalendar(selectedDate, currentDate) {
         }
         cell.textContent = day;
         cell.addEventListener('click', () => {
-            selectedDate = cellDate;
-            renderPage(selectedDate);
+            _currentSelectedDate = cellDate;
+            renderAll();
         });
         monthGrid.appendChild(cell);
     }
 }
 
+/* ── Création d'un bloc événement ── */
 function createEventCard(event) {
-    const start = new Date(event.start);
-    const end = new Date(event.end);
-    const color = event.color || window.calendarTypes[event.type] || '#4E6E8E';
-    const topMinutes = ((start.getHours() * 60 + start.getMinutes()) - 480);
+    const start  = new Date(event.start);
+    const end    = new Date(event.end);
+    const color  = resolveColor(event);
+
+    const topMinutes    = ((start.getHours() * 60 + start.getMinutes()) - 480);
     const heightMinutes = (end - start) / 60000;
+
     const eventEl = document.createElement('div');
     eventEl.className = 'event-card';
-    eventEl.style.top = `${topMinutes}px`;
-    eventEl.style.height = `${heightMinutes}px`;
-    eventEl.style.backgroundColor = `${color}33`;
-    eventEl.style.borderColor = color;
+    eventEl.style.top             = `${topMinutes}px`;
+    eventEl.style.height          = `${heightMinutes}px`;
+    eventEl.style.backgroundColor = `${color}2E`;  /* fond très transparent */
+    eventEl.style.borderColor     = color;
+
+    const promoTag = event.promo
+        ? `<span class="event-promo-tag" style="background:${color}">${event.promo}</span>`
+        : '';
+
     eventEl.innerHTML = `
-        <div class="event-title">${event.title}</div>
+        <div class="event-title">${promoTag} ${event.title}</div>
         <div class="event-meta">${event.type} · ${event.location}</div>
-        <div class="event-time">${start.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })} - ${end.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}</div>
+        <div class="event-time">
+            ${start.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
+            –
+            ${end.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
+        </div>
     `;
     return eventEl;
 }
 
+/* ── Vue hebdomadaire ── */
 function renderWeekView(selectedDate, events) {
     const daysColumns = document.getElementById('daysColumns');
     daysColumns.innerHTML = '';
@@ -126,7 +186,10 @@ function renderWeekView(selectedDate, events) {
 
         const header = document.createElement('div');
         header.className = 'day-header';
-        header.innerHTML = `<span>${formatDate(dayDate, { weekday: 'short' })}</span><strong>${formatDate(dayDate, { day: '2-digit', month: '2-digit' })}</strong>`;
+        header.innerHTML = `
+            <span>${formatDate(dayDate, { weekday: 'short' })}</span>
+            <strong>${formatDate(dayDate, { day: '2-digit', month: '2-digit' })}</strong>
+        `;
         column.appendChild(header);
 
         const grid = document.createElement('div');
@@ -138,34 +201,32 @@ function renderWeekView(selectedDate, events) {
             grid.appendChild(slot);
         }
 
-        dayEvents.forEach(event => {
-            const eventCard = createEventCard(event);
-            grid.appendChild(eventCard);
-        });
-
+        dayEvents.forEach(event => grid.appendChild(createEventCard(event)));
         column.appendChild(grid);
         daysColumns.appendChild(column);
     }
 }
 
-function renderPage(initialDate = new Date()) {
-    const selectedDate = new Date(initialDate);
-    const weekStart = getWeekStart(selectedDate);
-    const todayButton = document.getElementById('todayBtn');
-    const weekRange = document.getElementById('weekRange');
+/* ── Rendu global (appelé à chaque changement) ── */
+function renderAll() {
+    const selectedDate = _currentSelectedDate;
+    const weekStart    = getWeekStart(selectedDate);
     const currentMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
 
-    weekRange.textContent = getWeekRangeLabel(weekStart);
+    document.getElementById('weekRange').textContent = getWeekRangeLabel(weekStart);
     renderMonthCalendar(selectedDate, currentMonth);
-    renderWeekView(selectedDate, window.calendarEvents);
-    renderLegend(window.calendarEvents);
-
-    todayButton.onclick = () => renderPage(new Date());
-    document.getElementById('prevWeekBtn').onclick = () => renderPage(addDays(weekStart, -7));
-    document.getElementById('nextWeekBtn').onclick = () => renderPage(addDays(weekStart, 7));
+    renderWeekView(selectedDate, filteredEvents());
+    renderPromoPanel();
 }
 
+/* ── Initialisation ── */
 window.addEventListener('DOMContentLoaded', () => {
     buildHourLabels();
-    renderPage(new Date());
+
+    _currentSelectedDate = new Date();
+    renderAll();
+
+    document.getElementById('todayBtn').onclick    = () => { _currentSelectedDate = new Date(); renderAll(); };
+    document.getElementById('prevWeekBtn').onclick = () => { _currentSelectedDate = addDays(getWeekStart(_currentSelectedDate), -7); renderAll(); };
+    document.getElementById('nextWeekBtn').onclick = () => { _currentSelectedDate = addDays(getWeekStart(_currentSelectedDate),  7); renderAll(); };
 });
