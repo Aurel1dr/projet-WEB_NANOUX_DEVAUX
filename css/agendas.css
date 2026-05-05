@@ -466,3 +466,5 @@ html.dark .promo-filter-btn.promo-active {
     background: color-mix(in srgb, var(--promo-color, #388bfd) 20%, transparent);
     border-color: var(--promo-color, #388bfd);
 }
+
+
