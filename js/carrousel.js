@@ -115,13 +115,14 @@ demarrerTimer();
 
 
 
-// ===== TEST ANIMATION NAV =====
+// ===== ANIMATION NAV + BOUTONS CARROUSEL =====
 
 window.addEventListener("DOMContentLoaded", () => {
     const carrousel = document.getElementById("carrousel");
     if (!carrousel) return;
 
-    const links = document.querySelectorAll(".nav-links a");
+    // On cible à la fois les liens de la nav ET les boutons .link-page du carrousel
+    const links = document.querySelectorAll(".nav-links a, .link-page");
 
     links.forEach(link => {
         link.addEventListener("click", function(e) {
@@ -143,4 +144,3 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-
