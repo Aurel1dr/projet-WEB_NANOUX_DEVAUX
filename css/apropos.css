@@ -48,7 +48,7 @@ body.apropos-body main {
 .etudiants-section {
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: 40px;
     justify-content: center;
 }
 
