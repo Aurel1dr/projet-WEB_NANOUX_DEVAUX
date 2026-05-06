@@ -5,10 +5,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
-        <link rel="stylesheet" type="text/css" href="../css/apropos.css">
+        <link rel="stylesheet" type="text/css" href="../css/actualite.css">
     </head>
 
-    <body class="apropos-body">
+    <body class="actualite-body">
 
         <nav>
             <div style="display: flex; align-items: center; gap: 0px;">
@@ -26,10 +26,42 @@
                 <a href="./agendas.html">Agenda</a>
                 <a href="./formation.html">Formation</a>
                 <a href="./equipe.html">Équipe</a>
-                <a href="./actualite.html">Actualité</a>
-                <a href="./apropos.html" class="active">À propos</a>
+                <a href="./actualite.html" class="active">Actualité</a>
+                <a href="./apropos.html">À propos</a>
             </div>
             <a href="https://myefrei.fr" class="myefrei-link" target="_blank" rel="noopener noreferrer">
                 <img src="../img/img_logo/Logo_MyEfrei.svg" alt="myefrei">
             </a>
         </nav>
+
+        <main>
+            <div class="actualite-container">
+
+
+                <div class="actualite-hero">
+                    <h1>Notre actualité</h1>
+                    <p>Restez informé des dernières nouvelles, événements et réalisations de l'EFREI</p>
+                </div>
+            
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <a href="./apropos.html" class="footer-link">© 2026 EFREI Paris - Département Informatique - Aurélien DEVAUX-RIVIÈRE & Augustin NANOUX</a>
+            </div>
+        </footer>
+
+
+        <script>
+            const savedImg = sessionStorage.getItem('bannerImg');
+            if (savedImg) {
+                const banner = document.createElement('div');
+                banner.className = 'page-banner';
+                banner.innerHTML = `<img src="${savedImg}" alt="">`;
+                document.body.insertBefore(banner, document.body.firstChild);
+            }
+        </script>
+        <script src="../js/apropos.js"></script>
+
+    </body>
+</html>
