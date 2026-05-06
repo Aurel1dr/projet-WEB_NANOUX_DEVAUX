@@ -37,7 +37,7 @@ body.formation-body main {
     border: 2px solid #1b57fb;
     max-width: 720px;
     /* Espace augmenté entre le hero et les accordéons */
-    margin: 0 auto 200px auto;
+    margin: 0 auto 140px auto;
     box-shadow: 0 4px 28px rgba(27, 87, 251, 0.1);
 }
 
