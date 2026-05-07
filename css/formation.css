@@ -26,6 +26,11 @@ body.formation-body main {
     padding-right: 3rem;
 }
 
+
+
+
+
+
 /* ════════════════════════════════════════
    HERO — rectangle "Nos formations"
    ════════════════════════════════════════ */
@@ -55,6 +60,12 @@ body.formation-body main {
     line-height: 1.65;
 }
 
+
+
+
+
+
+
 /* ════════════════════════════════════════
    GRILLE 2 COLONNES
    ════════════════════════════════════════ */
@@ -77,6 +88,12 @@ body.formation-body main {
     .accordion-grid { grid-template-columns: 1fr; }
     body.formation-body main { padding-left: 1.5rem; padding-right: 1.5rem; }
 }
+
+
+
+
+
+
 
 /* ════════════════════════════════════════
    ACCORDÉON PRINCIPAL
@@ -177,6 +194,11 @@ body.formation-body main {
     flex-shrink: 0;
 }
 
+
+
+
+
+
 /* ════════════════════════════════════════
    CORPS DE L'ACCORDÉON (contenu déplié)
    ════════════════════════════════════════ */
@@ -218,9 +240,11 @@ body.formation-body main {
     color: #ffffff;
 }
 
-/* ════════════════════════════════════════
-   SOUS-ACCORDÉONS (années / majors)
-   ════════════════════════════════════════ */
+
+
+
+
+/* SOUS-ACCORDÉONS (années / majors)*/
 .sub-acc-group {
     display: flex;
     flex-direction: column;
@@ -286,6 +310,11 @@ body.formation-body main {
     gap: 0;
 }
 
+
+
+
+
+
 /* ════════════════════════════════════════
    LIENS RESSOURCES
    Chaque lien est séparé par une ligne légère
@@ -340,6 +369,9 @@ body.formation-body main {
     border-radius: 7px;
 }
 
+
+
+
 /* ════════════════════════════════════════
    BADGES RESSOURCES
    ════════════════════════════════════════ */
@@ -355,10 +387,6 @@ body.formation-body main {
 .res-badge.corrige { background: #dbeafe; color: #1d4ed8; }
 .res-badge.annale  { background: #ffedd5; color: #c2410c; }
 .res-badge.ext     { background: #ede9fe; color: #7c3aed; }
-
-
-
-
 
 
 
@@ -393,7 +421,7 @@ body.formation-body main {
 .pricing-table th {
     background: #1b57fb;
     color: white;
-    padding: 15px;
+    padding: 18px;
     font-weight: 700;
     font-size: 1.1rem;
 }
