@@ -26,9 +26,12 @@ body.formation-body main {
     padding-right: 3rem;
 }
 
-
-
-
+/* Forcage retour à la ligne après gros titres */
+.acc-title,
+.acc-sub,
+.acc-preview {
+    display: block;
+}
 
 
 /* ════════════════════════════════════════
