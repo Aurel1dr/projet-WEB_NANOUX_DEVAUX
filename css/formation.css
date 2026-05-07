@@ -356,3 +356,61 @@ body.formation-body main {
 .res-badge.annale  { background: #ffedd5; color: #c2410c; }
 .res-badge.ext     { background: #ede9fe; color: #7c3aed; }
 
+
+
+
+
+
+
+
+
+
+
+/*TABLEAU DES PRIX*/
+.pricing-table {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.pricing-table h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1b57fb;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.pricing-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(27, 87, 251, 0.07);
+    border: 1.5px solid #c7d9ff;
+}
+
+.pricing-table th {
+    background: #1b57fb;
+    color: white;
+    padding: 15px;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.pricing-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e8efff;
+    text-align: center;
+    color: #4a5e80;
+}
+
+.pricing-table tbody tr:nth-child(even) td {
+    background: #f7f9ff;
+}
+
+.pricing-table tbody tr:hover td {
+    background: #dce7ff;
+}
+
+
