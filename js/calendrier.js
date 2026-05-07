@@ -96,42 +96,7 @@ function renderPromoPanel() {
     });
 }
 
-/* ── Mini-calendrier mensuel ── */
-let _currentSelectedDate = new Date();
 
-function renderMonthCalendar(selectedDate, currentDate) {
-    const monthLabel = document.getElementById('monthLabel');
-    const monthGrid  = document.getElementById('monthGrid');
-    monthLabel.textContent = getMonthLabel(currentDate);
-    monthGrid.innerHTML = '';
-
-    const firstDay   = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
-    const startIsoDay = firstDay.getDay() === 0 ? 7 : firstDay.getDay();
-    const startOffset = startIsoDay - 1;
-
-    for (let i = 0; i < startOffset; i++) {
-        const empty = document.createElement('div');
-        empty.className = 'month-cell month-cell-empty';
-        monthGrid.appendChild(empty);
-    }
-
-    const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
-    for (let day = 1; day <= daysInMonth; day++) {
-        const cellDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
-        const cell = document.createElement('button');
-        cell.type = 'button';
-        cell.className = 'month-cell';
-        if (cellDate.toDateString() === selectedDate.toDateString()) {
-            cell.classList.add('month-cell-active');
-        }
-        cell.textContent = day;
-        cell.addEventListener('click', () => {
-            _currentSelectedDate = cellDate;
-            renderAll();
-        });
-        monthGrid.appendChild(cell);
-    }
-}
 
 /* ── Création d'un bloc événement ── */
 function createEventCard(event) {
@@ -155,7 +120,7 @@ function createEventCard(event) {
 
     eventEl.innerHTML = `
         <div class="event-title">${promoTag} ${event.title}</div>
-        <div class="event-meta">${event.type} · ${event.location}</div>
+        ${ event.location ? `<div class="event-meta">${event.location}</div>` : '' }
         <div class="event-time">
             ${start.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
             –
@@ -211,10 +176,21 @@ function renderWeekView(selectedDate, events) {
 function renderAll() {
     const selectedDate = _currentSelectedDate;
     const weekStart    = getWeekStart(selectedDate);
-    const currentMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
 
+    // Met à jour le libellé de la semaine
     document.getElementById('weekRange').textContent = getWeekRangeLabel(weekStart);
-    renderMonthCalendar(selectedDate, currentMonth);
+
+    // Appeler le mini-calendrier seulement s'il existe (protection après suppression HTML)
+    if (typeof renderMonthCalendar === 'function') {
+        const currentMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
+        try {
+            renderMonthCalendar(selectedDate, currentMonth);
+        } catch (err) {
+            console.warn('Erreur renderMonthCalendar :', err);
+        }
+    }
+
+    // Toujours rendre la vue hebdomadaire et le panneau promos
     renderWeekView(selectedDate, filteredEvents());
     renderPromoPanel();
 }
