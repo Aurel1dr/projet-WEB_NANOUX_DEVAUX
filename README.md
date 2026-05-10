@@ -1,6 +1,7 @@
-# 🖥️ Département Informatique - EFREI Paris
+# Département Informatique — EFREI Paris
  
-> Projet Web TI402 · 2025-2026 · Aurélien DEVAUX-RIVIÈRE & Augustin NANOUX
+Projet Web TI402 · 2025-2026  
+Aurélien DEVAUX-RIVIÈRE & Augustin NANOUX
  
 Site vitrine du Département Informatique de l'EFREI Paris, développé en HTML5, CSS3 et JavaScript vanilla, sans framework ni bibliothèque externe.
  
@@ -12,31 +13,31 @@ Site vitrine du Département Informatique de l'EFREI Paris, développé en HTML5
 
 
  
-## 📄 Pages
+## Pages
  
 | Page | Fichier | Description |
 |------|---------|-------------|
 | Accueil | `html/accueil.html` | Carrousel interactif, présentation du département |
 | Agenda | `html/agendas.html` | Calendrier hebdomadaire des permanences par promotion |
-| Formation | `html/formation.html` | Programmes accordéon (Prépa, Bachelor, Master, Mastères spécialisés) + tableau des prix |
-| Équipe | `html/equipe.html` | Fiches des enseignants-chercheurs du département |
-| Actualité | `html/actualite.html` | Chiffres clés, Journées Portes Ouvertes, campus |
-| À propos | `html/apropos.html` | Membres du projet, timeline, technologies, formulaire de contact |
+| Formation | `html/formation.html` | Programmes en accordéons imbriqués + tableau des frais de scolarité |
+| Equipe | `html/equipe.html` | Fiches des enseignants-chercheurs du département |
+| Actualite | `html/actualite.html` | Chiffres clés animés, Journées Portes Ouvertes, présentation des campus |
+| A propos | `html/apropos.html` | Membres du projet, timeline des étapes, technologies, formulaire de contact |
  
 ---
  
-## 🗂️ Arborescence
+## Arborescence
  
 ```
 PROJET-WEB/
 ├── css/
-│   ├── styles.css          # styles globaux, navbar, footer, carrousel
-│   ├── agendas.css
-│   ├── actualite.css
-│   ├── apropos.css
-│   ├── equipe.css
-│   ├── formation.css
-│   └── darkmode.css
+│   ├── styles.css          # styles globaux : reset, navbar, footer, carrousel, bannière
+│   ├── agendas.css         # calendrier hebdomadaire, filtres promotions
+│   ├── actualite.css       # compteurs, cartes JPO, onglets campus
+│   ├── apropos.css         # cartes étudiants, timeline, jauges, formulaire
+│   ├── equipe.css          # cartes professeurs
+│   ├── formation.css       # accordéons, tableau des prix
+│   └── darkmode.css        # toggle thème clair / sombre
 ├── html/
 │   ├── accueil.html
 │   ├── agendas.html
@@ -53,62 +54,67 @@ PROJET-WEB/
 │   ├── img_professeur/
 │   └── img-maquette.png
 ├── js/
-│   ├── carrousel.js        # logique carrousel + animation bannière
-│   ├── calendrier.js       # vue hebdomadaire, filtres promos
-│   ├── calendar-data.js    # données des permanences
-│   ├── formation.js        # accordéons
-│   ├── actualite.js        # compteurs animés, onglets campus
-│   ├── apropos.js          # jauges de compétences, formulaire
-│   └── darkmode.js         # bascule thème clair/sombre
+│   ├── carrousel.js        # logique carrousel + animation bannière inter-pages
+│   ├── calendrier.js       # rendu vue hebdomadaire, filtres par promotion
+│   ├── calendar-data.js    # données des permanences (événements, couleurs promos)
+│   ├── formation.js        # accordéons principaux et sous-accordéons
+│   ├── actualite.js        # compteurs animés (IntersectionObserver), onglets campus
+│   ├── apropos.js          # jauges de compétences animées, validation formulaire
+│   └── darkmode.js         # bascule thème clair / sombre
 └── README.md
 ```
  
 ---
  
-## ✨ Fonctionnalités
+## Fonctionnalités JavaScript
  
-- **Carrousel** automatique (6 s) avec navigation par flèches et points, et animation de réduction vers une bannière lors de la navigation entre pages
-- **Calendrier hebdomadaire** des permanences avec filtre par promotion (P1, P2, I1, I2, I3) et navigation semaine précédente / suivante
-- **Accordéons** imbriqués sur la page Formation (programmes → années → cours)
-- **Compteurs animés** (IntersectionObserver) sur la page Actualité
-- **Jauges de compétences** animées à l'entrée dans le viewport
-- **Onglets campus** (Villejuif / Bordeaux) avec transition CSS
-- **Formulaire de contact** avec validation native HTML5 et confirmation JS
-- **Dark mode** persistant via toggle dans la navbar
----
+**Carrousel (carrousel.js)**  
+Défilement automatique toutes les 6 secondes avec navigation par flèches et points indicateurs. Lors d'un clic sur un lien de navigation, le carrousel se réduit en bannière avec une transition CSS, et l'image active est mémorisée en `sessionStorage` pour être réaffichée sur les autres pages.
  
-## 🛠️ Technologies
+**Calendrier des permanences (calendrier.js + calendar-data.js)**  
+Vue hebdomadaire générée dynamiquement à partir d'un tableau d'événements. Navigation semaine précédente / suivante. Filtre par promotion (P1, P2, I1, I2, I3) avec toggle : cliquer sur une promotion affiche uniquement ses événements, recliquer revient à tout afficher. Chaque événement est positionné au pixel via `top` et `height` calculés depuis les horaires.
  
-| Technologie | Usage |
-|-------------|-------|
-| HTML5 | Structure sémantique des 6 pages |
-| CSS3 | Mise en page, animations, responsive (media queries) |
-| JavaScript ES6 | Interactions, calendrier, carrousel, compteurs |
+**Accordéons Formation (formation.js)**  
+Deux niveaux d'accordéons imbriqués. L'ouverture d'un sous-accordéon recalcule la hauteur maximale du parent pour éviter tout débordement ou troncature du contenu.
  
-Aucun framework ni bibliothèque externe - conformément aux consignes TI402.
+**Compteurs animés (actualite.js)**  
+Animation easing de type `1 - (1-t)^4` sur les chiffres clés, déclenchée au scroll via `IntersectionObserver` (seuil à 10% de visibilité). Une fois animé, l'élément n'est plus observé.
+ 
+**Jauges de compétences (apropos.js)**  
+Largeur animée en CSS (`transition: width 1.2s ease`) déclenchée à l'entrée dans le viewport via `IntersectionObserver` (seuil à 30%).
+ 
+**Dark mode (darkmode.js)**  
+Toggle de la classe `dark-mode` sur `body`, avec échange de l'icône lune/soleil.
  
 ---
  
-## 👥 Équipe
+## Design
+ 
+- Couleur principale : `#1b57fb`
+- Typographie : `system-ui, -apple-system, sans-serif`
+- Charte inspirée du site officiel [efrei.fr](https://www.efrei.fr)
+- Aucun framework CSS ni bibliothèque JavaScript externe
+---
+ 
+## Répartition du travail
  
 | Membre | Responsabilités |
 |--------|----------------|
-| **Aurélien DEVAUX-RIVIÈRE** | Pages Formation & Agenda, calendrier JS, données des permanences |
-| **Augustin NANOUX** | Pages Équipe, Actualité & À propos, carrousel interactif |
+| Aurélien DEVAUX-RIVIÈRE | Pages Formation et Agenda, calendrier JS, données des permanences |
+| Augustin NANOUX | Pages Equipe, Actualité et A propos, carrousel interactif |
  
 ---
  
-## 🎨 Charte graphique
+## Etapes du projet
  
-- **Couleur principale :** `#1b57fb` (bleu EFREI)
-- **Couleur secondaire :** `#ffffff`
-- **Typographie :** `system-ui, -apple-system, sans-serif`
-- Inspirée du design officiel [efrei.fr](https://www.efrei.fr)
+| Semaine | Etape |
+|---------|-------|
+| 1 | Réflexion et maquette (wireframe) |
+| 2 | Structure HTML, navigation, header et footer sur toutes les pages |
+| 3 | Pages A propos, Agenda et Equipe |
+| 4 | Carrousel et fonctionnalités JavaScript |
+| 5 | Page Actualité et accordéons Formation |
+ 
 ---
  
-*© 2026 EFREI Paris - Département Informatique*
- 
-Projet étudiant — EFREI Paris 2025. Tous droits réservés.
- 
-```
- 
+*Projet TI402 — EFREI Paris, Département Informatique — 2025-2026*
