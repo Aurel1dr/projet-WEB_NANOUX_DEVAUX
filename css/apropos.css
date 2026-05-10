@@ -181,6 +181,17 @@ body.apropos-body main {
     line-height: 1.6;
 }
 
+.timeline-title-link {
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 2px solid #1b57fb;
+    transition: opacity 0.2s ease;
+}
+.timeline-title-link:hover span{
+    opacity: 0.3;
+}
+
+
 /*  SECTION JAUGES DE COMPÉTENCES  */
 .skills-section {
     background: #ffffff;
