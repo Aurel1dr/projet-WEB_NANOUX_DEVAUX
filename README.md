@@ -8,7 +8,8 @@
  
 ## 📸 Aperçu
  
-<img width="1918" height="917" alt="image" src="https://github.com/user-attachments/assets/c8f9b844-d710-4dbd-a250-7d849d12577e" />
+<img width="1918" height="917" alt="image" src="<img width="1917" height="912" alt="image" src="https://github.com/user-attachments/assets/ebf20530-e7ae-4141-a773-d0888f191605" />
+" />
 
  
 ---
