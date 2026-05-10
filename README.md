@@ -1,4 +1,4 @@
-# 🖥️ Département Informatique — EFREI Paris
+# 🖥️ Département Informatique - EFREI Paris
  
 > Projet Web TI402 · 2025-2026 · Aurélien DEVAUX-RIVIÈRE & Augustin NANOUX
  
