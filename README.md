@@ -75,7 +75,6 @@ PROJET-WEB/
 - **Onglets campus** (Villejuif / Bordeaux) avec transition CSS
 - **Formulaire de contact** avec validation native HTML5 et confirmation JS
 - **Dark mode** persistant via toggle dans la navbar
-- **Design responsive** avec media queries
 ---
  
 ## 🛠️ Technologies
