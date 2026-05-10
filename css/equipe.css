@@ -107,16 +107,7 @@ body.equipe-body main {
     border-radius: 2px;
 }
 
-/* ---- RESPONSIVE : sur petit écran, la carte passe en colonne ---- */
-@media (max-width: 700px) {
-    .prof-card {
-        flex-direction: column;   /* ← photo au-dessus, texte en dessous */
-    }
-    .prof-photo {
-        width: 100%;              /* ← photo pleine largeur */
-        height: 280px;            /* ← hauteur fixe en mode mobile */
-    }
-}
+
 
 
 

@@ -43,7 +43,7 @@ nav {
 
 .theme-btn {
     position: relative;
-    right: 350px; 
+    right: -18px; 
 }
 
 
@@ -62,14 +62,14 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 16px;
     padding: 8px 30px;
 }
 
 .nav-links {
     display: flex;
     gap: 13px;
-    margin-left: 250px; /* Aligne les liens plus vers la droite */
+    margin-left: 70px; /* Aligne les liens plus vers la droite */
 }
 
 nav a:hover {

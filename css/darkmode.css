@@ -3,7 +3,7 @@ body.dark-mode {
   color: white;
 }
 
-/* Optionnel : inverser un peu la couleur de l'icône si elle est noire 
+/* inverser un peu la couleur de l'icône si elle est noire 
    et que ton fond devient sombre */
 body.dark-mode #theme-icon {
   filter: invert(1); /* Rend l'icône blanche si elle était noire */
@@ -37,13 +37,12 @@ body.dark-mode {
 }
 
 
-
-/* Inverser l'icône si elle est noire à la base (astuce magique) */
+/* Inverser l'icône si elle est noire à la base */
 body.dark-mode #theme-icon {
     filter: invert(1);
 }
 
-/* Transition douce pour tout le site */
+
 body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }

@@ -54,10 +54,8 @@ body.agenda-body main {
 
 .agenda-header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
 }
 
 .eyebrow {
@@ -89,7 +87,8 @@ body.agenda-body main {
 .agenda-actions {
     display: flex;
     gap: 12px;
-
+    margin-left: auto;
+    justify-content: flex-end;
     flex-wrap: wrap;
 }
 
@@ -301,41 +300,6 @@ body.agenda-body main {
     flex: 0 0 14px;
 }
 
-/* Responsive */
-@media (max-width: 1120px) {
-    .agenda-panels {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 760px) {
-    nav {
-        padding: 10px 18px;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .agenda-actions {
-        width: 100%;
-        justify-content: stretch;
-    }
-
-    .calendar-btn {
-        flex: 1;
-    }
-
-    .agenda-grid {
-        grid-template-columns: 60px 1fr;
-    }
-
-    .time-column {
-        padding-left: 8px;
-    }
-}
-
-body.agenda-body footer {
-    position: relative;
-}
 
 
 
