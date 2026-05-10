@@ -10,7 +10,7 @@ body.actualite-body main {
     padding-bottom: 200px;
 }
 
-/* ===== rectangle blanc ===== */
+/* ===== CONTENEUR GÉNÉRAL ===== */
 .actualite-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -20,6 +20,7 @@ body.actualite-body main {
     gap: 60px;
 }
 
+/* ===== HERO ===== */
 .actualite-hero {
     text-align: center;
     padding: 30px 40px;
@@ -30,95 +31,268 @@ body.actualite-body main {
     margin: 0 auto 10px auto;
     box-shadow: 0 4px 20px rgba(0,0,0,0.12);
 }
-
 .actualite-hero h1 {
     font-size: 2.4rem;
     font-weight: 800;
     color: #1b57fb;
     margin-bottom: 8px;
 }
-
 .actualite-hero p {
     font-size: 1.05rem;
     color: #1b57fb;
 }
 
-/* ===== section EFREI en chiffres ===== */
-
-
-
-
-
-
-
-
-
-
-/* ===== JPO card ===== */
-.JPO-section {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    justify-content: center;
-}
-
-.JPO-title {
+/* ===== CHIFFRES ANIMÉS ===== */
+.chiffres-section {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
     text-align: center;
-    font-size: 4rem;
+}
+.chiffres-title {
+    font-size: 1.6rem;
     font-weight: 800;
     color: #1b57fb;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
-
-.JPO-card {
-    background: #1b57fb;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-    width: 300px;
+.chiffres-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.chiffre-card {
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
+    align-items: center;
+    padding: 24px 16px;
+    border-radius: 12px;
+    background: #f7f9ff;
+    border: 2px solid #e8efff;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.chiffre-card:hover {
+    transform: translateY(-4px);
+    border-color: #1b57fb;
+}
+.chiffre-nombre {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #1b57fb;
+    line-height: 1;
+}
+.chiffre-unite {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1b57fb;
+    margin-top: 4px;
+}
+.chiffre-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 8px;
+    text-align: center;
+}
+
+/* ===== JPO ===== */
+.JPO-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.JPO-title {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #1b57fb;
+}
+.JPO-cards-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.JPO-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    width: 290px;
+    display: flex;
+    flex-direction: column;
     transition: transform 0.25s ease;
 }
-
 .JPO-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
 }
-
+.JPO-ribbon {
+    position: absolute;
+    top: 16px;
+    right: -28px;
+    background: #1b57fb;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 5px 36px;
+    transform: rotate(45deg);
+    z-index: 10;
+    letter-spacing: 0.04em;
+}
 .JPO-photo {
     width: 100%;
-    height: 320px;
+    height: 180px;
     overflow: hidden;
 }
-
 .JPO-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: top;
     display: block;
+    transition: transform 0.4s ease;
 }
-
-.JPO-description {
-    padding: 20px;
-    text-align: center;
+.JPO-card:hover .JPO-photo img {
+    transform: scale(1.05);
+}
+.JPO-info {
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     border-top: 3px solid #1b57fb;
 }
-
 .JPO-name {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 800;
     color: #1a1a1a;
-    margin-bottom: 4px;
+}
+.JPO-description {
+    font-size: 0.88rem;
+    color: #666;
+}
+.JPO-link {
+    display: inline-block;
+    margin-top: 6px;
+    background: #1b57fb;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: background 0.2s ease;
+}
+.JPO-link:hover {
+    background: #1445d4;
 }
 
+/* ===== CAMPUS ===== */
+.campus-section {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+.campus-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #1b57fb;
+    text-align: center;
+    margin-bottom: 24px;
+}
+.campus-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 28px;
+    justify-content: center;
+}
+.campus-tab {
+    padding: 10px 28px;
+    border-radius: 30px;
+    border: 2px solid #1b57fb;
+    background: transparent;
+    color: #1b57fb;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+.campus-tab.active {
+    background: #1b57fb;
+    color: white;
+}
+.campus-tab:hover:not(.active) {
+    background: #f0f5ff;
+}
+.campus-content {
+    animation: fadeIn 0.3s ease;
+}
+.campus-content.hidden {
+    display: none;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
 
+/* Photo campus pleine largeur */
+.campus-photo {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: block;
+}
 
+.campus-info {
+    max-width: 650px;
+    margin: 0 auto;
+}
+.campus-info h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+.campus-info p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+.campus-details {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+.campus-details li {
+    font-size: 0.95rem;
+    color: #444;
+    padding: 8px 12px;
+    background: #f7f9ff;
+    border-radius: 8px;
+    border-left: 3px solid #1b57fb;
+}
+.campus-link {
+    display: inline-block;
+    background: #1b57fb;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background 0.2s ease;
+}
+.campus-link:hover {
+    background: #1445d4;
+}
 
-
-
-/* ===== FOOTER ===== */
 footer {
     position: relative;
 }
