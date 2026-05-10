@@ -8,7 +8,7 @@ Site vitrine du Département Informatique de l'EFREI Paris, développé en HTML5
 
 ## 📸 Aperçu
  
-<img width="1918" height="917" alt="image" src="<img width="1917" height="912" alt="image" src="https://github.com/user-attachments/assets/ebf20530-e7ae-4141-a773-d0888f191605" />
+<img width="1917" height="912" alt="image" src="https://github.com/user-attachments/assets/ebf20530-e7ae-4141-a773-d0888f191605" />
 " />
 
  
