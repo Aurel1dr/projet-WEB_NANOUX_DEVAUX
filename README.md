@@ -12,7 +12,19 @@ Site vitrine du Département Informatique de l'EFREI Paris, développé en HTML,
 <img width="1512" height="861" alt="Capture d’écran 2026-05-10 à 22 28 05" src="https://github.com/user-attachments/assets/a13faaf8-b4d0-4180-aea7-4aa6a265f778" />
 
 
+## Lancer le site
  
+Le site ne nécessite aucune installation. Il suffit d'ouvrir les fichiers HTML dans un navigateur, de préférence via un serveur local pour éviter les restrictions liées au protocole `file://` (notamment pour `sessionStorage` et le chargement des ressources).
+ 
+**Méthode recommandée — Live Server (VS Code)**
+ 
+1. Installer l'extension [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) dans VS Code
+2. Ouvrir le dossier racine du projet (`PROJET-WEB/`) dans VS Code
+3. Faire un clic droit sur `html/accueil.html` puis choisir "Open with Live Server"
+4. Le site s'ouvre automatiquement sur `http://127.0.0.1:5500/html/accueil.html`
+Tout changement dans un fichier HTML, CSS ou JS recharge la page automatiquement.
+
+
 ## Pages
  
 | Page | Fichier | Description |
