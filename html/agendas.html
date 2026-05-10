@@ -3,7 +3,7 @@
     <head>
         <title>Département Informatique - Agenda</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../css/agendas.css">
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
         <script src="../js/darkmode.js" defer></script>
@@ -39,44 +39,50 @@
         </nav>
 
         <main>
-            <section class="agenda-page">
-                <div class="agenda-hero">
-                        <h1>Planning des permanences</h1> 
-                        <p>Découvrez les horraires des permanences de chaque promotions</p>
-                    </div>
-                    <div class="agenda-header">
-                        <div>
-                             <p class="eyebrow">Planning</p>
-                        </div>
-                    <div class="agenda-actions">
-                        <button id="prevWeekBtn" class="calendar-btn" data-direction="prev">Semaine précédente</button>
-                        <button id="nextWeekBtn" class="calendar-btn" data-direction="next">Semaine suivante</button>
-                    </div>
+    <section class="agenda-page">
+
+        <div class="agenda-hero">
+            <h1>Planning des permanences</h1>
+            <p>Découvrez les horaires des permanences de chaque promotion</p>
+        </div>
+
+        <div class="agenda-header">
+            <div class="header-info">
+                <p class="eyebrow">Planning</p>
+            </div>
+            <div class="agenda-actions">
+                <button id="prevWeekBtn" class="calendar-btn" data-direction="prev">Semaine précédente</button>
+                <button id="nextWeekBtn" class="calendar-btn" data-direction="next">Semaine suivante</button>
+            </div>
+        </div>
+
+        <div class="agenda-panels">
+            
+            <aside class="panel panel-sidebar">
+                <div class="panel card event-types">
+                    <h2>Promotions</h2>
+                    <div id="legend"></div>
+                </div>
+            </aside>
+
+            <section class="panel panel-calendar">
+                <h2 class="visually-hidden">Calendrier des cours</h2>
+
+                <div class="week-summary">
+                    <span>Semaine du</span>
+                    <strong id="weekRange"></strong>
                 </div>
 
-                <div class="agenda-panels">
-                    <aside class="panel panel-sidebar">
-                        <div class="panel card event-types">
-                            <h2>Promotions</h2>
-                            <div id="legend"></div>
-                        </div>
-                    </aside>
-
-                    <section class="panel panel-calendar">
-                        <div class="week-summary">
-                            <span>Semaine du</span>
-                            <strong id="weekRange"></strong>
-                        </div>
-                        <div class="agenda-grid">
-                            <div class="time-column">
-                                <div class="time-label"></div>
-                            </div>
-                            <div id="daysColumns" class="days-columns"></div>
-                        </div>
-                    </section>
+                <div class="agenda-grid">
+                    <div class="time-column">
+                        <div class="time-label"></div>
+                    </div>
+                    <div id="daysColumns" class="days-columns"></div>
                 </div>
-            </section>
-        </main>
+            </section> 
+        </div> 
+    </section> 
+</main>
 
         <footer>
             <div class="footer-content">

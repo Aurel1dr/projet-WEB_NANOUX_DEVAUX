@@ -202,7 +202,7 @@ window.addEventListener('DOMContentLoaded', () => {
     _currentSelectedDate = new Date();
     renderAll();
 
-    document.getElementById('todayBtn').onclick    = () => { _currentSelectedDate = new Date(); renderAll(); };
+    // On a supprimé la ligne "todayBtn" qui bloquait tout
     document.getElementById('prevWeekBtn').onclick = () => { _currentSelectedDate = addDays(getWeekStart(_currentSelectedDate), -7); renderAll(); };
     document.getElementById('nextWeekBtn').onclick = () => { _currentSelectedDate = addDays(getWeekStart(_currentSelectedDate),  7); renderAll(); };
 });
