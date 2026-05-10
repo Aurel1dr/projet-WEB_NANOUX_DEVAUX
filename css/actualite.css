@@ -1,4 +1,4 @@
-/* ===== SCROLL ===== */
+/* SCROLL */
 body.actualite-body {
     overflow-y: auto;
     height: auto;
@@ -10,7 +10,7 @@ body.actualite-body main {
     padding-bottom: 200px;
 }
 
-/* ===== CONTENEUR GÉNÉRAL ===== */
+/* CONTENEUR GÉNÉRAL */
 .actualite-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -20,7 +20,7 @@ body.actualite-body main {
     gap: 60px;
 }
 
-/* ===== HERO ===== */
+/* hero*/
 .actualite-hero {
     text-align: center;
     padding: 30px 40px;
@@ -42,7 +42,7 @@ body.actualite-body main {
     color: #1b57fb;
 }
 
-/* ===== CHIFFRES ANIMÉS ===== */
+/* anim chiffres */
 .chiffres-section {
     background: #ffffff;
     border-radius: 16px;
@@ -94,7 +94,7 @@ body.actualite-body main {
     text-align: center;
 }
 
-/* ===== JPO ===== */
+/* tout ce qui est pour JPO */
 .JPO-section {
     display: flex;
     flex-direction: column;
@@ -189,7 +189,7 @@ body.actualite-body main {
     background: #1445d4;
 }
 
-/* ===== CAMPUS ===== */
+/* section Campus */
 .campus-section {
     background: #ffffff;
     border-radius: 16px;
@@ -238,7 +238,7 @@ body.actualite-body main {
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Photo campus pleine largeur */
+/* campus photo */
 .campus-photo {
     width: 100%;
     height: 220px;

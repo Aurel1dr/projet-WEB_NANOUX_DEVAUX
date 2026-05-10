@@ -1,8 +1,4 @@
-/* ============================================================
-   formation.css — design moderne, lisible, aéré
-   ============================================================ */
-
-/* ── SCROLL ── */
+/*  SCROLL  */
 html, body {
     overflow-y: auto !important;
     height: auto !important;
@@ -15,7 +11,7 @@ body.formation-body {
     background-attachment: fixed;
 }
 
-/* ── MAIN : centré, aéré ── */
+/*  MAIN */
 body.formation-body main {
     overflow: visible;
     padding-top: 200px !important;
@@ -34,16 +30,14 @@ body.formation-body main {
 }
 
 
-/* ════════════════════════════════════════
-   HERO — rectangle "Nos formations"
-   ════════════════════════════════════════ */
+/* hero */
 .formation-hero {
     text-align: center;
     padding: 30px 40px;
     background: #ffffff;
     border-radius: 12px;
     max-width: 750px;
-    margin: 0 auto 140px auto;   /* ← top right bottom left — le margin-bottom reste intact */
+    margin: 0 auto 140px auto;   
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     border: 2px solid #1b57fb;
 }
@@ -67,16 +61,14 @@ body.formation-body main {
 
 
 
-/* ════════════════════════════════════════
-   GRILLE 2 COLONNES
-   ════════════════════════════════════════ */
+/* 2 coloones*/
 .accordion-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 28px;
-    align-items: start; /* hauteur naturelle, pas d'étirement */
+    align-items: start; /* hauteur naturelle */
     max-width: 9060px;
-    margin: 0 auto;    /* ← et ça pour centrer */
+    margin: 0 auto;    /* centrer */
 }
 
 .accordion-col {
@@ -96,18 +88,13 @@ body.formation-body main {
 
 
 
-/* ════════════════════════════════════════
-   ACCORDÉON PRINCIPAL
-   ════════════════════════════════════════ */
+/* acciordéon */
 .acc-item {
     background: #ffffff;
-    /* Bordure bleue douce, cohérente avec le hero */
     border: 1.5px solid #c7d9ff;
     border-radius: 16px;
-    /* Ombre portée légère */
     box-shadow: 0 4px 20px rgba(27, 87, 251, 0.07);
     overflow: hidden;
-    /* Transition au survol */
     transition: box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
@@ -116,14 +103,11 @@ body.formation-body main {
     border-color: #1b57fb;
 }
 
-/* Header : fond blanc pur, texte centré, padding généreux */
 .acc-header {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    /* align-items: center pour aligner verticalement badge + texte + flèche */
     align-items: center;
-    /* Padding vertical augmenté pour des blocs hauts et aérés */
     padding: 42px 36px;
     background: #ffffff;
     border: none;
@@ -134,13 +118,11 @@ body.formation-body main {
 }
 
 .acc-header:hover {
-    /* Bleu très très clair au survol — donne le signal de clic */
     background: #f0f5ff;
 }
 
 .acc-header-left {
     display: flex;
-    /* Centrer verticalement badge et bloc texte */
     align-items: center;
     gap: 18px;
     flex: 1;
@@ -165,7 +147,6 @@ body.formation-body main {
 /* ── Textes du header ── */
 .acc-title {
     font-weight: 700;
-    /* Taille augmentée pour une vraie hiérarchie */
     font-size: 1.65rem;
     color: #1b57fb;
     margin-bottom: 4px;
@@ -178,7 +159,6 @@ body.formation-body main {
     margin-bottom: 8px;
 }
 
-/* Mini description visible AVANT de cliquer — comble l'espace vide */
 .acc-preview {
     font-size: 0.95rem;
     color: #4a5e80;
@@ -200,9 +180,7 @@ body.formation-body main {
 
 
 
-/* ════════════════════════════════════════
-   CORPS DE L'ACCORDÉON (contenu déplié)
-   ════════════════════════════════════════ */
+/* CORPS DE L'ACCORDÉON */
 .acc-body {
     max-height: 0;
     overflow: hidden;
@@ -211,7 +189,6 @@ body.formation-body main {
 
 .acc-body-inner {
     padding: 24px 28px;
-    /* Séparation visuelle nette entre header et contenu */
     border-top: 2px solid #e8efff;
 }
 
@@ -253,7 +230,6 @@ body.formation-body main {
 }
 
 .sub-acc-item {
-    /* Bordure visible dès le départ pour identifier chaque bloc */
     border: 1.5px solid #dce8ff;
     border-radius: 10px;
     overflow: hidden;
@@ -270,7 +246,6 @@ body.formation-body main {
     justify-content: space-between;
     align-items: center;
     padding: 20px 18px;
-    /* Fond légèrement bleuté — différencie du blanc pur du parent */
     background: #f5f8ff;
     border: none;
     cursor: pointer;
@@ -303,11 +278,9 @@ body.formation-body main {
 .sub-acc-inner {
     padding: 8px 14px 12px;
     background: #ffffff;
-    /* Séparation nette entre header du sous-acc et ses ressources */
     border-top: 1.5px solid #dce8ff;
     display: flex;
     flex-direction: column;
-    /* Pas de gap — on utilise des séparateurs CSS à la place */
     gap: 0;
 }
 
@@ -316,16 +289,11 @@ body.formation-body main {
 
 
 
-/* ════════════════════════════════════════
-   LIENS RESSOURCES
-   Chaque lien est séparé par une ligne légère
-   pour éviter l'effet "bloc de texte unique"
-   ════════════════════════════════════════ */
+/* LIENS RESSOURCES */
 .resource-link {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Padding vertical généreux pour aérer */
     padding: 14px 14px;
     color: #2d3f6b;
     text-decoration: none;
@@ -334,11 +302,9 @@ body.formation-body main {
     font-weight: 500;
     transition: background 0.18s, color 0.18s, padding-left 0.18s;
     gap: 12px;
-    /* Séparateur entre chaque ressource */
     border-bottom: 1px solid #eef2ff;
 }
 
-/* Dernier lien : pas de bordure en bas */
 .resource-link:last-child {
     border-bottom: none;
 }
@@ -346,7 +312,6 @@ body.formation-body main {
 .resource-link:hover {
     background: #f0f5ff;
     color: #1b57fb;
-    /* Légère indentation au survol pour indiquer l'interactivité */
     padding-left: 18px;
     border-radius: 7px;
 }
@@ -356,7 +321,6 @@ body.formation-body main {
     color: #1b57fb;
     font-weight: 700;
     font-size: 0.84rem;
-    /* Séparation plus marquée en dessous du lien externe */
     border-bottom: 2px solid #dce8ff;
     margin-bottom: 2px;
     padding-bottom: 12px;
@@ -373,9 +337,7 @@ body.formation-body main {
 
 
 
-/* ════════════════════════════════════════
-   BADGES RESSOURCES
-   ════════════════════════════════════════ */
+/*  BADGES RESSOURCES */
 .res-badge {
     font-size: 0.68rem;
     padding: 3px 10px;

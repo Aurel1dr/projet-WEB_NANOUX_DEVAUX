@@ -1,5 +1,4 @@
-/* --------- Agenda (nettoyé) ----------*/
-/* ===== SCROLL ===== */
+/* SCROLL */
 body.agendas-body {
     overflow-y: auto;
     height: auto;
@@ -11,7 +10,6 @@ body.agenda-body main {
     padding-bottom: 200px;
 }
 
-/* =====  ===== */
 .agenda-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -21,7 +19,7 @@ body.agenda-body main {
     gap: 60px;
 }
 
-/* ===== rectangle blanc ===== */
+/* hero, rectangle blanc*/
 .agenda-hero {
     text-align: center;
     padding: 30px 40px;
@@ -339,11 +337,9 @@ body.agenda-body footer {
     position: relative;
 }
 
-/* ============================================================
-   Styles pour le filtre promos + tag promo dans les blocs
-   ============================================================ */
 
-/* ── Boutons de filtre promotion ── */
+
+/* Boutons filtre promo */
 .promo-filter-btn {
     cursor: pointer;
     border-radius: 10px;
@@ -358,7 +354,7 @@ body.agenda-body footer {
     transform: translateX(3px);
 }
 
-/* Bouton actif : la couleur de la promo ressort en bordure */
+/* Bouton actif :  couleur de la promo ressort en bordure */
 .promo-filter-btn.promo-active {
     background: color-mix(in srgb, var(--promo-color, #1b57fb) 12%, transparent);
     border-color: var(--promo-color, #1b57fb);
@@ -377,6 +373,8 @@ body.agenda-body footer {
     vertical-align: middle;
     margin-right: 4px;
 }
+
+
 
 /* ── Dark mode : ajustements filtres ── */
 html.dark .promo-filter-btn:hover {

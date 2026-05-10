@@ -1,11 +1,11 @@
-/* ========== RESET GLOBAL ========== */
+/*  RESET GLOBAL  */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ========== BODY & LAYOUT ========== */
+/*  BODY & LAYOUT  */
 body {
     margin: 0;
     font-family: system-ui, -apple-system, sans-serif;
@@ -20,13 +20,13 @@ main {
     overflow: visible;
 }
 
-/* ========== HEADER ========== */
+/*  HEADER  */
 header {
     overflow: hidden;
     position: relative;
 }
 
-/* ========== NAVBAR ========== */
+/*  NAVBAR  */
 nav {
     position: fixed;
     top: 0;
@@ -94,8 +94,7 @@ nav a.active {
     border-radius: 20px;;
 }
 
-/* ========== FOOTER ========== */
-/* ========== FOOTER ========== */
+/*  FOOTER  */
 footer {
     position: fixed;
     bottom: 0;
@@ -107,12 +106,12 @@ footer {
     text-align: center;
     padding: 15px;
     font-size: 13px;
-    z-index: 100; /* Assure que le footer reste au-dessus du contenu */
+    z-index: 100; /* aurélien j'ai mis ca pour footer reste au-dessus du contenu */
 }
 
 .footer-content {
     display: flex;
-    flex-direction: column; /* Aligne le texte et le lien verticalement */
+    flex-direction: column; /* touche pas je modofirais pour aligner tkt */
     gap: 5px;
     align-items: center;
 }
@@ -128,7 +127,7 @@ footer {
     text-decoration: underline;
     opacity: 0.8;
 }
-/* ========== CARROUSEL ========== */
+/*  CARROUSEL  */
 
 #carrousel {
     position: relative;
@@ -202,13 +201,13 @@ footer {
     font-size: clamp(1rem, 1.5vw, 1.25rem);
 }
 
-/* ========== BOUTONS CARROUSEL ========== */
+/*  BOUTONS CARROUSEL  */
 #btn-prev,
 #btn-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 100;               /* au-dessus de l'overlay (overlay z-index:1) */
+    z-index: 100;              
     width: 60px;
     height: 60px;
     background-size: contain;
@@ -240,7 +239,7 @@ footer {
     transform: translateY(-50%) translateY(-4px);
 }
 
-/* ========== POINTS ========== */
+/*  POINTS  */
 #carrousel-points {
     position: absolute;
     bottom: 60px;
@@ -276,7 +275,7 @@ footer {
     height: 180px;
 }
 
-/* ========== BANNIÈRE PERSISTANTE (autres pages) ========== */
+/*  BANNIÈRE PERSISTANTE (autres pages)  */
 .page-banner {
     position: fixed;
     top: 0;

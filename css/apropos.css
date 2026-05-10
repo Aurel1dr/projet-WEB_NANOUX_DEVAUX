@@ -1,4 +1,4 @@
-/* ===== SCROLL ===== */
+/*  SCROLL  */
 body.apropos-body {
     overflow-y: auto;
     height: auto;
@@ -10,7 +10,6 @@ body.apropos-body main {
     padding-bottom: 200px;
 }
 
-/* =====  ===== */
 .apropos-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -20,7 +19,7 @@ body.apropos-body main {
     gap: 60px;
 }
 
-/* ===== rectangle blanc ===== */
+/* hero, rectangle blanc  */
 .apropos-hero {
     text-align: center;
     padding: 30px 40px;
@@ -44,7 +43,7 @@ body.apropos-body main {
     color: #1b57fb;
 }
 
-/* ===== SECTION DEUX CARTES ===== */
+/* SECTION DEUX CARTES  */
 .etudiants-section {
     display: flex;
     flex-direction: row;
@@ -110,7 +109,7 @@ body.apropos-body main {
     line-height: 1.6;
 }
 
-/* ===== SECTION TIMELINE ===== */
+/*  SECTION TIMELINE */
 .timeline-section {
     background: #ffffff;
     border-radius: 16px;
@@ -182,7 +181,7 @@ body.apropos-body main {
     line-height: 1.6;
 }
 
-/* ===== SECTION JAUGES DE COMPÉTENCES ===== */
+/*  SECTION JAUGES DE COMPÉTENCES  */
 .skills-section {
     background: #ffffff;
     border-radius: 16px;
@@ -224,17 +223,17 @@ body.apropos-body main {
     overflow: hidden;
 }
 
-/* La barre orange qui se remplit — largeur contrôlée par le style inline */
+/* jauge */
 .skill-fill {
     height: 100%;
     background: #1b57fb;
     border-radius: 10px;
-    width: 0%;              /* commence à 0, JS l'anime jusqu'au vrai % */
-    transition: width 1.2s ease;   /* animation CSS de remplissage */
+    width: 0%;              
+    transition: width 1.2s ease;   
 }
 
 
-/* ===== TABLEAU ===== */
+/* TABLEAU  */
 .tableau-section {
     background: #ffffff;
     border-radius: 16px;
@@ -275,7 +274,7 @@ body.apropos-body main {
     background: #eef2ff;
 }
 
-/* ===== FORMULAIRE ===== */
+/*  FORMULAIRE contact */
 .contact-section {
     background: #ffffff;
     border-radius: 16px;
@@ -336,7 +335,7 @@ body.apropos-body main {
 }
 
 
-/* ===== bouton sociales ===== */
+/*  bouton réseau sociale  */
 .etudiant-links {
     display: flex;
     justify-content: center;

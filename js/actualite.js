@@ -1,10 +1,4 @@
-/* ============================================================
-   actualite.js
-   ============================================================ */
-
-/* ── Compteurs animés ──
-   Fix : on déclenche immédiatement si déjà visible,
-   sinon on attend que l'élément entre dans le viewport */
+/* Compteurs animé */
 function animerCompteurs() {
     const nombres = document.querySelectorAll('.chiffre-nombre');
 
@@ -15,12 +9,9 @@ function animerCompteurs() {
             compter(entry.target);
         });
     }, { threshold: 0.1 });
-    /* threshold à 0.1 au lieu de 0.3 : se déclenche dès que 10%
-       de l'élément est visible, donc même s'il est presque en haut */
+    /*  0.1 = déclenche dès que 10% visible */
 
     nombres.forEach(function(el) {
-        /* Si l'élément est déjà dans le viewport au chargement,
-           IntersectionObserver le détecte quand même à threshold 0.1 */
         observer.observe(el);
     });
 }
@@ -40,8 +31,7 @@ function compter(el) {
 }
 
 
-/* ── Tabs Campus ──
-   On attache les listeners en JS pur, plus de onclick dans le HTML */
+/* ── Tabs Campus ─ */
 function initTabs() {
     const tabs = document.querySelectorAll('.campus-tab');
 
