@@ -86,7 +86,7 @@ PROJET-WEB/
 | CSS3 | Mise en page, animations, responsive (media queries) |
 | JavaScript ES6 | Interactions, calendrier, carrousel, compteurs |
  
-Aucun framework ni bibliothèque externe — conformément aux consignes TI402.
+Aucun framework ni bibliothèque externe - conformément aux consignes TI402.
  
 ---
  
@@ -107,7 +107,7 @@ Aucun framework ni bibliothèque externe — conformément aux consignes TI402.
 - Inspirée du design officiel [efrei.fr](https://www.efrei.fr)
 ---
  
-*© 2026 EFREI Paris — Département Informatique*
+*© 2026 EFREI Paris - Département Informatique*
  
 Projet étudiant — EFREI Paris 2025. Tous droits réservés.
  
