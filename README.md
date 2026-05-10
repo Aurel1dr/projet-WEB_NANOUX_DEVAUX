@@ -117,4 +117,4 @@ Toggle de la classe `dark-mode` sur `body`, avec échange de l'icône lune/solei
  
 ---
  
-*Projet TI402 — EFREI Paris, Département Informatique — 2025-2026*
+*Projet TI402 - EFREI Paris, Département Informatique - 2025-2026*
