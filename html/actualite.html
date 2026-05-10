@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
         <link rel="stylesheet" type="text/css" href="../css/actualite.css">
+        <script src="../js/darkmode.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="../css/darkmode.css">
     </head>
 
     <body class="actualite-body">
@@ -29,6 +31,9 @@
                 <a href="./actualite.html" class="active">Actualité</a>
                 <a href="./apropos.html">À propos</a>
             </div>
+            <button id="theme-toggle" class="theme-btn">
+                <img id="theme-icon" src="../img/img_logo/moon.svg" alt="Mode Sombre">
+            </button>
             <a href="https://myefrei.fr" class="myefrei-link" target="_blank" rel="noopener noreferrer">
                 <img src="../img/img_logo/Logo_MyEfrei.svg" alt="myefrei">
             </a>
@@ -52,8 +57,9 @@
                             <span class="chiffre-label">d'excellence</span>
                         </div>
                         <div class="chiffre-card">
-                            <span class="chiffre-nombre" data-target="8000">0</span>
                             <span class="chiffre-unite">+</span>
+                            <span class="chiffre-nombre" data-target="8000">0</span>
+                        
                             <span class="chiffre-label">étudiants</span>
                         </div>
                         <div class="chiffre-card">
@@ -122,7 +128,7 @@
                     <div class="campus-content" id="campus-villejuif">
                         <img src="../img/img_campus/img-campus-Villejuif.jpg" alt="Campus Villejuif" class="campus-photo">
                         <div class="campus-info">
-                            <h3>Campus de Villejuif</h3>
+                            <h1>Campus de Villejuif</h1>
                             <p>Le campus principal de l'EFREI accueille plus de 6 000 étudiants dans un environnement moderne et connecté</p>
                             <ul class="campus-details">
                                 <li>📍 30-32 Avenue de la République, 94800 Villejuif</li>
@@ -137,7 +143,7 @@
                     <div class="campus-content hidden" id="campus-bordeaux">
                         <img src="../img/img_campus/img-campus-Bordeaux.jpg" alt="Campus Bordeaux" class="campus-photo">
                         <div class="campus-info">
-                            <h3>Campus de Bordeaux</h3>
+                            <h1>Campus de Bordeaux</h1>
                             <p>Ouvert en 2020, le campus de Bordeaux propose les mêmes formations d'excellence dans un cadre dynamique et à taille humaine, au cœur d'une métropole en plein essor.</p>
                             <ul class="campus-details">
                                 <li>📍 Bordeaux Métropole</li>
@@ -149,7 +155,7 @@
                         </div>
                     </div>
                 </div>
-            </div>@
+            </div>
         </main>
 
         <footer>

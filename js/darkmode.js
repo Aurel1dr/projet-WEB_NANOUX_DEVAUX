@@ -1,23 +1,14 @@
-/* ============================================================
-   darkmode.js  —  à placer dans js/  et linker sur toutes les pages
-   ============================================================ */
+const btn = document.getElementById('theme-toggle');
+const icon = document.getElementById('theme-icon');
 
-(function () {
-    // ── Applique le thème sauvegardé immédiatement (avant le rendu) ──
-    // Mis dans une IIFE pour s'exécuter avant le paint et éviter le flash
-    if (localStorage.getItem('theme') === 'dark') {
-        document.documentElement.classList.add('dark');
-    }
-})();
+btn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
 
-function toggleDark() {
-    const html = document.documentElement;
-    const isDark = html.classList.toggle('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-}
-
-window.addEventListener('DOMContentLoaded', function () {
-    const input = document.getElementById('dark-toggle-input');
-    if (!input) return;
-    input.checked = document.documentElement.classList.contains('dark');
+  if (document.body.classList.contains('dark-mode')) {
+    icon.src = '../img/img_logo/sun.svg'; // Chemin vers ton icône soleil
+    icon.alt = 'Mode Clair';
+  } else {
+    icon.src = '../img/img_logo/moon.svg'; // Chemin vers ton icône lune
+    icon.alt = 'Mode Sombre';
+  }
 });
