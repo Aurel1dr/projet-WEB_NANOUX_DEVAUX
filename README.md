@@ -3,13 +3,13 @@
 Projet Web TI402 · 2025-2026  
 Aurélien DEVAUX-RIVIÈRE & Augustin NANOUX
  
-Site vitrine du Département Informatique de l'EFREI Paris, développé en HTML5, CSS3 et JavaScript vanilla, sans framework ni bibliothèque externe.
+Site vitrine du Département Informatique de l'EFREI Paris, développé en HTML, CSS et JavaScript, sans framework ni bibliothèque externe.
  
 ---
 
 ## 📸 Aperçu
  
-<img width="1917" height="912" alt="image" src="https://github.com/user-attachments/assets/ebf20530-e7ae-4141-a773-d0888f191605" />
+<img width="1512" height="861" alt="Capture d’écran 2026-05-10 à 22 28 05" src="https://github.com/user-attachments/assets/a13faaf8-b4d0-4180-aea7-4aa6a265f778" />
 
 
  
