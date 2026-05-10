@@ -184,7 +184,7 @@ body.apropos-body main {
 .timeline-title-link {
     display: inline-block;
     text-decoration: none;
-    border-bottom: 2px solid #1b57fb;
+
     transition: opacity 0.2s ease;
 }
 .timeline-title-link:hover span{
