@@ -1,141 +1,112 @@
-# 🎓 Département Informatique - EFREI Paris
+# 🖥️ Département Informatique - EFREI Paris
  
-> Site web du département informatique de l'EFREI Paris, réalisé dans le cadre d'un projet étudiant.
+> Projet Web TI402 · 2025-2026 · Aurélien DEVAUX-RIVIÈRE & Augustin NANOUX
  
-**Aurélien DEVAUX-RIVIÈRE & Augustin NANOUX** - 2025
+Site vitrine du Département Informatique de l'EFREI Paris, développé en HTML5, CSS3 et JavaScript vanilla, sans framework ni bibliothèque externe.
  
 ---
- 
+
 ## 📸 Aperçu
  
-<img width="1918" height="917" alt="image" src="<img width="1917" height="912" alt="image" src="https://github.com/user-attachments/assets/ebf20530-e7ae-4141-a773-d0888f191605" />
-" />
+<img width="1917" height="912" alt="image" src="https://github.com/user-attachments/assets/ebf20530-e7ae-4141-a773-d0888f191605" />
 
+
+ 
+## 📄 Pages
+ 
+| Page | Fichier | Description |
+|------|---------|-------------|
+| Accueil | `html/accueil.html` | Carrousel interactif, présentation du département |
+| Agenda | `html/agendas.html` | Calendrier hebdomadaire des permanences par promotion |
+| Formation | `html/formation.html` | Programmes accordéon (Prépa, Bachelor, Master, Mastères spécialisés) + tableau des prix |
+| Équipe | `html/equipe.html` | Fiches des enseignants-chercheurs du département |
+| Actualité | `html/actualite.html` | Chiffres clés, Journées Portes Ouvertes, campus |
+| À propos | `html/apropos.html` | Membres du projet, timeline, technologies, formulaire de contact |
  
 ---
  
-## 📁 Structure du projet
+## 🗂️ Arborescence
  
 ```
-projet/
-├── html/
-│   ├── accueil.html        # Page d'accueil avec carrousel
-│   ├── formation.html      # Formations avec accordéons
-│   ├── equipe.html         # Équipe enseignante avec cartes 3D
-│   ├── agendas.html        # Planning des cours
-│   └── apropos.html        # À propos + chatbot IA + contacts
-│
+PROJET-WEB/
 ├── css/
-│   ├── styles.css          # Styles globaux (nav, footer, body)
-│   ├── formation.css       # Styles page Formation
-│   ├── equipe.css          # Styles page Équipe
-│   ├── agendas.css         # Styles page Agenda
-    ├── darkmode.css        # Bouton darkmode (thème)
-│   └── apropos.css         # Styles page À propos
-│
+│   ├── styles.css          # styles globaux, navbar, footer, carrousel
+│   ├── agendas.css
+│   ├── actualite.css
+│   ├── apropos.css
+│   ├── equipe.css
+│   ├── formation.css
+│   └── darkmode.css
+├── html/
+│   ├── accueil.html
+│   ├── agendas.html
+│   ├── actualite.html
+│   ├── apropos.html
+│   ├── equipe.html
+│   └── formation.html
+├── img/
+│   ├── img_campus/
+│   ├── img_carrousel/
+│   ├── img_JPO/
+│   ├── img_logo/
+│   ├── img_perso/
+│   ├── img_professeur/
+│   └── img-maquette.png
 ├── js/
-│   ├── formation.js        # Logique accordéons
-│   ├── calendrier.js       # Logique calendrier hebdomadaire
-    ├── apropos.js
-    ├── carrousel.js
-    ├── darkmode.js
-│   └── calendar-data.js    # Données des cours (à modifier)
-│
-└── img/
-    ├── banière1.png
-    ├── banière2.png
-    ├── banière3.png
-    ├── Efrei-logo-couleur.svg
-    └── logo_MyEfrei.svg
-
----
- 
-## 🚀 Pages
- 
-### 🏠 Accueil
-- Carrousel d'images plein écran avec texte superposé
-- Navigation sticky transparente avec backdrop blur
-### 📚 Formation
-- Accordéons à deux niveaux : **Prépa / Bachelor / Master** → années et majors
-- Ressources pédagogiques avec badges **Corrigé** et **Annale**
-### 👨‍🏫 Équipe
-- Grille de cartes enseignants avec **effet de retournement 3D**
-- Recto : photo + nom en bas à gauche
-- Verso : formation, cours dispensés, thèmes de recherche, tags
-- Bouton ↻ pour tourner la carte
-### 📅 Agenda
-- Calendrier hebdomadaire interactif
-- Mini calendrier mensuel en sidebar
-- Données des cours configurables dans `js/calendar-data.js`
-### ℹ️ À propos
-- **Chatbot IA** propulsé par l'API Claude (Anthropic)
-- Liens vers les réseaux sociaux : LinkedIn, Instagram, Snapchat
-- Adresse et contact du département
----
- 
-## ⚙️ Installation
- 
-Aucune dépendance, aucun framework. Ouvrez simplement `html/accueil.html` dans un navigateur.
- 
-```bash
-git clone https://github.com/votre-repo/dept-info-efrei.git
-cd dept-info-efrei
-# Ouvrir html/accueil.html dans votre navigateur
+│   ├── carrousel.js        # logique carrousel + animation bannière
+│   ├── calendrier.js       # vue hebdomadaire, filtres promos
+│   ├── calendar-data.js    # données des permanences
+│   ├── formation.js        # accordéons
+│   ├── actualite.js        # compteurs animés, onglets campus
+│   ├── apropos.js          # jauges de compétences, formulaire
+│   └── darkmode.js         # bascule thème clair/sombre
+└── README.md
 ```
  
 ---
  
-## 🛠️ Personnalisation
+## ✨ Fonctionnalités
  
-### Ajouter un cours au planning
-Ouvrez `js/calendar-data.js` et copiez un objet existant :
-```js
-{
-    title: "Nom du cours",
-    start: "2025-09-15T09:00",
-    end:   "2025-09-15T11:00",
-    color: "#3b82f6"
-}
-```
+- **Carrousel** automatique (6 s) avec navigation par flèches et points, et animation de réduction vers une bannière lors de la navigation entre pages
+- **Calendrier hebdomadaire** des permanences avec filtre par promotion (P1, P2, I1, I2, I3) et navigation semaine précédente / suivante
+- **Accordéons** imbriqués sur la page Formation (programmes → années → cours)
+- **Compteurs animés** (IntersectionObserver) sur la page Actualité
+- **Jauges de compétences** animées à l'entrée dans le viewport
+- **Onglets campus** (Villejuif / Bordeaux) avec transition CSS
+- **Formulaire de contact** avec validation native HTML5 et confirmation JS
+- **Dark mode** persistant via toggle dans la navbar
+---
  
-### Ajouter un professeur
-Dans `html/equipe.html`, ajoutez un objet dans le tableau `profs` :
-```js
-{
-    name: "Prénom Nom",
-    role: "Enseignant en ...",
-    photo: "../img/profs/nom.jpg",  // ou null pour les initiales
-    studies: "Doctorat en ...",
-    courses: "Cours 1, Cours 2",
-    research: "Thème de recherche",
-    tags: ["Tag1", "Tag2"]
-}
-```
+## 🛠️ Technologies
  
-### Ajouter une ressource pédagogique
-Dans `html/formation.html`, dans le bon `sub-acc-inner` :
-```html
-<a href="lien-vers-fichier.pdf" class="resource-link">
-    Nom de la ressource <span class="res-badge corrige">Corrigé</span>
-</a>
-```
+| Technologie | Usage |
+|-------------|-------|
+| HTML5 | Structure sémantique des 6 pages |
+| CSS3 | Mise en page, animations, responsive (media queries) |
+| JavaScript ES6 | Interactions, calendrier, carrousel, compteurs |
+ 
+Aucun framework ni bibliothèque externe - conformément aux consignes TI402.
+ 
+---
+ 
+## 👥 Équipe
+ 
+| Membre | Responsabilités |
+|--------|----------------|
+| **Aurélien DEVAUX-RIVIÈRE** | Pages Formation & Agenda, calendrier JS, données des permanences |
+| **Augustin NANOUX** | Pages Équipe, Actualité & À propos, carrousel interactif |
  
 ---
  
 ## 🎨 Charte graphique
  
-| Élément | Valeur |
-|---|---|
-| Couleur principale | `#1b57fb` |
-| Couleur hover/accent | `#0056b3` |
-| Badge Prépa | `#3b82f6` |
-| Badge Bachelor | `#10b981` |
-| Badge Master | `#8b5cf6` |
-| Police | Inter (Google Fonts) |
- 
+- **Couleur principale :** `#1b57fb` (bleu EFREI)
+- **Couleur secondaire :** `#ffffff`
+- **Typographie :** `system-ui, -apple-system, sans-serif`
+- Inspirée du design officiel [efrei.fr](https://www.efrei.fr)
 ---
  
-## 📄 Licence
+*© 2026 EFREI Paris - Département Informatique*
  
 Projet étudiant — EFREI Paris 2025. Tous droits réservés.
  
