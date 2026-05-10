@@ -12,7 +12,7 @@ window.calendarEvents = [
 
 /* semaine 04-10 mai */
     {
-        title: 'Permanence',
+        title: 'Permanence Python',
         promo: 'P1',
         type: 'Permanence',
         location: 'A 101',
@@ -22,7 +22,7 @@ window.calendarEvents = [
     },
 
     {
-        title: 'Permanence',
+        title: 'Permanence Java',
         promo: 'P2',
         type: 'Permanence',
         location: 'H 102',
@@ -32,7 +32,7 @@ window.calendarEvents = [
     },
 
     {
-        title: 'Permanence',
+        title: 'Permanence C++',
         promo: 'I1',
         type: 'Permanence',
         location: 'N 205',
@@ -42,7 +42,7 @@ window.calendarEvents = [
     },
 
     {
-        title: 'Permanence',
+        title: 'Permanence JavaScript',
         promo: 'I2',
         type: 'Permanence',
         location: 'C 001',
@@ -65,7 +65,7 @@ window.calendarEvents = [
 
     /* semaine 11-17 mai */
     {
-        title: 'Permanence',
+        title: 'Permanence Anglais',
         promo: 'I1',
         type: 'Permanence',
         location: 'N 205',
@@ -84,7 +84,7 @@ window.calendarEvents = [
         color: ''
     },
     {
-        title: 'Permanence',
+        title: 'Permanence Cybersecurité',
         promo: 'I2',
         type: 'Permanence',
         location: 'A 101',
@@ -94,7 +94,7 @@ window.calendarEvents = [
     },
  
     {
-        title: 'Permanence',
+        title: 'Permanence Data',
         promo: 'I3',
         type: 'Permanence',
         location: 'H 310',
@@ -104,7 +104,7 @@ window.calendarEvents = [
     },
 
     {
-        title: 'Permanence',
+        title: 'Permanence Physique',
         promo: 'P1',
         type: 'Permanence',
         location: 'A 101',
