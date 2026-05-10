@@ -26,7 +26,7 @@ function addDays(date, days) {
 
 function getWeekRangeLabel(startDate) {
     const endDate = addDays(startDate, 6);
-    return `${formatDate(startDate, { day: '2-digit', month: 'long' })} – ${formatDate(endDate, { day: '2-digit', month: 'long' })}`;
+    return `${formatDate(startDate, { day: '2-digit', month: 'long' })} au ${formatDate(endDate, { day: '2-digit', month: 'long' })}`;
 }
 
 function getMonthLabel(date) {

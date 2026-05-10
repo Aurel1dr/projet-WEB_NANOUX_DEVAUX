@@ -58,9 +58,6 @@ body.formation-body main {
 
 
 
-
-
-
 /* 2 coloones*/
 .accordion-grid {
     display: grid;
@@ -76,14 +73,6 @@ body.formation-body main {
     flex-direction: column;
     gap: 24px;
 }
-
-@media (max-width: 860px) {
-    .accordion-grid { grid-template-columns: 1fr; }
-    body.formation-body main { padding-left: 1.5rem; padding-right: 1.5rem; }
-}
-
-
-
 
 
 
