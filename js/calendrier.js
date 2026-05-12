@@ -1,8 +1,4 @@
-/* ============================================================
-   calendrier.js  —  Calendrier hebdomadaire avec filtre promos
-   ============================================================ */
-
-/* ── État du filtre actif (null = toutes les promos affichées) ── */
+/*  État du filtre actif (null = toutes les promos affichées)  */
 let activePromo = null;
 
 function formatDate(date, options = {}) {
@@ -33,7 +29,7 @@ function getMonthLabel(date) {
     return formatDate(date, { month: 'long', year: 'numeric' });
 }
 
-/* ── Résolution couleur d'un événement ── */
+/*  Résolution couleur d'un événement - */
 function resolveColor(event) {
     if (event.color && event.color !== '') return event.color;
     if (event.promo && window.promoColors && window.promoColors[event.promo]) {
@@ -42,13 +38,13 @@ function resolveColor(event) {
     return '#4E6E8E';
 }
 
-/* ── Filtre : retourne les événements visibles selon la promo active ── */
+/* - Filtre : retourne les événements visibles selon la promo active - */
 function filteredEvents() {
     if (!activePromo) return window.calendarEvents;
     return window.calendarEvents.filter(e => e.promo === activePromo);
 }
 
-/* ── Construction des labels horaires ── */
+/* - Construction des labels horaires - */
 function buildHourLabels() {
     const container = document.querySelector('.time-column');
     for (let hour = 8; hour <= 18; hour++) {
@@ -59,7 +55,7 @@ function buildHourLabels() {
     }
 }
 
-/* ── Panneau latéral : liste des promotions avec filtres ── */
+/* - Panneau latéral : liste des promotions avec filtres - */
 function renderPromoPanel() {
     const legendEl = document.getElementById('legend');
     legendEl.innerHTML = '';
@@ -98,7 +94,7 @@ function renderPromoPanel() {
 
 
 
-/* ── Création d'un bloc événement ── */
+/* - Création d'un bloc événement - */
 function createEventCard(event) {
     const start  = new Date(event.start);
     const end    = new Date(event.end);
@@ -130,7 +126,7 @@ function createEventCard(event) {
     return eventEl;
 }
 
-/* ── Vue hebdomadaire ── */
+/* - Vue hebdomadaire - */
 function renderWeekView(selectedDate, events) {
     const daysColumns = document.getElementById('daysColumns');
     daysColumns.innerHTML = '';
@@ -172,7 +168,7 @@ function renderWeekView(selectedDate, events) {
     }
 }
 
-/* ── Rendu global (appelé à chaque changement) ── */
+/* - Rendu global (appelé à chaque changement) - */
 function renderAll() {
     const selectedDate = _currentSelectedDate;
     const weekStart    = getWeekStart(selectedDate);
@@ -195,7 +191,7 @@ function renderAll() {
     renderPromoPanel();
 }
 
-/* ── Initialisation ── */
+/* - Initialisation - */
 window.addEventListener('DOMContentLoaded', () => {
     buildHourLabels();
 

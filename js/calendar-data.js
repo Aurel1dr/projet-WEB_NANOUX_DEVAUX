@@ -1,4 +1,4 @@
-/* ── Liste promo (couleur)── */
+/* Liste promo  */
 window.promoColors = {
     'P1': '#43A047',  
     'P2': '#1E88E5', 
