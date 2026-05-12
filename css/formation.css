@@ -117,7 +117,7 @@ body.formation-body main {
     flex: 1;
 }
 
-/* - Badge - */
+/* ── Badge ── */
 .acc-badge {
     padding: 7px 16px;
     border-radius: 20px;
@@ -133,7 +133,7 @@ body.formation-body main {
 .badge-bachelor { background: #10b981; }
 .badge-master   { background: #8b5cf6; }
 
-/* - Textes du header - */
+/* ── Textes du header ── */
 .acc-title {
     font-weight: 700;
     font-size: 1.65rem;

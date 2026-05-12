@@ -31,7 +31,7 @@ function compter(el) {
 }
 
 
-/* - Tabs Campus ─ */
+/* ── Tabs Campus ─ */
 function initTabs() {
     const tabs = document.querySelectorAll('.campus-tab');
 
@@ -54,7 +54,7 @@ function initTabs() {
 }
 
 
-/* - Initialisation - */
+/* ── Initialisation ── */
 window.addEventListener('DOMContentLoaded', function() {
     animerCompteurs();
     initTabs();

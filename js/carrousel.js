@@ -26,7 +26,7 @@ const tousLesPoints = conteneurPoints.querySelectorAll('.point');// On récupèr
 
 
 
-// - Fonction principale : aller à une diapo précise -
+// ── Fonction principale : aller à une diapo précise ──
 function allerA(index) {
 
     // "transform: translateX" déplace la piste horizontalement => sur la diapo 0 : translateX(0%)   → piste à sa position d'origine ; Si on est sur la diapo 1 : translateX(-33.33%) → piste décalée de 1/3 vers la gauche ...
@@ -43,7 +43,7 @@ function allerA(index) {
 }
 
 
-// - Boutons fléchés -
+// ── Boutons fléchés ──
 btnNext.addEventListener('click', () => {
     const suivant = (indexActuel + 1) % nombreDeDiapos;    // quand on dépasse la dernière diapo, on revient à 0 + Exemple avec 3 diapos : (2 + 1) % 3 = 0 → retour au début
     allerA(suivant);
@@ -57,7 +57,7 @@ btnPrev.addEventListener('click', () => {
 });
 
 
-// - Défilement automatique -
+// ── Défilement automatique ──
 function demarrerTimer() {
     //  appelle une fonction toutes les 4s + Il renvoie un identifiant qu'on garde pour pouvoir l'annuler
     timerAuto = setInterval(() => {
@@ -71,7 +71,7 @@ function reinitialiserTimer() {
     demarrerTimer();    //  redémarre un nouveau
 }
 
-// - Initialisation -
+// ── Initialisation ──
 allerA(0);// (index 0) au chargement de la page
 demarrerTimer();// On démarre le défilement automatique
 
